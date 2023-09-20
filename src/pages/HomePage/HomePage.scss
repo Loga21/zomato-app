@@ -1,0 +1,78 @@
+.zomato-header {
+  background-image: url(../../../public/assets/images/bg-zomato.avif);
+  background-repeat: no-repeat;
+  background-size: 100% 570px;
+  object-fit: cover;
+}
+
+.zomato-banner {
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+}
+
+.ul-nav {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+
+.ul-nav > li {
+  padding: 20px 30px;
+  font-size: 18px;
+  color: white;
+}
+
+.zomato-logo {
+  width: 20%;
+  height: 60px;
+  // padding: 10px;
+  margin-bottom: 15px;
+  margin-top: 14%;
+}
+
+.text-wrapper {
+  text-align: center;
+  height: 470px;
+  // margin-bottom: 20%;
+}
+
+.text-wrapper > h1 {
+  line-height: 1.5;
+  // margin-bottom: 20%;
+}
+
+.location-header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
+.fa-chevron-down {
+  transform: rotate(270deg);
+  font-size: 13px;
+}
+
+.card-content {
+  box-shadow: 0px 1px 3px 0px gray;
+}
+
+.hr-text {
+  display: flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex-grow: 1;
+    background: rgb(229, 226, 226);
+    height: 1px;
+    margin: 0 8px;
+  }
+}
+
+.drop{
+  max-height: 90px;
+  overflow-y: scroll;
+}

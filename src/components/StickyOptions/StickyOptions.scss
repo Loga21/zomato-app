@@ -1,0 +1,13 @@
+.drop{
+  max-height: 90px;
+  overflow-y: scroll;
+}
+
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+
+.wrapper div {
+  flex: 50%;
+}

@@ -1,0 +1,1194 @@
+{
+  "productDispensers": [
+    {
+      "id": 1,
+      "productName": "Ambient & Cold Water Dispenser (No Spill)",
+      "description": "39\"/13\"/13\" (H/W/D)",
+      "imageUrlBlack": "./assets/images/cold-water-dispenser.webp",
+      "imageUrlWhite": "./assets/images/cold-water-white.webp",
+      "maxRetailPrice": 19.99,
+      "sellingPrice": 4.99,
+      "productInfo": "This cooler dispenses instant room temperature and chilled water. Read Dispenser user manual.",
+      "productTerms": "PLEASE NOTE: Actual product make and model may vary and is subject to availability based on your location.",
+      "black": true,
+      "white": true,
+      "gray": false,
+      "stainlessSteel": false,
+      "rent": [
+        {
+          "dropDownName": "4.99/mo - Rent",
+          "dropDownNumber": 4.99
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "productName": "Lumina™ Bottom Load Dispenser",
+      "description": "44.8\"/12.6\"/14\" (H/W/D)",
+      "imageUrlBlack": "./assets/images/bottom-load-dispenser.webp",
+      "imageUrlWhite": "./assets/images/load-dispenser-white.webp",
+      "imageUrlGray": "./assets/images/bottom-load-dispenser-gray.webp",
+      "maxRetailPrice": 299.99,
+      "sellingPrice": 24.99,
+      "productInfo": "A sleek, new water dispenser designed to make healthy hydration easy for everyone. Dispenses hot and cold water, perfect for tea and hot cocoa, or refreshing, crisp hydration. Sleek, bottom-load design means a more optimal dispensing height and no heavy lifting. Also features a convenient built-in cup dispenser, child safety hot lever lock, and near-effortless setup. Works with replaceable AquaEase™ Water Cartridge that keeps your water dispenser clean by replacing all internal cold-water contact parts.",
+      "black": true,
+      "white": true,
+      "gray": true,
+      "stainlessSteel": false,
+      "rent": [
+        {
+          "dropDownName": "279.99 - One-time payment",
+          "dropDownNumber": 279.99
+        },
+        {
+          "dropDownName": "24.99/mo - 12 months",
+          "dropDownNumber": 24.99
+        },
+        {
+          "dropDownName": "49.98 - 6 months",
+          "dropDownNumber": 49.98
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "productName": "Bottom Load Hot & Cold Water Dispenser",
+      "description": "41\"/ 12\"/ 13\" (H/W/D)",
+      "imageUrlBlack": "./assets/images/hot-cold-dispenser.webp",
+      "maxRetailPrice": 279.99,
+      "sellingPrice": 23.33,
+      "productInfo": "Bottom loading means no more heavy lifting! This cooler dispenses cold water to keep you refreshed and hot water perfect for making a a cup of tea, hot chocolate or oatmeal. Energy Star Qualified. 1 Year limited warranty. Available in black/platinum.",
+      "productTerms": "PLEASE NOTE: Actual product make and model may vary and is subject to availability based on your location.",
+      "black": false,
+      "white": false,
+      "gray": false,
+      "stainlessSteel": true,
+      "rent": [
+        {
+          "dropDownName": "279.99 - One-time payment",
+          "dropDownNumber": 279.99
+        },
+        {
+          "dropDownName": "24.99/mo - 12 months",
+          "dropDownNumber": 24.99
+        },
+        {
+          "dropDownName": "49.98 - 6 months",
+          "dropDownNumber": 49.98
+        }
+      ]
+    }
+  ],
+  "primaryHeader": [
+    {
+      "id": 1,
+      "btnText": "Log in"
+    },
+    {
+      "id":2,
+      "btnText":"Sign up"
+    }
+  ],
+  "secondaryHeader": [
+    {
+      "id": 1,
+      "imgUrl": "https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp",
+      "toolTip": "Delivery"
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png?output-format=webp",
+      "toolTip": "Dining Out"
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp",
+      "toolTip": "Nightlife"
+    }
+  ],
+  "stickyOptions": {
+    "checkBoxOptions": [
+      {
+        "id": 1,
+        "option": "Aegean"
+      },
+      {
+        "id": 2,
+        "option": "American"
+      },
+      {
+        "id": 3,
+        "option": "Balkans"
+      },
+      {
+        "id": 4,
+        "option": "BBQ"
+      },
+      {
+        "id": 5,
+        "option": "Indian"
+      },
+      {
+        "id": 6,
+        "option": "Chinese"
+      }
+    ],
+    "stickyHeaderOptions": [
+      {
+        "id": 1,
+        "menu": "Filters"
+      },
+      {
+        "id": 2,
+        "menu": "Rating: 4.0+"
+      },
+      {
+        "id": 3,
+        "menu": "Pure Veg"
+      },
+      {
+        "id": 4,
+        "menu": "Cuisines"
+      }
+    ]
+  },
+  "branchs": {
+    "states": [
+      {
+        "id": 1,
+        "stateName": "Agra Restaurants"
+      },
+      {
+        "id": 2,
+        "stateName": "Ajmer Restaurants"
+      },
+      {
+        "id": 3,
+        "stateName": "Alappuzha Restaurants"
+      },
+      {
+        "id": 4,
+        "stateName": "Bengaluru Restaurants"
+      },
+      {
+        "id": 5,
+        "stateName": "Chennai Restaurants"
+      },
+      {
+        "id": 6,
+        "stateName": "Coimbatore Restaurants"
+      },
+      {
+        "id": 7,
+        "stateName": "Delhi NCR Restaurants"
+      },
+      {
+        "id": 8,
+        "stateName": "Goa Restaurants"
+      },
+      {
+        "id": 9,
+        "stateName": "Guntur Restaurants"
+      },
+      {
+        "id": 10,
+        "stateName": "Haridwar Restaurants"
+      },
+      {
+        "id": 11,
+        "stateName": "Hyderabad Restaurants"
+      },
+      {
+        "id": 12,
+        "stateName": "Jaipur Restaurants"
+      },
+      {
+        "id": 13,
+        "stateName": "Kanpur Restaurants"
+      },
+      {
+        "id": 14,
+        "stateName": "Lucknow Restaurants"
+      },
+      {
+        "id": 15,
+        "stateName": "Mumbai Restaurants"
+      }
+    ],
+    "countries": [
+      {
+        "id": 1,
+        "countryName": "India",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp"
+      },
+      {
+        "id": 2,
+        "countryName": "Brazil",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/br.png?output-format=webp"
+      },
+      {
+        "id": 3,
+        "countryName": "Australia",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/au.png?output-format=webp"
+      },
+      {
+        "id": 4,
+        "countryName": "United States",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/us.png?output-format=webp"
+      },
+      {
+        "id": 5,
+        "countryName": "Singapore",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/sg.png?output-format=webp"
+      },
+      {
+        "id": 6,
+        "countryName": "Malaysia",
+        "flagImgUrl": "https://b.zmtcdn.com/images/flags_z10/my.png?output-format=webp"
+      }
+    ]
+  },
+  "countryDropdownForm": {
+    "countryName": [
+      {
+        "id": 1,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp",
+        "alt": "India",
+        "country": "India",
+        "callCode": "+91"
+      },
+      {
+        "id": 2,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/af.png",
+        "alt": "Afghanistan",
+        "country": "Afghanistan",
+        "callCode": "+93"
+      },
+      {
+        "id": 3,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/gb.png",
+        "alt": "United Kingdom",
+        "country": "United Kingdom",
+        "callCode": "+44"
+      },
+      {
+        "id": 4,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/mx.png",
+        "alt": "Mexico",
+        "country": "Mexico",
+        "callCode": "+52"
+      },
+      {
+        "id": 5,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/se.png",
+        "alt": "Sweden",
+        "country": "Sweden",
+        "callCode": "+46"
+      },
+      {
+        "id": 6,
+        "flagUrl": "https://b.zmtcdn.com/images/flags_z10/zw.png",
+        "alt": "Zimbabwe",
+        "country": "Zimbabwe",
+        "callCode": "+263"
+      }
+    ],
+    "continueWithBtn": [
+      {
+        "id": 1,
+        "icon": "fa-solid fa-envelope",
+        "btnText": "Continue with Email"
+      },
+      {
+        "id": 2,
+        "icon": "fa-brands fa-google",
+        "btnText": "Continue with Google"
+      }
+    ]
+  },
+  "footerItems": {
+    "aboutZomato": [
+      {
+        "id": 1,
+        "menu": "Who We Are"
+      },
+      {
+        "id": 2,
+        "menu": "Blog"
+      },
+      {
+        "id": 3,
+        "menu": "Work With Us"
+      },
+      {
+        "id": 4,
+        "menu": "Investor Relations"
+      },
+      {
+        "id": 5,
+        "menu": "Report Fraud"
+      },
+      {
+        "id": 6,
+        "menu": "Press Kit"
+      },
+      {
+        "id": 7,
+        "menu": "Contact Us"
+      }
+    ],
+    "zomaverse": [
+      {
+        "id": 1,
+        "menu": "Zomato"
+      },
+      {
+        "id": 2,
+        "menu": "BlinKit"
+      },
+      {
+        "id": 3,
+        "menu": "Feeding India"
+      },
+      {
+        "id": 4,
+        "menu": "Hyperpure"
+      },
+      {
+        "id": 5,
+        "menu": "Zomaland"
+      }
+    ],
+    "forRestaurants": [
+      {
+        "id": 1,
+        "menu": "Partner With Us"
+      },
+      {
+        "id": 2,
+        "menu": "Apps For You"
+      }
+    ],
+    "learnMore": [
+      {
+        "id": 1,
+        "menu": "Privacy"
+      },
+      {
+        "id": 2,
+        "menu": "Security"
+      },
+      {
+        "id": 3,
+        "menu": "Terms"
+      },
+      {
+        "id": 4,
+        "menu": "Sitemap"
+      }
+    ],
+    "socialMediaIcons": [
+      {
+        "id": 1,
+        "icon": "fa-brands fa-linkedin"
+      },
+      {
+        "id": 2,
+        "icon": "fa-brands fa-square-instagram"
+      },
+      {
+        "id": 3,
+        "icon": "fa-brands fa-square-twitter"
+      },
+      {
+        "id": 4,
+        "icon": "fa-brands fa-youtube"
+      },
+      {
+        "id": 5,
+        "icon": "fa-brands fa-square-facebook"
+      }
+    ],
+    "socialMediaImg": [
+      {
+        "id": 1,
+        "imgUrl": "https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png",
+        "alt": "appStore"
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png",
+        "alt": "googleStore"
+      }
+    ],
+    "footerCountryDropdown": [
+      {
+        "id": 1,
+        "countryFlagImgUrl": "https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp",
+        "countryNames": "India"
+      },
+      {
+        "id": 2,
+        "countryFlagImgUrl": "https://b.zmtcdn.com/images/flags_z10/au.png?output-format=webp",
+        "countryNames": "Australia"
+      },
+      {
+        "id": 3,
+        "countryFlagImgUrl": "https://b.zmtcdn.com/images/flags_z10/br.png?output-format=webp",
+        "countryNames": "Brazil"
+      }
+    ],
+    "languageDropdown": [
+      {
+        "id": 1,
+        "language": "English"
+      },
+      {
+        "id": 2,
+        "language": "Italian"
+      },
+      {
+        "id": 3,
+        "language": "Portugues (PT)"
+      }
+    ]
+  },
+  "cuisine": {
+    "sampleFood": [
+      {
+        "id": 1,
+        "foodImgUrl": "https://b.zmtcdn.com/data/o2_assets/8dc39742916ddc369ebeb91928391b931632716660.png",
+        "foodName": "Dosa"
+      },
+      {
+        "id": 2,
+        "foodImgUrl": "https://b.zmtcdn.com/data/dish_images/d19a31d42d5913ff129cafd7cec772f81639737697.png",
+        "foodName": "Biriyani"
+      },
+      {
+        "id": 3,
+        "foodImgUrl": "https://b.zmtcdn.com/data/dish_images/1db865b046c8d463c5ac0cdaaea42ba81620642625.png",
+        "foodName": "MiniTiffin"
+      },
+      {
+        "id": 4,
+        "foodImgUrl": "https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png",
+        "foodName": "Pizza"
+      },
+      {
+        "id": 5,
+        "foodImgUrl": "https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png",
+        "foodName": "Thali"
+      },
+      {
+        "id": 6,
+        "foodImgUrl": "https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png",
+        "foodName": "Cake"
+      }
+    ],
+    "brands": [
+      {
+        "id": 1,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/80c09d718acddee05a655eb378bb442f_1617875219.png?output-format=webp",
+        "brandName": "KFC",
+        "deliveryTimePeriod": "40 min"
+      },
+      {
+        "id": 2,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/23b16c7bbb727a8499309011f2e010b6_1684317946.png?output-format=webp",
+        "brandName": "Sangeetha Veg Restaurant",
+        "deliveryTimePeriod": "17 min"
+      },
+      {
+        "id": 3,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/5ef673b417cd25b5a04176ce341d425a_1630505652.png?output-format=webp",
+        "brandName": "A2B - Adyar Ananda Bhavan",
+        "deliveryTimePeriod": "18 min"
+      },
+      {
+        "id": 4,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/3d80cb89fca9e212f7dab2c1914ebd8f_1643984189.png?output-format=webp",
+        "brandName": "McDonald's",
+        "deliveryTimePeriod": "43 min"
+      },
+      {
+        "id": 5,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/6a11fd0f30c9fd9ceaff2f5b21f61d23_1617187803.png?output-format=webp",
+        "brandName": "Burger King",
+        "deliveryTimePeriod": "45 min"
+      },
+      {
+        "id": 6,
+        "brandImgUrl": "https://b.zmtcdn.com/data/brand_creatives/logos/367270a3a33c60e580e0e2848c098b97_1673722257.png?output-format=webp",
+        "brandName": "Geetham Veg Restaurant",
+        "deliveryTimePeriod": "40 min"
+      }
+    ],
+    "foodItems": [
+      {
+        "id": 1,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/chains/1/20587241/068b439834ce22ce236a78c8f10b996a_o2_featured_v2.jpg?output-format=webp",
+        "offer": 20,
+        "hotelName": "Mannah Sweets",
+        "rating": 4.4,
+        "cuisineName": "Mithai, Bakery",
+        "price": 200,
+        "timeTaken": 40
+      },
+      {
+        "id": 2,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/0/18591940/feaa196881849fd693d1ede725a373b0_o2_featured_v2.jpg",
+        "offer": 30,
+        "hotelName": "Hotel Kanthaa's",
+        "rating": 3.5,
+        "cuisineName": "South Indian Thali",
+        "price": 150,
+        "timeTaken": 28
+      },
+      {
+        "id": 3,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/0/19650760/d3c4b37bf7d35f8f6cbbb13834aaf85a_o2_featured_v2.jpg",
+        "offer": 15,
+        "hotelName": "SS Muslim Briyani",
+        "rating": 3.8,
+        "cuisineName": "Biryani, Chinese",
+        "price": 150,
+        "timeTaken": 37
+      }
+    ],
+    "popularLocalities": [
+      {
+        "id": 1,
+        "area": "T.Nagar",
+        "noOfRestaurants": 323
+      },
+      {
+        "id": 2,
+        "area": "Nungambakkam",
+        "noOfRestaurants": 273
+      },
+      {
+        "id": 3,
+        "area": "Velachery",
+        "noOfRestaurants": 436
+      },
+      {
+        "id": 4,
+        "area": "Adyar",
+        "noOfRestaurants": 183
+      },
+      {
+        "id": 5,
+        "area": "Anna Nagar East",
+        "noOfRestaurants": 310
+      },
+      {
+        "id": 6,
+        "area": "Thuraipakkam",
+        "noOfRestaurants": 232
+      },
+      {
+        "id": 7,
+        "area": "Mylapore",
+        "noOfRestaurants": 161
+      },
+      {
+        "id": 8,
+        "area": "Alwarpet",
+        "noOfRestaurants": 129
+      },
+      {
+        "id": 9,
+        "area": "Avadi",
+        "noOfRestaurants": 214
+      }
+    ],
+    "accordionValues": [
+      {
+        "id": 2,
+        "toggleTarget": "#collapseTwo",
+        "ariaControls": "collapseTwo",
+        "targetId": "collapseTwo",
+        "dataParent": "#accordion2",
+        "btnName": "Top Restaurant Chains",
+        "brand1": "Burger King",
+        "brand2": "Dominos",
+        "brand3": "KFC",
+        "brand4": "Krispy Kreme",
+        "brand5": "McDonald"
+      },
+      {
+        "id": 3,
+        "toggleTarget": "#collapseThree",
+        "ariaControls": "collapseThree",
+        "targetId": "collapseThree",
+        "dataParent": "#accordion3",
+        "btnName": "Cities We Deliver To",
+        "brand1": "Delhi NCR",
+        "brand2": "Kolkata",
+        "brand3": "Mumbai",
+        "brand4": "Bengaluru",
+        "brand5": "Pune"
+      }
+    ]
+  },
+  "overview": {
+    "ourSponsors": [
+      {
+        "id": 1,
+        "sponserImgUrl": "https://b.zmtcdn.com/data/pictures/chains/2/72602/c6ce6b8c2f3de88a992cda1e1d8abded_featured_v2.jpg?output-format=webp",
+        "sponserName": "Punjab Grill",
+        "diningRating": 4.5,
+        "deliveryRating": 4.1,
+        "foodVarieties": "North Indian, Mughlai, Kebab, Biryani, Desserts"
+      },
+      {
+        "id": 2,
+        "sponserImgUrl": "https://b.zmtcdn.com/data/pictures/5/73095/79c1eeffd34131af9dc91a796972d381_featured_v2.jpg?output-format=webp",
+        "sponserName": "VB Signature",
+        "diningRating": 4.3,
+        "deliveryRating": 3.6,
+        "foodVarieties": "North Indian, South Indian, Asian, Fast Food,"
+      },
+      {
+        "id": 3,
+        "sponserImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/13fb84ec9ebc7ce71ea2923d25336070.jpg?fit=around%7C500%3A200&crop=471%3A400%3B%2A%2C%2A",
+        "sponserName": "Amdavadi",
+        "diningRating": 3.8,
+        "deliveryRating": 3.5,
+        "foodVarieties": "Gujarati, Desserts, Beverages"
+      },
+      {
+        "id": 4,
+        "sponserImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/feaa196881849fd693d1ede725a373b0_o2_featured_v2.jpg",
+        "sponserName": "Namma Veedu Vasanthabavan",
+        "diningRating": 3.4,
+        "deliveryRating": 3.8,
+        "foodVarieties": "South Indian, North Indian, Chinese"
+      }
+    ],
+    "similarRestaurants": [
+      {
+        "id": 1,
+        "sponserUrl": "https://b.zmtcdn.com/data/pictures/9/18899209/f80cf23a359e70ed136ac9949b77ba1a_featured_v2.png?output-format=webp",
+        "restaurantName": "Hotel Vishwa Sagar",
+        "restroDiningRating": 3.8,
+        "restroDeliveryRating": 4.2,
+        "foodTypes": "South Indian, Chinese, North Indian",
+        "location": "Kilpauk, Chennai"
+      },
+      {
+        "id": 2,
+        "sponserUrl": "https://b.zmtcdn.com/data/pictures/chains/3/65223/d36d8bc0df8b6e287a5d9137e371c24c_featured_v2.jpg?fit=around%7C250%3A200&crop=219%3A200%3B%2A%2C%2A",
+        "restaurantName": "Hot Chips",
+        "restroDiningRating": 3.3,
+        "restroDeliveryRating": 3.7,
+        "foodTypes": "South Indian, Chinese, Beverages",
+        "location": "Purasavakkam, Chennai"
+      },
+      {
+        "id": 3,
+        "sponserUrl": "https://b.zmtcdn.com/data/pictures/9/18899209/f80cf23a359e70ed136ac9949b77ba1a_featured_v2.png?output-format=webp",
+        "restaurantName": "Hotel Raaj Bhaavan",
+        "restroDiningRating": 3.3,
+        "restroDeliveryRating": 3.8,
+        "foodTypes": "South Indian, North Indian, Chinese",
+        "location": "Purasavakkam, Chennai"
+      }
+    ],
+    "moreInfo": [
+      {
+        "id": 1,
+        "features": "Breakfast"
+      },
+      {
+        "id": 2,
+        "features": "Home Delivery"
+      },
+      {
+        "id": 3,
+        "features": "Takeaway Available"
+      },
+      {
+        "id": 4,
+        "features": "Vegetarian Only"
+      },
+      {
+        "id": 5,
+        "features": "Indoor Seating"
+      }
+    ],
+    "reviewHighlights": [
+      {
+        "id": 1,
+        "btnName": "Plenty of Vegetarian Options"
+      },
+      {
+        "id": 2,
+        "btnName": "Lip Smacking Food"
+      },
+      {
+        "id": 3,
+        "btnName": "Portion"
+      },
+      {
+        "id": 4,
+        "btnName": "Good Taste"
+      },
+      {
+        "id": 5,
+        "btnName": "Good Food"
+      },
+      {
+        "id": 6,
+        "btnName": "Spicy"
+      }
+    ],
+    "gpsBtn": [
+      {
+        "id": 1,
+        "icon": "fa-regular fa-copy",
+        "btnName": "Copy"
+      },
+      {
+        "id": 2,
+        "icon": "fa-solid fa-diamond-turn-right",
+        "btnName": "Direction"
+      }
+    ],
+    "cuisineVarietyBtn": [
+      {
+        "id": 1,
+        "btnName": "South Indian"
+      },
+      {
+        "id": 2,
+        "btnName": "Chinese"
+      },
+      {
+        "id": 3,
+        "btnName": "Beverages"
+      }
+    ],
+    "restroFeatures": [
+      {
+        "id": 1,
+        "imgUrl": "https://b.zmtcdn.com/data/o2_assets/fa7443fb81df3ff2c54186672599c3db1585754076.png",
+        "safetyMeasures": "RESTAURANT SAFETY MEASURE",
+        "features": "Rider Hand Wash"
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://b.zmtcdn.com/data/o2_assets/8ecc61badb80ea685f0afc71a4d721671585754288.png",
+        "safetyMeasures": "RESTAURANT SAFETY MEASURE",
+        "features": "Daily Temp. Checks"
+      }
+    ]
+  },
+  "cuisineDetail": {
+    "stickyMenu": [
+      {
+        "id": 1,
+        "linkUrl": "",
+        "menuName": "Overview"
+      },
+      {
+        "id": 2,
+        "linkUrl": "order-online",
+        "menuName": "Order Online"
+      },
+      {
+        "id": 3,
+        "linkUrl": "reviews",
+        "menuName": "Reviews"
+      },
+      {
+        "id": 4,
+        "linkUrl": "photos",
+        "menuName": "Photos"
+      },
+      {
+        "id": 5,
+        "linkUrl": "menu",
+        "menuName": "Menu"
+      }
+    ],
+    "relatedDetails": [
+      {
+        "id": 1,
+        "title": "RELATED TO HOTEL KANTHAAS, KILPAUK",
+        "description": "Restaurants in Chennai, Chennai Restaurants, Kilpauk restaurants, Best Kilpauk restaurants, North Chennai restaurants, Quick Bites in Chennai, Quick Bites near me, Quick Bites in Kilpauk, in Chennai, near me, in Kilpauk, in Chennai, near me, in Kilpauk, Order food online in Kilpauk, Order food online in Chennai, New Year Parties in Chennai, Christmas Special in Chennai"
+      },
+      {
+        "id": 2,
+        "title": "RESTAURANTS AROUND KILPAUK",
+        "description": "Shenoy Nagar restaurants, Purasavakkam restaurants, Chetpet restaurants, Aminijikarai restaurants"
+      },
+      {
+        "id": 3,
+        "title": "FREQUENT SEARCHES LEADING TO THIS PAGE",
+        "description": "kandhas restaurant near me, kandhas, hotel khandhas kilpauk mobile numberd, hotel kandhas , pure vegetarian, hotel kanthaas menu"
+      }
+    ],
+    "helpIcons": [
+      {
+        "id": 1,
+        "icon": "fa-solid fa-diamond-turn-right",
+        "toolTip": "Direction"
+      },
+      {
+        "id": 2,
+        "icon": "fa-solid fa-bookmark",
+        "toolTip": "Bookmark"
+      },
+      {
+        "id": 3,
+        "icon": "fa-solid fa-share",
+        "toolTip": "Share"
+      }
+    ],
+    "hotelReviews": [
+      {
+        "id": 1,
+        "rating": 3.6,
+        "totalReviews": 119,
+        "reviewType": "Dining Reviews"
+      },
+      {
+        "id": 2,
+        "rating": 3.5,
+        "totalReviews": "31.3K",
+        "reviewType": "Delivery Reviews"
+      }
+    ],
+    "courasalImg": [
+      {
+        "id": 1,
+        "imgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/53c12bb3add55dd160df8a3138cbd92d.jpg?output-format=webp&fit=around|300:273&crop=300:273;*,*",
+        "altText": "biriyani"
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/bdda0e02230fd85af48a733e0a0882e4.jpg?output-format=webp&fit=around|300:273&crop=300:273;*,*",
+        "altText": "curdRice"
+      }
+    ],
+    "breadCrumbs": [
+      {
+        "id": 1,
+        "title": "Home"
+      },
+      {
+        "id": 2,
+        "title": "India"
+      },
+      {
+        "id": 3,
+        "title": "Chennai"
+      },
+      {
+        "id": 4,
+        "title": "Kilpauk"
+      },
+      {
+        "id": 5,
+        "title": "Hotel Kanthaas"
+      }
+    ]
+  },
+  "foodImgGallery": [
+    {
+      "id": 1,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/53c12bb3add55dd160df8a3138cbd92d.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "Biriyani"
+    },
+    {
+      "id": 2,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/bdda0e02230fd85af48a733e0a0882e4.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "curdRice"
+    },
+    {
+      "id": 3,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/45dfb151339c89fa8bea7ef3f32b490b.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "roast"
+    },
+    {
+      "id": 4,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/8ef5d3f6ee12693e49f85dda8410ed48.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "varietyRice"
+    },
+    {
+      "id": 5,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/pictures/0/18591940/13fb84ec9ebc7ce71ea2923d25336070.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "carrotRice"
+    },
+    {
+      "id": 6,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/ba6/6c1e676c4dcfacd21f9b917271a50ba6_1626535587.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "dosa"
+    },
+    {
+      "id": 7,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/69c/092603efee35e19233132a846014f69c_1688575959.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "chickenRice"
+    },
+    {
+      "id": 8,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/a7c/438f0b5066376c57e5d1869ae1030a7c_1612194375.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "poori"
+    },
+    {
+      "id": 9,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/23c/30cd018c78908ab9e92d4c95c9a9a23c_1650595309.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "parotta"
+    },
+    {
+      "id": 10,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/6d5/17fe3244e34b6c1126bd4128d1d946d5_1532327159.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "idly"
+    },
+    {
+      "id": 11,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/8ce/0744c3cbcc3ddb3ec7f9ab84f4dc18ce_1671274908.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "vegRice"
+    },
+    {
+      "id": 12,
+      "galleryImgUrl": "https://b.zmtcdn.com/data/reviews_photos/882/0c501bdffbcffc4f64b56c5a2d8a0882_1633098103.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "alttext": "lemonRice"
+    }
+  ],
+  "foodOrderOnlineExclusive": {
+    "orderData": [
+      {
+        "id": 1,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/d13/a3255ba8e97050169ce9374926d04d13.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "sambarIdly",
+        "foodName": "Sambar Idli",
+        "noOfVotes": 63,
+        "price": 78,
+        "foodDescription": "Idlis dipped in hot and delicious sambar!"
+      },
+      {
+        "id": 2,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/fb5/04e74771cab731431762933a99634fb5.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Thattu Idli",
+        "foodName": "Thattu Idli",
+        "noOfVotes": 243,
+        "price": 52,
+        "foodDescription": "Big idli toped with ghee & delicious home made idli podi & sided ..."
+      },
+      {
+        "id": 3,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/f17/bbbdea8a64b74a90097ef52221d96f17.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Pongal",
+        "foodName": "Pongal",
+        "noOfVotes": 274,
+        "price": 78,
+        "foodDescription": "Hot ghee pongal sided with delicious sambar and chutneys!"
+      },
+      {
+        "id": 4,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/f53/c404903002aa6d9f72e3ca704c0a4f53.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Wheat Paratha",
+        "foodName": "Wheat Paratha",
+        "noOfVotes": 153,
+        "price": 91,
+        "foodDescription": "Two pieces of hot wheat parathas served with raita and delicious kurma!"
+      },
+      {
+        "id": 5,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/c70/eedcf1fdcc2d0619af00ee11b5059c70.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Ghee Roast",
+        "foodName": "Ghee Roast",
+        "noOfVotes": 131,
+        "price": 109,
+        "foodDescription": "Crispy ghee dosa sided with delicious sambar and chutneys!"
+      },
+      {
+        "id": 6,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/d62/a74e81561a1d7c2d41bfe9cfe25e7d62.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Idli",
+        "foodName": "Idli",
+        "noOfVotes": 360,
+        "price": 61,
+        "foodDescription": "Two pieces of hot and fluffy Idlis sided with chutney and sambar."
+      },
+      {
+        "id": 7,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/285/cf65fe28d718f37f7eceb536a931c285.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Chapati",
+        "foodName": "Chapati",
+        "noOfVotes": 200,
+        "price": 79,
+        "foodDescription": "2 Pieces of chapati sided with hot and delicious kurma!"
+      },
+      {
+        "id": 8,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/11c/3ca2935e2b221aa55a118beb0353611c.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Dosa",
+        "foodName": "Dosa",
+        "noOfVotes": 317,
+        "price": 75,
+        "foodDescription": "Delicious dosa sided with hot sambar and 2 chutneys!"
+      },
+      {
+        "id": 9,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/267/de971d2618d2ae88a0010509ddc77267.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Onion Rava Dosa",
+        "foodName": "Onion Rava Dosa",
+        "noOfVotes": 300,
+        "price": 99,
+        "foodDescription": "Rawa dosa topped with finely chopped onions sided with sambar and chutneys!"
+      },
+      {
+        "id": 10,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/246/9f76eb5a2f566c41ca2957eaa7627246.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Set Dosa",
+        "foodName": "Set Dosa",
+        "noOfVotes": 72,
+        "price": 99,
+        "foodDescription": " kind of Masal mixer dosa"
+      },
+      {
+        "id": 11,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/51d/f7b67654cf892cdea4837ec34196251d.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Paper Roast",
+        "foodName": "Paper Roast",
+        "noOfVotes": 112,
+        "price": 101,
+        "foodDescription": "Crispy, long dosa sided with delicious sambar and chutneys!"
+      },
+      {
+        "id": 12,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/99c/080bcf0efd99b1ca854b45bb48a5799c.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Horlicks",
+        "foodName": "Horlicks",
+        "noOfVotes": 54,
+        "price": 55,
+        "foodDescription": "Horlicks mixed with fresh milk!"
+      },
+      {
+        "id": 13,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/5e7/984141a051789884f222608d891e65e7.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Special Tea",
+        "foodName": "Special Tea",
+        "noOfVotes": 138,
+        "price": 49,
+        "foodDescription": "ooty tea!"
+      },
+      {
+        "id": 14,
+        "cuisineImgUrl": "https://b.zmtcdn.com/data/dish_photos/892/01e619404e12c71c9454ecc42f93f892.jpg?fit=around|130:130&crop=130:130;*,*",
+        "alterText": "Boost",
+        "foodName": "Boost",
+        "noOfVotes": 56,
+        "price": 55,
+        "foodDescription": "Boost mixed with fresh milk!"
+      }
+    ],
+    "offerInfo": [
+      {
+        "id": 1,
+        "offerPercentage": "Free dish",
+        "offerStartsFrom": "order above ₹249"
+      },
+      {
+        "id": 2,
+        "offerPercentage": "50% OFF up to ₹100",
+        "offerStartsFrom": "use code MUNCH50"
+      },
+      {
+        "id": 3,
+        "offerPercentage": "Flat ₹250 OFF",
+        "offerStartsFrom": "use code FLAT250"
+      },
+      {
+        "id": 4,
+        "offerPercentage": "40% OFF up to ₹80",
+        "offerStartsFrom": "use code ZOMPAYTM"
+      },
+      {
+        "id": 5,
+        "offerPercentage": "Up to ₹150 cashback",
+        "offerStartsFrom": "use code AMAZONPA..."
+      }
+    ],
+    "todaysMenuList": [
+      {
+        "id": 1,
+        "menuTitle": "Todays Exclusive Dishes (3)",
+        "link": "#list-item-1"
+      },
+      {
+        "id": 2,
+        "menuTitle": "Breakfast (29)",
+        "link": "#list-item-2"
+      },
+      {
+        "id": 3,
+        "menuTitle": "Drinks (Beverages) (5)",
+        "link": "#list-item-3"
+      }
+    ]
+  },
+  "reviews": {
+    "totalReviews": [
+      {
+        "id": 1,
+        "sortBy": "Following"
+      },
+      {
+        "id": 2,
+        "sortBy": "Popular"
+      },
+      {
+        "id": 3,
+        "sortBy": "Bloggers"
+      },
+      {
+        "id": 4,
+        "sortBy": "My Reviews"
+      },
+      {
+        "id": 5,
+        "sortBy": "Order Reviews"
+      }
+    ],
+    "sorting": [
+      {
+        "id": 1,
+        "sortBy": "Newest First"
+      },
+      {
+        "id": 2,
+        "sortBy": "Oldest First"
+      },
+      {
+        "id": 3,
+        "sortBy": "Highest Rated"
+      },
+      {
+        "id": 4,
+        "sortBy": "Lowest Rated"
+      }
+    ],
+    "commentReactions": [
+      {
+        "id": 1,
+        "iconName": "Helpful",
+        "icon": "fa-regular fa-thumbs-up"
+      },
+      {
+        "id": 2,
+        "iconName": "Comment",
+        "icon": "fa-regular fa-comment"
+      },
+      {
+        "id": 3,
+        "iconName": "Share",
+        "icon": "fa-solid fa-share"
+      }
+    ]
+  }
+}
