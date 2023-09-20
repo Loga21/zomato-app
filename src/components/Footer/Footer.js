@@ -35,8 +35,8 @@ const Footer = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
   return (
-    <div className='container footer-wrapper'>
-      <footer className='pt-5 pb-1'>
+    <div className='footer-wrapper'>
+      <footer className='pt-5 pb-1 container'>
         <div className='d-flex'>
           <div>
             <img

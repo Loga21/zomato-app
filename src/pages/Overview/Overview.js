@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { Link } from 'react-router-dom';
 import './Overview.scss';
+import OurSponsors from './OurSponsors/OurSponsors';
 
 const Overview = () => {
   const [restaurant, setRestaurant] = useState({});
@@ -59,31 +60,29 @@ const Overview = () => {
               );
             })}
           </div>
-          <div>
-            <div className='d-flex justify-content-between'>
-              <h4 className='mb-3'>Menu</h4>
-              <p className='m-0 text-danger me-5'>
-                See all menus
-                <FontAwesomeIcon
-                  icon='fa-solid fa-chevron-right'
-                  className='ms-2'
-                  style={{ fontSize: 11 }}
-                />
-              </p>
-            </div>
-            <div className='geeks rounded'>
-              <img
-                src='https://b.zmtcdn.com/data/menus/940/18591940/920a90fa4643eaa74f5224880809b54f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
-                alt='menu'
-                height={190}
-                className='rounded'
+          <div className='d-flex justify-content-between'>
+            <h4 className='mb-3'>Menu</h4>
+            <p className='m-0 text-danger me-5'>
+              See all menus
+              <FontAwesomeIcon
+                icon='fa-solid fa-chevron-right'
+                className='ms-2'
+                style={{ fontSize: 11 }}
               />
-            </div>
-            <p className='m-0 mt-1'>Food Menu</p>
-            <p className='m-0 text-secondary' style={{ fontSize: 12 }}>
-              3 pages
             </p>
           </div>
+          <div className='geeks rounded'>
+            <img
+              src='https://b.zmtcdn.com/data/menus/940/18591940/920a90fa4643eaa74f5224880809b54f.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+              alt='menu'
+              height={190}
+              className='rounded'
+            />
+          </div>
+          <p className='m-0 mt-1'>Food Menu</p>
+          <p className='m-0 text-secondary' style={{ fontSize: 12 }}>
+            3 pages
+          </p>
           <h4 className='mb-3 mt-4'>Cuisines</h4>
           {restaurant.cuisineVarietyBtn?.map((varieties) => {
             return (
@@ -125,86 +124,7 @@ const Overview = () => {
             })}
           </div>
           <h5 className='text-secondary mt-3'>OUR SPONSORS</h5>
-          <div className='d-flex flex-wrap my-3'>
-            {restaurant.ourSponsors?.map((sponsor) => {
-              return (
-                <div key={sponsor.id} className='me-3 mb-3'>
-                  <img
-                    src={sponsor.sponserImgUrl}
-                    alt={sponsor.sponserName}
-                    height={180}
-                    className='rounded mb-2'
-                  />
-                  <h4>{sponsor.sponserName}</h4>
-                  <span
-                    className='bg-success rounded text-light px-1 me-1 mt-2'
-                    style={{ width: 42, height: 26, fontSize: 16 }}>
-                    {sponsor.diningRating}
-                    <FontAwesomeIcon
-                      icon='fa-solid fa-star'
-                      className='fs-n1 text-light'
-                      style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                    />
-                  </span>
-                  <span>DINING</span>
-                  <span className='border-end border-dark ms-3 me-3'></span>
-                  <span
-                    className='bg-success rounded text-light px-1 me-1 mt-2'
-                    style={{ width: 42, height: 26, fontSize: 16 }}>
-                    {sponsor.deliveryRating}
-                    <FontAwesomeIcon
-                      icon='fa-solid fa-star'
-                      className='fs-n1 text-light'
-                      style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                    />
-                  </span>
-                  <span>DELIVERY</span>
-                  <p className='text-secondary mb-3'>{sponsor.foodVarieties}</p>
-                </div>
-              );
-            })}
-          </div>
-          <p className='fs-5'>Similar restaurants</p>
-          <div className='d-flex my-3'>
-            {restaurant.similarRestaurants?.map((restro) => {
-              return (
-                <div key={restro.id} className='me-2'>
-                  <img
-                    src={restro.sponserUrl}
-                    alt={restro.restaurantName}
-                    height={200}
-                    className='rounded mb-2'
-                  />
-                  <h4>{restro.restaurantName}</h4>
-                  <span
-                    className='bg-success rounded text-light px-1 me-1 mt-2'
-                    style={{ width: 42, height: 26, fontSize: 16 }}>
-                    {restro.restroDiningRating}
-                    <FontAwesomeIcon
-                      icon='fa-solid fa-star'
-                      className='fs-n1 text-light'
-                      style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                    />
-                  </span>
-                  <span>DINING</span>
-                  <span className='border-end border-dark ms-1 me-1'></span>
-                  <span
-                    className='bg-success rounded text-light px-1 me-1 mt-2'
-                    style={{ width: 42, height: 26, fontSize: 16 }}>
-                    {restro.restroDeliveryRating}
-                    <FontAwesomeIcon
-                      icon='fa-solid fa-star'
-                      className='fs-n1 text-light'
-                      style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                    />
-                  </span>
-                  <span>DELIVERY</span>
-                  <p className='text-secondary mb-0'>{restro.foodTypes}</p>
-                  <p className='text-secondary mb-3'>{restro.location}</p>
-                </div>
-              );
-            })}
-          </div>
+          <OurSponsors />
           <div className='bg-body-secondary rounded py-2'>
             <h4 className='ms-3'>Are you a food blogger?</h4>
             <p className='mb-0 text-danger ms-3'>
