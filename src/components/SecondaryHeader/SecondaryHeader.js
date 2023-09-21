@@ -62,16 +62,16 @@ const SecondaryHeader = () => {
                           : 'nav-link text-secondary fs-5'
                       }
                       aria-current='page'
-                      to={items.link}>
+                      to={items.link}
+                      onClick={() => {
+                        setMenuName(items.toolTip);
+                      }}>
                       <span
                         className={
                           menuName === items.toolTip
                             ? 'bg-warning-subtle rounded-circle py-4 px-1 me-2'
                             : 'bg-body-secondary rounded-circle py-4 px-1 me-2'
-                        }
-                        onClick={() => {
-                          setMenuName(items.toolTip);
-                        }}>
+                        }>
                         <img
                           src={items.imgUrl}
                           alt={items.toolTip}
