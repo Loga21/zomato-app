@@ -93,17 +93,20 @@
     {
       "id": 1,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp",
-      "toolTip": "Delivery"
+      "toolTip": "Delivery",
+      "link": "/cuisine-details"
     },
     {
       "id": 2,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png?output-format=webp",
-      "toolTip": "Dining Out"
+      "toolTip": "Dining Out",
+      "link": "/cuisine-details/dine-out"
     },
     {
       "id": 3,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp",
-      "toolTip": "Nightlife"
+      "toolTip": "Nightlife",
+      "link": ""
     }
   ],
   "stickyOptions": {
@@ -1316,6 +1319,95 @@
         "id": 3,
         "iconName": "Share",
         "icon": "fa-solid fa-share"
+      }
+    ]
+  },
+  "diningOut": {
+    "zomatoCollections": [
+      {
+        "id": 1,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/77c1b9704985885cbe2cb094e9983eab_1682080540.jpg",
+        "highlightedText": "Winners of Zomato Res...",
+        "totalPlaces": 8
+      },
+      {
+        "id": 2,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/f141889a9c1564098ee6a9763a941d78_1675232834.jpg",
+        "highlightedText": "29 Best Bars & Pubs",
+        "totalPlaces": 27
+      },
+      {
+        "id": 3,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/5a235455020ab591941f86eadecd111c_1675231203.jpg",
+        "highlightedText": "8 Newly Opened Resta...",
+        "totalPlaces": 8
+      },
+      {
+        "id": 4,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/1b191329f2c37a474c428131841d488b_1675232931.jpg",
+        "highlightedText": "6 Sea View Dining Places",
+        "totalPlaces": 6
+      }
+    ],
+    "subHeaderMenus": [
+      {
+        "id": 1,
+        "menu": "Filters"
+      },
+      {
+        "id": 2,
+        "menu": "Gold"
+      },
+      {
+        "id": 3,
+        "menu": "Rating: 4.0+"
+      },
+      {
+        "id": 4,
+        "menu": "Outdoor Seating"
+      },
+      {
+        "id": 5,
+        "menu": "Serves Alcohol"
+      },
+      {
+        "id": 6,
+        "menu": "Open Now"
+      }
+    ],
+    "trendingDinings": [
+      {
+        "id": 1,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/2/20590792/69779d8e29e53065c5d7c4dd2595f8db_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "Sundays",
+        "rating": 4.4,
+        "cuisineName": "Italian, Continental, Asian,...",
+        "price": "200",
+        "location": "Anna Nagar East, Chennai",
+        "distance": 4.9
+      },
+      {
+        "id": 2,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/8/20420088/247de2f48e26068cc3c6bc5b805322fc_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "Secret Story",
+        "rating": 4.3,
+        "cuisineName": "North Indian, Chinese, Itali...",
+        "price": "3,500",
+        "location": "Nungambakkam, Chennai",
+        "distance": 3.5
+      },
+      {
+        "id": 3,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/19580519/f0bd5bf09f13c8eacd076af947c78a60_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "The Living Room",
+        "rating": 4.5,
+        "cuisineName": "North Indian, Pasta, Italian,...",
+        "price": "2,000",
+        "location": "Anna Nagar East, Chennai",
+        "distance": 5.9
       }
     ]
   }

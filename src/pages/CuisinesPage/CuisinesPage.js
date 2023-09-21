@@ -86,7 +86,7 @@ const CuisinesPage = () => {
         {food.popularLocalities?.map((area) => {
           return (
             <div key={area.id} className='col-md-4 px-2 py-3'>
-              <div key={area.id} className='card rounded-3 card-content'>
+              <div className='card rounded-3 card-content'>
                 <div className='card-body d-flex justify-content-between'>
                   <div>
                     <p className='m-0' style={{ fontSize: 19 }}>

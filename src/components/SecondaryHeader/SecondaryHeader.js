@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
+import { Link, Outlet } from 'react-router-dom';
 
 const SecondaryHeader = () => {
+  const [menuName, setMenuName] = useState('Delivery');
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
-
+  console.log(menuName);
   useEffect(() => {
     fetchApi('http://localhost:5000/secondaryHeader', 'GET')
       .then((resInJson) => {
@@ -53,18 +55,23 @@ const SecondaryHeader = () => {
               {menu?.map((items) => {
                 return (
                   <li key={items.id} className='nav-item ms-2'>
-                    <a
+                    <Link
                       className={
-                        items.id === 1 ? 'nav-link active fs-5 text-danger' : 'nav-link text-secondary fs-5'
+                        menuName === items.toolTip
+                          ? 'nav-link active fs-5 text-danger border-2 border-bottom border-danger'
+                          : 'nav-link text-secondary fs-5'
                       }
                       aria-current='page'
-                      href='#'>
+                      to={items.link}>
                       <span
                         className={
-                          items.id === 1
+                          menuName === items.toolTip
                             ? 'bg-warning-subtle rounded-circle py-4 px-1 me-2'
                             : 'bg-body-secondary rounded-circle py-4 px-1 me-2'
-                        }>
+                        }
+                        onClick={() => {
+                          setMenuName(items.toolTip);
+                        }}>
                         <img
                           src={items.imgUrl}
                           alt={items.toolTip}
@@ -74,11 +81,12 @@ const SecondaryHeader = () => {
                         />
                       </span>
                       {items.toolTip}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
             </ul>
+            <Outlet />
           </div>
         </div>
       </nav>

@@ -111,22 +111,22 @@ const HomePage = () => {
       <div className='d-flex flex-wrap container mb-4 mt-3'>
         {location.countries?.map((countryName) => {
           return (
-            <div
-              key={countryName.id}
-              className='card rounded-3 card-content col-md-4 px-2 py-1 my-2'>
-              <div className='card-body d-flex justify-content-between'>
-                <div>
-                  <img
-                    src={countryName.flagImgUrl}
-                    alt='flag'
-                    width={42}
-                    height={32}
-                    className='me-2'
-                  />
-                  <span>{countryName.countryName}</span>
-                </div>
-                <div>
-                  <FontAwesomeIcon icon='fa-solid fa-chevron-down' />
+            <div key={countryName.id} className='col-md-4 px-2 py-3'>
+              <div className='card rounded-3 card-content'>
+                <div className='card-body d-flex justify-content-between'>
+                  <div>
+                    <img
+                      src={countryName.flagImgUrl}
+                      alt='flag'
+                      width={42}
+                      height={32}
+                      className='me-2'
+                    />
+                    <span>{countryName.countryName}</span>
+                  </div>
+                  <div>
+                    <FontAwesomeIcon icon='fa-solid fa-chevron-down' />
+                  </div>
                 </div>
               </div>
             </div>

@@ -16,6 +16,7 @@ import CuisinesPage from './pages/CuisinesPage/CuisinesPage';
 import CuisineDetailPage from './pages/CuisineDetailPage/CuisineDetailPage';
 import Menu from './pages/Menu/Menu';
 import Overview from './pages/Overview/Overview';
+import DiningOutPage from './pages/DiningOutPage/DiningOutPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 <Route path='photos' element={<FoodImageGallery />} />
                 <Route path='menu' element={<Menu />} />
               </Route>
+              <Route path='/cuisine-details/dine-out' element={<DiningOutPage />} />
             </Routes>
           </ErrorBoundary>
         </main>
