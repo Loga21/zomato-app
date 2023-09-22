@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import './SignUp.scss';
 
 const SignUp = () => {
   const [accBtn, setAccBtn] = useState(false);
@@ -26,13 +27,13 @@ const SignUp = () => {
           <form>
             <input
               type='text'
-              className='form-control rounded mb-3 p-2'
+              className='form-control rounded mb-3 p-2 focus-out'
               id='phoneNumber'
               placeholder='Full Name'
             />
             <input
               type='text'
-              className='form-control rounded mb-3 p-2'
+              className='form-control rounded mb-3 p-2 focus-out'
               id='phoneNumber'
               placeholder='Email'
             />

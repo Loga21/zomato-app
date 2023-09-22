@@ -25,7 +25,7 @@ const Accordian = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {

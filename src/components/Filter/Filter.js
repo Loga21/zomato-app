@@ -6,6 +6,7 @@ import CuisinesSort from './CuisinesSort/CuisinesSort';
 import RatingFilter from './RatingFilter/RatingFilter';
 import CostPerPersonFilter from './CostPerPersonFilter/CostPerPersonFilter';
 import SortBy from './SortBy/SortBy';
+import './Filter.scss';
 
 const Filter = () => {
   const [sortBtn, setSortBtn] = useState('Sort by');
@@ -31,7 +32,7 @@ const Filter = () => {
       });
   }, []);
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -40,7 +41,7 @@ const Filter = () => {
   return (
     <>
       <div
-        className='modal fade'
+        className='modal fade visibility-set'
         id='modal3'
         tabIndex='-1'
         aria-labelledby='exampleModalLabel'

@@ -1266,23 +1266,27 @@
   "reviews": {
     "totalReviews": [
       {
-        "id": 1,
-        "sortBy": "Following"
+        "id":1,
+        "sortBy":"All Reviews"
       },
       {
         "id": 2,
-        "sortBy": "Popular"
+        "sortBy": "Following"
       },
       {
         "id": 3,
-        "sortBy": "Bloggers"
+        "sortBy": "Popular"
       },
       {
         "id": 4,
-        "sortBy": "My Reviews"
+        "sortBy": "Bloggers"
       },
       {
         "id": 5,
+        "sortBy": "My Reviews"
+      },
+      {
+        "id": 6,
         "sortBy": "Order Reviews"
       }
     ],

@@ -26,7 +26,7 @@ const TrendingDinings = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -54,7 +54,7 @@ const TrendingDinings = () => {
                     alt='offer-logo'
                     height={18}
                   />
-                  <p className='ms-2' style={{ fontSize: 12 }}>
+                  <p className='m-0 ms-2' style={{ fontSize: 12 }}>
                     Flat{restaurants.offerInfo}% OFF
                   </p>
                 </div>

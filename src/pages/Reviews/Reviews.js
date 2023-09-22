@@ -7,7 +7,8 @@ const Reviews = () => {
   const [review, setReview] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
-  const [priceSorting, setPriceSorting] = useState('Newest First');
+  const [sorting, setSorting] = useState('Newest First');
+  const [reviewSorting, setReviewSorting] = useState('All Reviews');
   useEffect(() => {
     fetchApi('http://localhost:5000/reviews', 'GET')
       .then((resInJson) => {
@@ -44,13 +45,16 @@ const Reviews = () => {
           type='button'
           data-bs-toggle='dropdown'
           aria-expanded='false'>
-          All Reviews
+          {reviewSorting}
         </button>
         <ul className='dropdown-menu shadow'>
           {review.totalReviews?.map((reviews) => {
             return (
               <li className='p-1' key={reviews.id}>
-                <Link className='dropdown-item text-secondary' to='#'>
+                <Link
+                  className='dropdown-item text-secondary'
+                  to='#'
+                  onClick={() => setReviewSorting(reviews.sortBy)}>
                   {reviews.sortBy}
                 </Link>
               </li>
@@ -65,7 +69,7 @@ const Reviews = () => {
           data-bs-toggle='dropdown'
           aria-expanded='false'>
           <FontAwesomeIcon icon='fa-solid fa-arrow-up-wide-short' className='me-1' />
-          {priceSorting}
+          {sorting}
         </button>
         <ul className='dropdown-menu'>
           {review.sorting?.map((data) => {
@@ -74,7 +78,7 @@ const Reviews = () => {
                 <Link
                   className='dropdown-item text-secondary'
                   to='#'
-                  onClick={() => setPriceSorting(data.sortBy)}>
+                  onClick={() => setSorting(data.sortBy)}>
                   {data.sortBy}
                 </Link>
               </li>

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
+import './LogIn.scss';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});
@@ -26,7 +27,7 @@ const LogIn = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -60,7 +61,7 @@ const LogIn = () => {
                 height={20}
               />
               <button
-                className='btn btn-transparent dropdown-toggle text-secondary'
+                className='btn btn-transparent border-0 dropdown-toggle text-secondary'
                 type='button'
                 data-bs-toggle='dropdown'
                 aria-expanded='false'>
@@ -78,7 +79,7 @@ const LogIn = () => {
                             height={20}
                             className='me-2'
                           />
-                          <span className='me-5'>{country.country}</span>
+                          <span className='me-2'>{country.country}</span>
                         </div>
                         <div className='border-start'>
                           <span className='ms-2'>{country.callCode}</span>
@@ -92,7 +93,7 @@ const LogIn = () => {
             <div>
               <input
                 type='text'
-                className='form-control border-0 border-start  border-2 rounded-0'
+                className='border-0 text-secondary p-2 focus-out border-start border-2'
                 id='phoneNumber'
                 placeholder='Phone'
               />

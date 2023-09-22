@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Filter from '../Filter/Filter';
+// import Filter from '../Filter/Filter';
 
 const NightLifeSubHeader = () => {
   const [subHeader, setSubHeader] = useState({});
@@ -27,7 +27,7 @@ const NightLifeSubHeader = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -86,7 +86,7 @@ const NightLifeSubHeader = () => {
           </div>
         </div>
       </nav>
-      <Filter />
+      {/* <Filter /> */}
     </>
   );
 };

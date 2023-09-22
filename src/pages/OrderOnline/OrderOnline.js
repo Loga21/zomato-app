@@ -67,11 +67,11 @@ const OrderOnline = () => {
           {/* </div> */}
           <div className='position-absolute top-0 end-0 col-md-6'>
             <form className='ms-5 border border-secondary-subtle rounded shadow-sm'>
-              <button className='btn bg-white text-secondary' type='button'>
+              <button className='btn bg-white text-secondary focus-out' type='button'>
                 <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
               </button>
               <input
-                className='border-0 text-secondary p-2 search-input'
+                className='border-0 text-secondary p-2 search-input focus-out'
                 type='search'
                 placeholder='Search within menu'
               />

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import LogIn from '../../pages/LogIn/LogIn';
 import SignUp from '../../pages/SignUp/SignUp';
+import './PrimaryHeader.scss'
 
 const PrimaryHeader = () => {
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
@@ -28,7 +29,7 @@ const PrimaryHeader = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -91,11 +92,11 @@ const PrimaryHeader = () => {
             </ul>
             <form className='ms-5 border-start border-secondary-subtle'>
               <span className='d-flex'>
-                <button className='btn bg-white text-secondary rounded-0' type='button'>
+                <button className='btn bg-white text-secondary rounded-0 focus-out' type='button'>
                   <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
                 </button>
                 <input
-                  className='border-0 text-secondary p-2'
+                  className='border-0 text-secondary p-2 focus-out'
                   type='search'
                   style={{ width: 450 }}
                   placeholder='Search for restaurant, cuisine or a dish'

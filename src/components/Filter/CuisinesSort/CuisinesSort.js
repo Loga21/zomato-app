@@ -27,7 +27,7 @@ const CuisinesSort = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
 
   if (error) {
@@ -38,11 +38,11 @@ const CuisinesSort = () => {
       <form className='border border-secondary-subtle rounded mb-3 mt-1'>
         <div>
           <span className='d-flex'>
-            <button className='btn bg-white text-secondary' type='button'>
+            <button className='btn bg-white text-secondary focus-out' type='button'>
               <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
             </button>
             <input
-              className='border-0 text-secondary p-2 rounded'
+              className='border-0 text-secondary p-2 rounded focus-out'
               type='search'
               style={{ width: 388 }}
               placeholder='Search for restaurant, cuisine or a dish'

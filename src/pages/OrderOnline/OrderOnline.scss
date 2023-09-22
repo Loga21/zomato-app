@@ -1,4 +1,14 @@
-.search-input:active{
-    border: 0;
-    outline: 0;
+.focus-out {
+  //   &:active {
+  //     border: none;
+  //     outline: none;
+  //   }
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
