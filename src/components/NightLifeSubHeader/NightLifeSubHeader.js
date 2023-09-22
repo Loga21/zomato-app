@@ -3,12 +3,12 @@ import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../Filter/Filter';
 
-const DiningOutSubHeader = () => {
+const NightLifeSubHeader = () => {
   const [subHeader, setSubHeader] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
-    fetchApi('http://localhost:5000/diningOut', 'GET')
+    fetchApi('http://localhost:5000/NightLife', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setSubHeader(resInJson);
@@ -64,6 +64,12 @@ const DiningOutSubHeader = () => {
                         />
                       )}
                       {menu.id === 2 && (
+                        <FontAwesomeIcon
+                          icon='fa-solid fa-down-left-and-up-right-to-center'
+                          className='text-secondary me-2'
+                        />
+                      )}
+                      {menu.id === 3 && (
                         <img
                           src='https://b.zmtcdn.com/data/o2_assets/577bf55ff265ae45e11cfe6911d176941687789024.png'
                           alt='gold-logo'
@@ -85,4 +91,4 @@ const DiningOutSubHeader = () => {
   );
 };
 
-export default DiningOutSubHeader;
+export default NightLifeSubHeader;

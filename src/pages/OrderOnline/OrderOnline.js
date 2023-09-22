@@ -14,7 +14,6 @@ const OrderOnline = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setOrder(resInJson);
-          console.log(order);
           setError(false);
         } else {
           setOrder({});

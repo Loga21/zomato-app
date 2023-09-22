@@ -15,7 +15,6 @@ const CuisineDetailPage = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setMenuBar(resInJson);
-          console.log(menuBar);
           setError(false);
         } else {
           setMenuBar([]);

@@ -13,7 +13,6 @@ const Reviews = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setReview(resInJson);
-          console.log(review);
           setError(false);
         } else {
           setReview([]);

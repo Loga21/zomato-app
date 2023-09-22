@@ -10,7 +10,6 @@ const SortBy = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setSortBy(resInJson);
-          console.log(sortBy);
           setError(false);
         } else {
           setSortBy({});

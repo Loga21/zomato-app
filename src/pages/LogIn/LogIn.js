@@ -11,7 +11,6 @@ const LogIn = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setCountryName(resInJson);
-          console.log(countryName);
           setError(false);
         } else {
           setCountryName({});

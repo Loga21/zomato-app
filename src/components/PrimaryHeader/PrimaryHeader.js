@@ -13,7 +13,6 @@ const PrimaryHeader = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setPrimaryMenuBtn(resInJson);
-          console.log(primaryMenuBtn);
           setError(false);
         } else {
           setPrimaryMenuBtn([]);

@@ -12,13 +12,11 @@ const Filter = () => {
   const [category, setCategory] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
-  console.log(sortBtn);
   useEffect(() => {
     fetchApi('http://localhost:5000/filter', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setCategory(resInJson);
-          console.log(category);
           setError(false);
         } else {
           setCategory({});

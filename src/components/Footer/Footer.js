@@ -12,7 +12,6 @@ const Footer = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setFooter(resInJson);
-          console.log(footer);
           setError(false);
         } else {
           setFooter([]);

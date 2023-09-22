@@ -2,18 +2,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../../utils/fetchApi';
 
-const TrendingDinings = () => {
-  const [trendingRestaurants, setTrendingRestaurants] = useState({});
+const NightTimeRestaurants = () => {
+  const [nightRestaurants, setNightRestaurants] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
-    fetchApi('http://localhost:5000/diningOut', 'GET')
+    fetchApi('http://localhost:5000/NightLife', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
-          setTrendingRestaurants(resInJson);
+          setNightRestaurants(resInJson);
           setError(false);
         } else {
-          setTrendingRestaurants({});
+          setNightRestaurants({});
         }
       })
       .catch((err) => {
@@ -35,7 +35,7 @@ const TrendingDinings = () => {
 
   return (
     <div className='ms-2 row product-cards'>
-      {trendingRestaurants.trendingDinings?.map((restaurants) => {
+      {nightRestaurants.nightTimeRestaurants?.map((restaurants) => {
         return (
           <div className='col-md-4' key={restaurants.id}>
             <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
@@ -66,6 +66,7 @@ const TrendingDinings = () => {
                   </p>
                   <p className='text-secondary m-0'>{restaurants.cuisineName}</p>
                   <p className='text-secondary'>{restaurants.location}</p>
+                  <p className='text-secondary text-danger mt-4'>{restaurants.opensAt}</p>
                 </div>
                 <div className='text-end mt-2'>
                   <div
@@ -79,7 +80,7 @@ const TrendingDinings = () => {
                     />
                   </div>
                   <p className='card-text text-secondary m-0'>₹{restaurants.price} for two</p>
-                  <p className='text-secondary m-0'>{restaurants.distance} km</p>
+                  <p className='text-secondary m-0 mt-5'>{restaurants.distance} km</p>
                 </div>
               </div>
             </div>
@@ -90,4 +91,4 @@ const TrendingDinings = () => {
   );
 };
 
-export default TrendingDinings;
+export default NightTimeRestaurants;

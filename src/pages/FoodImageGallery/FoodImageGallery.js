@@ -13,7 +13,6 @@ const FoodImageGallery = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setFoodImg(resInJson);
-          console.log(foodImg);
           setError(false);
         } else {
           setFoodImg([]);

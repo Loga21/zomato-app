@@ -12,7 +12,6 @@ const CuisinesSort = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setCuisineVariety(resInJson);
-          console.log(cuisineVariety);
           setError(false);
         } else {
           setCuisineVariety({});

@@ -14,7 +14,6 @@ const HomePage = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setLocation(resInJson);
-          console.log(location);
           setError(false);
         } else {
           setLocation([]);

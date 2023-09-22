@@ -7,13 +7,11 @@ const SecondaryHeader = () => {
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
-  console.log(menuName);
   useEffect(() => {
     fetchApi('http://localhost:5000/secondaryHeader', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setMenu(resInJson);
-          console.log(menu);
           setError(false);
         } else {
           setMenu([]);

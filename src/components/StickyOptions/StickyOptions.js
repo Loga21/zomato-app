@@ -13,7 +13,6 @@ const StickyOptions = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setOptions(resInJson);
-          console.log(option);
           setError(false);
         } else {
           setOptions({});

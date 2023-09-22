@@ -16,7 +16,6 @@ const DiningOutPage = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setCollections(resInJson);
-          console.log(collections);
           setError(false);
         } else {
           setCollections({});

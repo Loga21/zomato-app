@@ -11,7 +11,6 @@ const FoodItems = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setFood(resInJson);
-          console.log(food);
           setError(false);
         } else {
           setFood({});

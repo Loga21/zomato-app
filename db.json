@@ -106,7 +106,7 @@
       "id": 3,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp",
       "toolTip": "Nightlife",
-      "link": ""
+      "link": "/cuisine-details/drinks-and-nightlife"
     }
   ],
   "stickyOptions": {
@@ -1408,6 +1408,68 @@
         "price": "2,000",
         "location": "Anna Nagar East, Chennai",
         "distance": 5.9
+      }
+    ]
+  },
+  "NightLife": {
+    "subHeaderMenus": [
+      {
+        "id": 1,
+        "menu": "Filters"
+      },
+      {
+        "id": 2,
+        "menu": "Distance"
+      },
+      {
+        "id": 3,
+        "menu": "Gold"
+      },
+      {
+        "id": 4,
+        "menu": "Rating: 4.0+"
+      },
+      {
+        "id": 5,
+        "menu": "Pubs & Bars"
+      }
+    ],
+    "nightTimeRestaurants": [
+      {
+        "id": 1,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/2/20590792/69779d8e29e53065c5d7c4dd2595f8db_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "Sundays",
+        "rating": 4.4,
+        "cuisineName": "Italian, Continental, Asian,...",
+        "price": "200",
+        "location": "Anna Nagar East, Chennai",
+        "distance": 4.9,
+        "opensAt": "Opens at 12noon"
+      },
+      {
+        "id": 2,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/8/20420088/247de2f48e26068cc3c6bc5b805322fc_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "Secret Story",
+        "rating": 4.3,
+        "cuisineName": "North Indian, Chinese, Itali...",
+        "price": "3,500",
+        "location": "Nungambakkam, Chennai",
+        "distance": 3.5,
+        "opensAt": "Opens at 12noon"
+      },
+      {
+        "id": 3,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/19580519/f0bd5bf09f13c8eacd076af947c78a60_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "The Living Room",
+        "rating": 4.5,
+        "cuisineName": "North Indian, Pasta, Italian,...",
+        "price": "2,000",
+        "location": "Anna Nagar East, Chennai",
+        "distance": 5.9,
+        "opensAt":"Opens at 12noon"
       }
     ]
   }

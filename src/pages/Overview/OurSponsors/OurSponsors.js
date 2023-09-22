@@ -12,7 +12,6 @@ const OurSponsors = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setRestaurant(resInJson);
-          console.log(restaurant);
           setError(false);
         } else {
           setRestaurant({});
