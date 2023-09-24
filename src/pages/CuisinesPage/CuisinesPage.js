@@ -28,7 +28,7 @@ const CuisinesPage = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success' data-test-id='spinner'></div>;
+    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
   }
 
   if (error) {

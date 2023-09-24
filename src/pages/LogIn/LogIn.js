@@ -2,11 +2,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import './LogIn.scss';
+import { Link } from 'react-router-dom';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});
+  const [lacchu, setLacchu] = useState(0);
+  const [loga, setLoga] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [inputErrorMsg, setInputErrorMsg] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
+  const handleInput = (event) => {
+    event.preventDefault();
+    lacchu.length > 9 ? setLoga(true) : setLoga(false);
+    lacchu.length > 9 ? setInputErrorMsg(false) : setInputErrorMsg(true);
+  };
+
   useEffect(() => {
     fetchApi('http://localhost:5000/countryDropdownForm', 'GET')
       .then((resInJson) => {
@@ -53,57 +65,97 @@ const LogIn = () => {
             aria-label='Close'></button>
         </div>
         <div className='modal-body'>
-          <form className='d-flex border rounded px-2 py-1'>
-            <div className='dropdown'>
-              <img
-                src='https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp'
-                alt='flag'
-                height={20}
-              />
-              <button
-                className='btn btn-transparent border-0 dropdown-toggle text-secondary'
-                type='button'
-                data-bs-toggle='dropdown'
-                aria-expanded='false'>
-                + 91
-              </button>
-              <ul className='dropdown-menu drop'>
-                {countryName.countryName?.map((country) => {
-                  return (
-                    <li key={country.id}>
-                      <a className='dropdown-item d-flex' href='#'>
-                        <div>
-                          <img
-                            src={country.flagUrl}
-                            alt={country.alt}
-                            height={20}
-                            className='me-2'
-                          />
-                          <span className='me-2'>{country.country}</span>
-                        </div>
-                        <div className='border-start'>
-                          <span className='ms-2'>{country.callCode}</span>
-                        </div>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div>
+          {!loga && (
+            <form className='dropdown'>
+              <div className='border rounded px-2 py-1'>
+                <img
+                  src='https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp'
+                  alt='flag'
+                  height={20}
+                />
+                <button
+                  className='btn btn-transparent border-0 dropdown-toggle text-secondary'
+                  type='button'
+                  data-bs-toggle='dropdown'
+                  aria-expanded='false'>
+                  + 91
+                </button>
+                <ul className='dropdown-menu drop'>
+                  {countryName.countryName?.map((country) => {
+                    return (
+                      <li key={country.id}>
+                        <a className='dropdown-item d-flex' href='#'>
+                          <div>
+                            <img
+                              src={country.flagUrl}
+                              alt={country.alt}
+                              height={20}
+                              className='me-2'
+                            />
+                            <span className='me-2'>{country.country}</span>
+                          </div>
+                          <div className='border-start'>
+                            <span className='ms-2'>{country.callCode}</span>
+                          </div>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <input
+                  maxLength={10}
+                  autoComplete='off'
+                  className='border-0 text-secondary p-2 focus-out border-start border-2'
+                  id='phoneNumber'
+                  placeholder='Phone'
+                  onChange={(e) => {
+                    setLacchu(e.target.value.replace(/\D/g, ''));
+                    setInputErrorMsg(false);
+                  }}
+                />
+              </div>
+              <div className='d-block text-center'>
+                {lacchu.length < 10 && inputErrorMsg && (
+                  <p className='text-danger m-0'>Incorrect Mobile number</p>
+                )}
+                <button
+                  className='border-0 rounded py-2 px-5 mt-4 bg-danger text-white'
+                  onClick={handleInput}>
+                  Send One Time Password
+                </button>
+              </div>
+            </form>
+          )}
+          {loga && (
+            <div className='text-center'>
+              We have sent an OTP to the mobile number
+              <p className='mt-3'>Enter Your OTP Below</p>
               <input
                 type='text'
-                className='border-0 text-secondary p-2 focus-out border-start border-2'
-                id='phoneNumber'
-                placeholder='Phone'
+                maxLength={4}
+                onChange={(e) => setOtp(e.target.value) || setInputErrorMsg(false)}
               />
+              <button className='text-primary fw-bold ms-2 border-0' style={{ fontSize: 12 }}>
+                Resend OTP
+              </button>
+              <div className='mt-3'>
+                {otp.length <= 3 && inputErrorMsg && (
+                  <p className='text-danger'>Please enter correct OTP</p>
+                )}
+                <button
+                  className='btn btn-danger border-0 rounded text-white me-3'
+                  onClick={() => setLoga(false)}>
+                  Reset Mobile Number
+                </button>
+                <Link
+                  to={otp.length > 3 ? '/cuisines' : '#'}
+                  className='border-0 rounded text-white btn btn-success'
+                  onClick={() => setInputErrorMsg(true)}>
+                  Confirm
+                </Link>
+              </div>
             </div>
-          </form>
-          <div className='text-center my-3'>
-            <button className='border-0 bg-danger text-white rounded py-2 px-5'>
-              Send One Time Password
-            </button>
-          </div>
+          )}
           <div className='hr-text label-l mt-3 mb-4 text-secondary'>or</div>
           <div className='mb-3'>
             {countryName.continueWithBtn?.map((btnName) => {
