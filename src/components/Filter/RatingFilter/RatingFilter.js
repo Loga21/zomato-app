@@ -15,7 +15,7 @@ const RatingFilter = () => {
         max='5'
         step='0.5'
         id='customRange3'
-        // width={500}
+        style={{ width: 300 }}
       />
     </>
   );

@@ -176,7 +176,7 @@ const LogIn = () => {
           New to Zomato?
           <span
             type='button'
-            className='btn btn-transparent text-danger'
+            className='ms-3 text-danger'
             data-bs-toggle='modal'
             data-bs-target='#modal2'>
             Create account
