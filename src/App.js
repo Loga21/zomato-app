@@ -18,11 +18,13 @@ import Menu from './pages/Menu/Menu';
 import Overview from './pages/Overview/Overview';
 import DiningOutPage from './pages/DiningOutPage/DiningOutPage';
 import NightLifePage from './pages/NightLifePage/NightLifePage';
+import ContextAPI from './components/ContextAPI/ContextAPI';
 
 function App() {
   return (
     <ErrorBoundary>
       <BrowserRouter>
+        <ContextAPI>
           <Header />
           <main>
             <ErrorBoundary>
@@ -42,6 +44,7 @@ function App() {
             </ErrorBoundary>
           </main>
           <Footer />
+        </ContextAPI>
       </BrowserRouter>
     </ErrorBoundary>
   );

@@ -1,18 +1,28 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import LogIn from '../../pages/LogIn/LogIn';
 import SignUp from '../../pages/SignUp/SignUp';
-// import { useContext } from 'react';
-import PropTypes from 'prop-types';
-// import { filterContext } from '../Header/Header';
+// import PropTypes from 'prop-types';
 import './PrimaryHeader.scss';
+import { cardContext } from '../ContextAPI/ContextAPI';
 
-const PrimaryHeader = ({ handleSearch }) => {
-  // const filteringFood = useContext(filterContext);
+const PrimaryHeader = () => {
+  const {
+    foodCardDetail,
+    setFilteredFood,
+    restaurantCardDetail,
+    setFilteredRestaurant,
+    NightRestaurantCardDetail,
+    setFilteredNightRestaurant
+  } = useContext(cardContext);
+  console.log(foodCardDetail);
+  console.log(restaurantCardDetail);
+
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/primaryHeader', 'GET')
       .then((resInJson) => {
@@ -40,6 +50,34 @@ const PrimaryHeader = ({ handleSearch }) => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
+  const handleSearch = (e) => {
+    const searchText = e.target.value;
+    const searchFilter = foodCardDetail.foodItems.filter((word) => {
+      return word.cuisineName.toLowerCase().includes(searchText.toLowerCase());
+    });
+    console.log(searchFilter);
+    setFilteredFood(searchFilter);
+  };
+  console.log(handleSearch);
+
+  const handleRestro = (e) => {
+    const searchText = e.target.value;
+    const searchRestaurantFilter = restaurantCardDetail.trendingDinings.filter((word) => {
+      return word.diningName.toLowerCase().includes(searchText.toLowerCase());
+    });
+    setFilteredRestaurant(searchRestaurantFilter);
+  };
+  console.log(handleRestro);
+
+  const handleNightRestro = (e) => {
+    const searchText = e.target.value;
+    const searchNightRestaurantFilter = NightRestaurantCardDetail.nightTimeRestaurants.filter(
+      (word) => {
+        return word.diningName.toLowerCase().includes(searchText.toLowerCase());
+      }
+    );
+    setFilteredNightRestaurant(searchNightRestaurantFilter);
+  };
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-light mt-1'>
@@ -104,7 +142,7 @@ const PrimaryHeader = ({ handleSearch }) => {
                   type='search'
                   style={{ width: 450 }}
                   placeholder='Search for restaurant, cuisine or a dish'
-                  onKeyUp={handleSearch}
+                  onKeyUp={handleNightRestro}
                 />
               </span>
             </form>
@@ -134,8 +172,8 @@ const PrimaryHeader = ({ handleSearch }) => {
   );
 };
 
-PrimaryHeader.propTypes = {
-  handleSearch: PropTypes.func
-};
+// PrimaryHeader.propTypes = {
+//   handleSearch: PropTypes.func
+// };
 
 export default PrimaryHeader;

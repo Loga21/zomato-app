@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-// import PrimaryHeader from '../../components/PrimaryHeader/PrimaryHeader';
-import Header from '../../components/Header/Header';
+import { cardContext } from '../../components/ContextAPI/ContextAPI';
 
 const FoodItems = () => {
   const [food, setFood] = useState({});
-  const [filteredFood, setFilteredFood] = useState({});
+  const { setFoodCardDetail, filteredFood } = useContext(cardContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
@@ -14,6 +13,7 @@ const FoodItems = () => {
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
           setFood(resInJson);
+          setFoodCardDetail(resInJson);
           setError(false);
         } else {
           setFood({});
@@ -36,136 +36,135 @@ const FoodItems = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
-  const handleSearch = (e) => {
-    const searchText = e.target.value;
-    const searchFilter = food.foodItems.filter((word) => {
-      return word.cuisineName.toLowerCase().includes(searchText.toLowerCase());
-    });
-    setFilteredFood(searchFilter);
-  };
+  // const handleSearch = (e) => {
+  //   const searchText = e.target.value;
+  //   const searchFilter = food.foodItems.filter((word) => {
+  //     return word.cuisineName.toLowerCase().includes(searchText.toLowerCase());
+  //   });
+  //   setFilteredFood(searchFilter);
+  // };
 
   return (
     <>
-      <Header handleSearch={handleSearch} />
       <div className='ms-2 row product-cards'>
         {filteredFood.length > 0
-          ? filteredFood.length &&
-            filteredFood?.map((food) => {
-              return (
-                <div className='col-md-4' key={food.id}>
-                  <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
-                    <div className='position-relative'>
-                      <a href='/cuisine-details'>
-                        <img
-                          src={food.cuisineImg}
-                          className='card-img-top rounded-4'
-                          alt={food.cuisineName}
-                          height={200}
-                        />
-                      </a>
-                      <p
-                        className='bg-primary col-md-2 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
-                        style={{ fontSize: 12 }}>
-                        {food.offer}% OFF
-                      </p>
+          ? filteredFood && filteredFood?.map((food) => {
+            return (
+            <div className='col-md-4' key={food.id}>
+              <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
+                <div className='position-relative'>
+                  <a href='/cuisine-details'>
+                    <img
+                      src={food.cuisineImg}
+                      className='card-img-top rounded-4'
+                      alt={food.cuisineName}
+                      height={200}
+                    />
+                  </a>
+                  <p
+                    className='bg-primary col-md-2 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
+                    style={{ fontSize: 12 }}>
+                    {food.offer}% OFF
+                  </p>
+                </div>
+                <div className='card-body d-flex justify-content-between'>
+                  <div>
+                    <div className='card-title fs-5 product-title text-decoration-none'>
+                      {food.hotelName}
                     </div>
-                    <div className='card-body d-flex justify-content-between'>
-                      <div>
-                        <div className='card-title fs-5 product-title text-decoration-none'>
-                          {food.hotelName}
-                        </div>
-                        <div className='text-secondary'>{food.cuisineName}</div>
-                      </div>
-                      <div className='text-end'>
-                        <div
-                          className='bg-success rounded text-light px-1'
-                          style={{ marginLeft: 70, fontSize: 14 }}>
-                          {food.rating}
-                          <FontAwesomeIcon
-                            icon='fa-solid fa-star'
-                            className='fs-n1 text-light'
-                            style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                          />
-                        </div>
-                        <p className='card-text text-secondary m-0 mt-3'>₹{food.price} for one</p>
-                        <p className='text-secondary m-0 mt-1'>{food.timeTaken} min</p>
-                      </div>
-                    </div>
-                    <hr className='m-0 text-secondary' />
-                    <div className='d-flex my-3 ms-3'>
-                      <img
-                        src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
-                        alt='PrepareGuideLines'
-                        height={18}
+                    <div className='text-secondary'>{food.cuisineName}</div>
+                  </div>
+                  <div className='text-end'>
+                    <div
+                      className='bg-success rounded text-light px-1'
+                      style={{ marginLeft: 70, fontSize: 14 }}>
+                      {food.rating}
+                      <FontAwesomeIcon
+                        icon='fa-solid fa-star'
+                        className='fs-n1 text-light'
+                        style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
                       />
-                      <div>
-                        <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
-                          Restaurant partner follows WHO protocol
-                        </p>
-                      </div>
                     </div>
+                    <p className='card-text text-secondary m-0'>₹{food.price} for one</p>
+                    <p className='text-secondary m-0'>{food.timeTaken} min</p>
                   </div>
                 </div>
-              );
-            })
+                <hr className='m-0 text-secondary' />
+                <div className='d-flex my-3 ms-3'>
+                  <img
+                    src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
+                    alt='PrepareGuideLines'
+                    height={18}
+                  />
+                  <div>
+                    <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
+                      Restaurant partner follows WHO protocol
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            );
+          })
           : food.foodItems?.map((food) => {
             return (
-                <div className='col-md-4' key={food.id}>
-                  <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
-                    <div className='position-relative'>
-                      <a href='/cuisine-details'>
-                        <img
-                          src={food.cuisineImg}
-                          className='card-img-top rounded-4'
-                          alt={food.cuisineName}
-                          height={200}
-                        />
-                      </a>
-                      <p
-                        className='bg-primary col-md-2 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
-                        style={{ fontSize: 12 }}>
-                        {food.offer}% OFF
-                      </p>
+            <div className='col-md-4' key={food.id}>
+              <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
+                <div className='position-relative'>
+                  <a href='/cuisine-details'>
+                    <img
+                      src={food.cuisineImg}
+                      className='card-img-top rounded-4'
+                      alt={food.cuisineName}
+                      height={200}
+                    />
+                  </a>
+                  <p
+                    className='bg-primary col-md-2 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
+                    style={{ fontSize: 12 }}>
+                    {food.offer}% OFF
+                  </p>
+                </div>
+                <div className='card-body d-flex justify-content-between'>
+                  <div>
+                    <div className='card-title fs-5 product-title text-decoration-none'>
+                      {food.hotelName}
                     </div>
-                    <div className='card-body d-flex justify-content-between'>
-                      <div>
-                        <div className='card-title fs-5 product-title text-decoration-none'>
-                          {food.hotelName}
-                        </div>
-                        <div className='text-secondary'>{food.cuisineName}</div>
-                      </div>
-                      <div className='text-end'>
-                        <div
-                          className='bg-success rounded text-light px-1'
-                          style={{ marginLeft: 70, fontSize: 14 }}>
-                          {food.rating}
-                          <FontAwesomeIcon
-                            icon='fa-solid fa-star'
-                            className='fs-n1 text-light'
-                            style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
-                          />
-                        </div>
-                        <p className='card-text text-secondary m-0'>₹{food.price} for one</p>
-                        <p className='text-secondary m-0'>{food.timeTaken} min</p>
-                      </div>
-                    </div>
-                    <hr className='m-0 text-secondary' />
-                    <div className='d-flex my-3 ms-3'>
-                      <img
-                        src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
-                        alt='PrepareGuideLines'
-                        height={18}
+                    <div className='text-secondary'>{food.cuisineName}</div>
+                  </div>
+                  <div className='text-end'>
+                    <div
+                      className='bg-success rounded text-light px-1'
+                      style={{ marginLeft: 70, fontSize: 14 }}>
+                      {food.rating}
+                      <FontAwesomeIcon
+                        icon='fa-solid fa-star'
+                        className='fs-n1 text-light'
+                        style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
                       />
-                      <div>
-                        <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
-                          Restaurant partner follows WHO protocol
-                        </p>
-                      </div>
                     </div>
+                    <p className='card-text text-secondary m-0'>₹{food.price} for one</p>
+                    <p className='text-secondary m-0'>{food.timeTaken} min</p>
                   </div>
                 </div>
+                <hr className='m-0 text-secondary' />
+                <div className='d-flex my-3 ms-3'>
+                  <img
+                    src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
+                    alt='PrepareGuideLines'
+                    height={18}
+                  />
+                  <div>
+                    <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
+                      Restaurant partner follows WHO protocol
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             );
-          })}
+          })
+        }
       </div>
     </>
   );

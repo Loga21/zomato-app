@@ -1,12 +1,9 @@
 import PrimaryHeader from '../PrimaryHeader/PrimaryHeader';
 import SecondaryHeader from '../SecondaryHeader/SecondaryHeader';
 import StickyOptions from '../StickyOptions/StickyOptions';
-import PropTypes from 'prop-types';
-// import { createContext } from 'react';
+// import PropTypes from 'prop-types';
 
-// export const filterContext = createContext();
-
-const Header = ({ handleSearch }) => {
+const Header = () => {
   const liveUrl = window.location.pathname;
   const homePath = '/';
   const cuisinePath = '/cuisines';
@@ -18,9 +15,7 @@ const Header = ({ handleSearch }) => {
     <div>
       {liveUrl !== homePath && (
         <div>
-          {/* <filterContext.Provider handleSearch={handleSearch}> */}
-          <PrimaryHeader handleSearch={handleSearch} />
-          {/* </filterContext.Provider> */}
+          <PrimaryHeader />
         </div>
       )}
       {liveUrl !== cuisineDetailPath && liveUrl !== homePath && (
@@ -37,7 +32,7 @@ const Header = ({ handleSearch }) => {
   );
 };
 
-Header.propTypes = {
-  handleSearch: PropTypes.func
-};
+// Header.propTypes = {
+//   handleSearch: PropTypes.func
+// };
 export default Header;
