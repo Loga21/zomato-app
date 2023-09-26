@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import LogIn from '../../pages/LogIn/LogIn';
 import SignUp from '../../pages/SignUp/SignUp';
-import './PrimaryHeader.scss'
+// import { useContext } from 'react';
+import PropTypes from 'prop-types';
+// import { filterContext } from '../Header/Header';
+import './PrimaryHeader.scss';
 
-const PrimaryHeader = () => {
+const PrimaryHeader = ({ handleSearch }) => {
+  // const filteringFood = useContext(filterContext);
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -100,6 +104,7 @@ const PrimaryHeader = () => {
                   type='search'
                   style={{ width: 450 }}
                   placeholder='Search for restaurant, cuisine or a dish'
+                  onKeyUp={handleSearch}
                 />
               </span>
             </form>
@@ -127,6 +132,10 @@ const PrimaryHeader = () => {
       <SignUp />
     </>
   );
+};
+
+PrimaryHeader.propTypes = {
+  handleSearch: PropTypes.func
 };
 
 export default PrimaryHeader;

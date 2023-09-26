@@ -23,25 +23,25 @@ function App() {
   return (
     <ErrorBoundary>
       <BrowserRouter>
-        <Header />
-        <main>
-          <ErrorBoundary>
-            <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/cuisines' element={<CuisinesPage />} />
-              <Route path='/cuisine-details' element={<CuisineDetailPage />}>
-                <Route path='' element={<Overview />} />
-                <Route path='order-online' element={<OrderOnline />} />
-                <Route path='reviews' element={<Reviews />} />
-                <Route path='photos' element={<FoodImageGallery />} />
-                <Route path='menu' element={<Menu />} />
-              </Route>
-              <Route path='/cuisine-details/dine-out' element={<DiningOutPage />} />
-              <Route path='/cuisine-details/drinks-and-nightlife' element={<NightLifePage />} />
-            </Routes>
-          </ErrorBoundary>
-        </main>
-        <Footer />
+          <Header />
+          <main>
+            <ErrorBoundary>
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/cuisines' element={<CuisinesPage />} />
+                <Route path='/cuisine-details' element={<CuisineDetailPage />}>
+                  <Route path='' element={<Overview />} />
+                  <Route path='order-online' element={<OrderOnline />} />
+                  <Route path='reviews' element={<Reviews />} />
+                  <Route path='photos' element={<FoodImageGallery />} />
+                  <Route path='menu' element={<Menu />} />
+                </Route>
+                <Route path='/cuisines/dine-out' element={<DiningOutPage />} />
+                <Route path='/cuisines/drinks-and-nightlife' element={<NightLifePage />} />
+              </Routes>
+            </ErrorBoundary>
+          </main>
+          <Footer />
       </BrowserRouter>
     </ErrorBoundary>
   );

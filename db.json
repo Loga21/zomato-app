@@ -94,19 +94,19 @@
       "id": 1,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp",
       "toolTip": "Delivery",
-      "link": "/cuisine-details"
+      "link": "/cuisines"
     },
     {
       "id": 2,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png?output-format=webp",
       "toolTip": "Dining Out",
-      "link": "/cuisine-details/dine-out"
+      "link": "/cuisines/dine-out"
     },
     {
       "id": 3,
       "imgUrl": "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp",
       "toolTip": "Nightlife",
-      "link": "/cuisine-details/drinks-and-nightlife"
+      "link": "/cuisines/drinks-and-nightlife"
     }
   ],
   "stickyOptions": {
@@ -664,7 +664,8 @@
         "rating": 4.4,
         "cuisineName": "Mithai, Bakery",
         "price": 200,
-        "timeTaken": 40
+        "timeTaken": 40,
+        "foodType": "PureVeg"
       },
       {
         "id": 2,
@@ -674,7 +675,8 @@
         "rating": 3.5,
         "cuisineName": "South Indian Thali",
         "price": 150,
-        "timeTaken": 28
+        "timeTaken": 28,
+        "foodType": "PureVeg"
       },
       {
         "id": 3,
@@ -684,7 +686,74 @@
         "rating": 3.8,
         "cuisineName": "Biryani, Chinese",
         "price": 150,
-        "timeTaken": 37
+        "timeTaken": 37,
+        "foodType": "NonVeg"
+      },
+      {
+        "id": 4,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/chains/5/65155/e8cf1c58f2bb217f3d85ff50b7fe39a3_o2_featured_v2.jpg",
+        "offer": 30,
+        "hotelName": "Domino's Pizza",
+        "rating": 4.2,
+        "cuisineName": "Pizza, Italian, Pasta...",
+        "price": 200,
+        "timeTaken": 25,
+        "foodType": "Veg"
+      },
+      {
+        "id": 5,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/9/65759/be91a74caa0f1351fc15a572de96ebc2_o2_featured_v2.jpg",
+        "offer": 20,
+        "hotelName": "Doveton Cafe",
+        "rating": 3.8,
+        "cuisineName": "South Indian, North Indian",
+        "price": 200,
+        "timeTaken": 16,
+        "foodType": "PureVeg"
+      },
+      {
+        "id": 6,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/5/66385/44bef8f972c30ce295a4d3075488f69b_o2_featured_v2.jpg",
+        "offer": 20,
+        "hotelName": "Guest Hotel",
+        "rating": 4.3,
+        "cuisineName": "South Indian, North Indian",
+        "price": 250,
+        "timeTaken": 26,
+        "foodType": "PureVeg"
+      },
+      {
+        "id": 7,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/chains/5/65745/d86d4d8e59325c2eef91b01afab70fa6_o2_featured_v2.jpg",
+        "offer": 5,
+        "hotelName": "Hotel Crescent",
+        "rating": 4.1,
+        "cuisineName": "Arabian, Chettinad",
+        "price": 200,
+        "timeTaken": 35,
+        "foodType": "NonVeg"
+      },
+      {
+        "id": 8,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/chains/0/65540/f31733dfcef4c1edb388b77619e07a59_o2_featured_v2.jpg",
+        "offer": 10,
+        "hotelName": "Subway",
+        "rating": 3.5,
+        "cuisineName": "Sandwich, Wraps, Salad",
+        "price": 200,
+        "timeTaken": 27,
+        "foodType": "Veg & NonVeg"
+      },
+      {
+        "id": 9,
+        "cuisineImg": "https://b.zmtcdn.com/data/pictures/3/67083/916cf13c160bd6b1dde72d4934c6cc21_o2_featured_v2.jpg",
+        "offer": 15,
+        "hotelName": "City Square Cafeteria",
+        "rating": 4.0,
+        "cuisineName": "North Indian, Lebanese, Str",
+        "price": 250,
+        "timeTaken": 28,
+        "foodType": "NonVeg"
       }
     ],
     "popularLocalities": [
@@ -1266,8 +1335,8 @@
   "reviews": {
     "totalReviews": [
       {
-        "id":1,
-        "sortBy":"All Reviews"
+        "id": 1,
+        "sortBy": "All Reviews"
       },
       {
         "id": 2,
@@ -1389,7 +1458,11 @@
         "cuisineName": "Italian, Continental, Asian,...",
         "price": "200",
         "location": "Anna Nagar East, Chennai",
-        "distance": 4.9
+        "distance": 4.9,
+        "restroType": "Gold",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
       },
       {
         "id": 2,
@@ -1400,7 +1473,11 @@
         "cuisineName": "North Indian, Chinese, Itali...",
         "price": "3,500",
         "location": "Nungambakkam, Chennai",
-        "distance": 3.5
+        "distance": 3.5,
+        "restroType": "Silver",
+        "restroSeating": "Intdoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": false
       },
       {
         "id": 3,
@@ -1411,7 +1488,101 @@
         "cuisineName": "North Indian, Pasta, Italian,...",
         "price": "2,000",
         "location": "Anna Nagar East, Chennai",
-        "distance": 5.9
+        "distance": 5.9,
+        "restroType": "Platinum",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": true
+      },
+      {
+        "id": 4,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/20715559/76803936f59245e19a000e171359832d_featured_v2.jpg?output-format=webp",
+        "offerInfo": 10,
+        "diningName": "Mustard Cafe & Bar",
+        "rating": 4.1,
+        "cuisineName": "Cafe, Bengali, European...",
+        "price": "2,500",
+        "location": "Nungambakkam, Chennai",
+        "distance": 3.6,
+        "restroType": "Gold",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": false
+      },
+      {
+        "id": 5,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/4/20620584/e07561d6ab120684bdc60581b3c8126a_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "The Bistrograph",
+        "rating": 3.9,
+        "cuisineName": "Cafe, Coffee, Italian, Pizza",
+        "price": "1,000",
+        "location": "Adyar, Chennai",
+        "distance": 9.7,
+        "restroType": "Silver",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": true
+      },
+      {
+        "id": 6,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/19665929/0561f18d8efd88cec5e00a899461e94b_featured_v2.jpg",
+        "offerInfo": 15,
+        "diningName": "Origin",
+        "rating": 4.7,
+        "cuisineName": "North Indian, Mediterranean...",
+        "price": "2,500",
+        "location": "Palavakkam, Chennai",
+        "distance": 13.7,
+        "restroType": "Platinum",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": true
+      },
+      {
+        "id": 7,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/8/18671238/a4c08200929e0c91660422346fb3a470_featured_v2.jpg",
+        "offerInfo": 15,
+        "diningName": "Off The Record",
+        "rating": 3.8,
+        "cuisineName": "European, Continental...",
+        "price": "1,800",
+        "location": "Nungambakkam, Chennai",
+        "distance": 4.2,
+        "restroType": "Gold",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
+      },
+      {
+        "id": 8,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/7/19348997/536a94343c842e08f07fa968709b4882_featured_v2.jpg",
+        "offerInfo": 25,
+        "diningName": "Dank",
+        "rating": 4.3,
+        "cuisineName": "Bar Food, Desserts, Medit",
+        "price": "1,800",
+        "location": "T.Nagar, Chennai",
+        "distance": 3.7,
+        "restroType": "Platinum",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": false
+      },
+      {
+        "id": 9,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/3/18555163/9bfed7cc1cf90f30b07d350d85e567b4_featured_v2.jpg",
+        "offerInfo": 20,
+        "diningName": "Amelie's",
+        "rating": 3.5,
+        "cuisineName": "Cafe, Continental, Grilled",
+        "price": "1,100",
+        "location": "Alwarpet, Chennai",
+        "distance": 5.1,
+        "restroType": "Silver",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": false
       }
     ]
   },
@@ -1449,7 +1620,10 @@
         "price": "200",
         "location": "Anna Nagar East, Chennai",
         "distance": 4.9,
-        "opensAt": "Opens at 12noon"
+        "restroType": "Gold",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
       },
       {
         "id": 2,
@@ -1461,7 +1635,11 @@
         "price": "3,500",
         "location": "Nungambakkam, Chennai",
         "distance": 3.5,
-        "opensAt": "Opens at 12noon"
+        "opensAt": "Opens at 12noon",
+        "restroType": "Gold",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": false
       },
       {
         "id": 3,
@@ -1473,7 +1651,104 @@
         "price": "2,000",
         "location": "Anna Nagar East, Chennai",
         "distance": 5.9,
-        "opensAt":"Opens at 12noon"
+        "restroType": "Gold",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
+      },
+      {
+        "id": 4,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/20715559/76803936f59245e19a000e171359832d_featured_v2.jpg?output-format=webp",
+        "offerInfo": 10,
+        "diningName": "Mustard Cafe & Bar",
+        "rating": 4.1,
+        "cuisineName": "Cafe, Bengali, European...",
+        "price": "2,500",
+        "location": "Nungambakkam, Chennai",
+        "distance": 3.6,
+        "opensAt": "Opens within 2mins",
+        "restroType": "Gold",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
+      },
+      {
+        "id": 5,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/4/20620584/e07561d6ab120684bdc60581b3c8126a_featured_v2.jpg",
+        "offerInfo": 10,
+        "diningName": "The Bistrograph",
+        "rating": 3.9,
+        "cuisineName": "Cafe, Coffee, Italian, Pizza",
+        "price": "1,000",
+        "location": "Adyar, Chennai",
+        "distance": 9.7,
+        "opensAt": "Opens within 30mins",
+        "restroType": "Silver",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": false
+      },
+      {
+        "id": 6,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/9/19665929/0561f18d8efd88cec5e00a899461e94b_featured_v2.jpg",
+        "offerInfo": 15,
+        "diningName": "Origin",
+        "rating": 4.7,
+        "cuisineName": "North Indian, Mediterranean...",
+        "price": "2,500",
+        "location": "Palavakkam, Chennai",
+        "distance": 13.7,
+        "opensAt": "Opens at 12noon",
+        "restroType": "Platinum",
+        "restroSeating": "Outdoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": false
+      },
+      {
+        "id": 7,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/8/18671238/a4c08200929e0c91660422346fb3a470_featured_v2.jpg",
+        "offerInfo": 15,
+        "diningName": "Off The Record",
+        "rating": 3.8,
+        "cuisineName": "European, Continental...",
+        "price": "1,800",
+        "location": "Nungambakkam, Chennai",
+        "distance": 4.2,
+        "opensAt": "Opens within 1hr",
+        "restroType": "Gold",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
+      },
+      {
+        "id": 8,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/7/19348997/536a94343c842e08f07fa968709b4882_featured_v2.jpg",
+        "offerInfo": 25,
+        "diningName": "Dank",
+        "rating": 4.3,
+        "cuisineName": "Bar Food, Desserts, Medit",
+        "price": "1,800",
+        "location": "T.Nagar, Chennai",
+        "distance": 3.7,
+        "restroType": "Platinum",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": true,
+        "openStatus": true
+      },
+      {
+        "id": 9,
+        "diningImg": "https://b.zmtcdn.com/data/pictures/3/18555163/9bfed7cc1cf90f30b07d350d85e567b4_featured_v2.jpg",
+        "offerInfo": 20,
+        "diningName": "Amelie's",
+        "rating": 3.5,
+        "cuisineName": "Cafe, Continental, Grilled",
+        "price": "1,100",
+        "location": "Alwarpet, Chennai",
+        "distance": 5.1,
+        "restroType": "Silver",
+        "restroSeating": "Indoor Seating",
+        "liquorProvideStatus": false,
+        "openStatus": false
       }
     ]
   }
