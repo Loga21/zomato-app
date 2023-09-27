@@ -123,10 +123,10 @@ const CuisinesPage = () => {
           icon='fa-solid fa-angle-left'
           className='bg-white p-3 text-center rounded-pill position-absolute top-50 start-0'
         />
-        <div className='row-poster'>
+        <div className='row-poster px-3'>
           {food.brands?.map((name) => {
             return (
-              <div key={name.id} className='me-5 text-center'>
+              <div key={name.id} className='me-5 ms-3 text-center'>
                 <span className='rounded-circle border border-light-subtle shadow py-5 px-1'>
                   <img
                     src={name.brandImgUrl}
