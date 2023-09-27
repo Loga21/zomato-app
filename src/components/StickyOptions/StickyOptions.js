@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import './StickyOptions.scss';
 import Filter from '../Filter/Filter';
+// import { cardContext } from '../ContextAPI/ContextAPI';
 
 const StickyOptions = () => {
+  // const { foodCardDetail, setSortedFood } = useContext(cardContext);
   const [option, setOptions] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -34,6 +36,14 @@ const StickyOptions = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
+  // const handleFoodSort = () => {
+  //   const foodSorting = foodCardDetail.foodItems.filter((foodItems) => {
+  //     return foodItems.rating >= 4.0;
+  //   });
+  //   console.log(foodSorting);
+  //   setSortedFood(foodSorting);
+  // };
   return (
     <>
       <section className='position-sticky top-0 visibility-set'>
@@ -60,7 +70,9 @@ const StickyOptions = () => {
                           menu.id === 4
                             ? 'nav-item dropdown border rounded me-3'
                             : 'nav-item border rounded me-3'
-                        }>
+                        }
+                        // onClick={handleFoodSort}
+                      >
                         <a
                           className={
                             menu.id === 4

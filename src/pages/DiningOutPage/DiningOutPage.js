@@ -32,9 +32,9 @@ const DiningOutPage = () => {
 
   if (loading) {
     return (
-      // <div className='text-center'>
-      <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>
-      // </div>
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
     );
   }
 
@@ -56,30 +56,40 @@ const DiningOutPage = () => {
           </Link>
         </button>
       </div>
-      <div className='d-flex'>
-        {collections.zomatoCollections?.map((items) => {
-          return (
-            <div key={items.id} className='col-md-3 px-2 pb-3'>
-              <div className='card text-white position-relative'>
-                <img
-                  src={items.bgImageUrl}
-                  className='card-img'
-                  alt={items.highlightedText}
-                  height={320}
-                />
-                <div className='position-absolute bottom-0 px-3 py-2 card-wrapper'>
-                  <h5 className='card-title fw-normal'>{items.highlightedText}</h5>
-                  <p className='card-text'>
-                    <small>
-                      {items.totalPlaces} Places{' '}
-                      <FontAwesomeIcon icon='fa-solid fa-caret-right' className='ms-1' />
-                    </small>
-                  </p>
+      <div className='position-relative'>
+        <FontAwesomeIcon
+          icon='fa-solid fa-angle-left'
+          className='bg-white p-3 text-center rounded-pill position-absolute top-50 start-0'
+        />
+        <div className='d-flex row-poster'>
+          {collections.zomatoCollections?.map((items) => {
+            return (
+              <div key={items.id} className='col-md-3 px-2 pb-3'>
+                <div className='card text-white position-relative'>
+                  <img
+                    src={items.bgImageUrl}
+                    className='card-img'
+                    alt={items.highlightedText}
+                    height={320}
+                  />
+                  <div className='position-absolute bottom-0 px-3 py-2 card-wrapper'>
+                    <h5 className='card-title fw-normal'>{items.highlightedText}</h5>
+                    <p className='card-text'>
+                      <small>
+                        {items.totalPlaces} Places{' '}
+                        <FontAwesomeIcon icon='fa-solid fa-caret-right' className='ms-1' />
+                      </small>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <FontAwesomeIcon
+          icon='fa-solid fa-angle-right'
+          className='bg-white p-3 text-center rounded-pill position-absolute top-50 end-0'
+        />
       </div>
       <DiningOutSubHeader />
       <div className='card border-0'>

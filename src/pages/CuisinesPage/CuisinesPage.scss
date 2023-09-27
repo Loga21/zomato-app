@@ -1,0 +1,25 @@
+.row-poster {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  object-fit: contain;
+}
+
+.row-poster::-webkit-scrollbar {
+  display: none;
+}
+
+// .carousal-width {
+//   width: calc(100% / 6);
+// }
+
+// .carousal-prev {
+//   transform: translateY(90%);
+//   left: -9px;
+// border-radius: 50%;
+// }
+
+// .carousal-next {
+//   transform: translateY(-100%);
+//   right: -9px;
+// }

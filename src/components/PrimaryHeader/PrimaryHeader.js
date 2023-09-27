@@ -17,7 +17,7 @@ const PrimaryHeader = () => {
     setFilteredNightRestaurant
   } = useContext(cardContext);
   console.log(foodCardDetail);
-  console.log(restaurantCardDetail);
+  // console.log(restaurantCardDetail);
 
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
   const [loading, setLoading] = useState(true);

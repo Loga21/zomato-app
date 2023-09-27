@@ -6,3 +6,14 @@
     rgba(0, 0, 0, 0.05) 95%
   );
 }
+
+.row-poster {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  object-fit: contain;
+}
+
+.row-poster::-webkit-scrollbar {
+  display: none;
+}

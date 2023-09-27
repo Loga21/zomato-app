@@ -3,6 +3,7 @@ import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FoodItems from '../FoodItems/FoodItems';
 import Accordian from '../../components/Accordian/Accordian';
+import './CuisinesPage.scss';
 
 const CuisinesPage = () => {
   const [food, setFood] = useState({});
@@ -28,7 +29,11 @@ const CuisinesPage = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
+    return (
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
+    );
   }
 
   if (error) {
@@ -38,45 +43,108 @@ const CuisinesPage = () => {
   return (
     <div className='container mb-4'>
       <div className='mb-5 mt-4 bg-light px-2 py-1'>
-        <h3 className='my-4'>Inspiration for your first order</h3>
-        <div className='d-flex'>
-          {food.sampleFood?.map((items) => {
+        <div className='position-relative'>
+          <h3 className='my-4'>Inspiration for your first order</h3>
+          <div id='carouselExample' className='carousel carousel-dark slide'>
+            <div className='carousel-inner'>
+              <div className='carousel-item active'>
+                <div className='d-flex'>
+                  {food.sampleFood?.map((items) => {
+                    return (
+                      items.id <= 6 && (
+                        <div key={items.id} className='carousal-width'>
+                          <img
+                            src={items.foodImgUrl}
+                            alt={items.foodName}
+                            width={150}
+                            height={150}
+                            className='rounded-circle'
+                            style={{ marginRight: 40 }}
+                          />
+                          <h6 className='fs-5 text-secondary mt-3' style={{ marginLeft: 45 }}>
+                            {items.foodName}
+                          </h6>
+                        </div>
+                      )
+                    );
+                  })}
+                </div>
+              </div>
+              <div className='carousel-item'>
+                <div className='d-flex'>
+                  {food.sampleFood?.map((items) => {
+                    return (
+                      items.id > 6 && (
+                        <div key={items.id} className='carousal-width'>
+                          <img
+                            src={items.foodImgUrl}
+                            alt={items.foodName}
+                            width={150}
+                            height={150}
+                            className='rounded-circle'
+                            style={{ marginRight: 40 }}
+                          />
+                          <h6 className='fs-5 text-secondary mt-3' style={{ marginLeft: 45 }}>
+                            {items.foodName}
+                          </h6>
+                        </div>
+                      )
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <button
+              className='carousel-control-prev'
+              type='button'
+              data-bs-target='#carouselExample'
+              data-bs-slide='prev'>
+              <span
+                className='carousel-control-prev-icon bg-dark p-2 rounded-pill'
+                aria-hidden='true'></span>
+              <span className='visually-hidden'>Previous</span>
+            </button>
+            <button
+              className='carousel-control-next'
+              type='button'
+              data-bs-target='#carouselExample'
+              data-bs-slide='next'>
+              <span
+                className='carousel-control-next-icon bg-dark p-2 rounded-pill'
+                aria-hidden='true'></span>
+              <span className='visually-hidden'>Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className='position-relative'>
+        <h3 className='my-4'>Top brands for you</h3>
+        <FontAwesomeIcon
+          icon='fa-solid fa-angle-left'
+          className='bg-white p-3 text-center rounded-pill position-absolute top-50 start-0'
+        />
+        <div className='row-poster'>
+          {food.brands?.map((name) => {
             return (
-              <div key={items.id}>
-                <img
-                  src={items.foodImgUrl}
-                  alt={items.foodName}
-                  width={150}
-                  height={150}
-                  className='rounded-circle'
-                  style={{ marginRight: 40 }}
-                />
-                <h6 className='fs-5 text-secondary mt-3' style={{ marginLeft: 45 }}>
-                  {items.foodName}
-                </h6>
+              <div key={name.id} className='me-5 text-center'>
+                <span className='rounded-circle border border-light-subtle shadow py-5 px-1'>
+                  <img
+                    src={name.brandImgUrl}
+                    alt={name.brandName}
+                    height={100}
+                    className='m-3 py-2'
+                  />
+                </span>
+                <p className='text-center m-0 mt-2'>{name.brandName}</p>
+                <p className='text-center text-secondary m-0 mt-1'>{name.deliveryTimePeriod}</p>
               </div>
             );
           })}
         </div>
-      </div>
-      <h3 className='my-4'>Top brands for you</h3>
-      <div className='d-flex'>
-        {food.brands?.map((name) => {
-          return (
-            <div key={name.id} className='me-5 text-center'>
-              <span className='rounded-circle border border-light-subtle shadow py-5 px-1'>
-                <img
-                  src={name.brandImgUrl}
-                  alt={name.brandName}
-                  height={100}
-                  className='m-3 py-2'
-                />
-              </span>
-              <p className='text-center m-0 mt-2'>{name.brandName}</p>
-              <p className='text-center text-secondary m-0 mt-1'>{name.deliveryTimePeriod}</p>
-            </div>
-          );
-        })}
+        <FontAwesomeIcon
+          icon='fa-solid fa-angle-right'
+          className='bg-white p-3 text-center rounded-pill position-absolute top-50 end-0'
+        />
       </div>
       <h3 className='my-4 ms-3'>Best Food in Chennai</h3>
       <FoodItems />

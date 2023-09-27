@@ -9,6 +9,7 @@ const ContextAPI = ({ children }) => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [NightRestaurantCardDetail, setNightRestaurantFoodCardDetail] = useState({});
   const [filteredNightRestaurant, setFilteredNightRestaurant] = useState([]);
+  const [sortedFood, setSortedFood] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(true);
   return (
@@ -26,6 +27,8 @@ const ContextAPI = ({ children }) => {
         setNightRestaurantFoodCardDetail,
         filteredNightRestaurant,
         setFilteredNightRestaurant,
+        sortedFood,
+        setSortedFood,
         isLoading,
         setIsLoading,
         isError,
