@@ -29,7 +29,11 @@ const OrderOnline = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
+    return (
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
+    );
   }
 
   if (error) {
@@ -53,7 +57,6 @@ const OrderOnline = () => {
       </div>
       <div>
         <div className='position-relative'>
-          {/* <div> */}
           <h4 className='my-2'>Order Online</h4>
           <span className='me-2 text-secondary'>
             <FontAwesomeIcon icon='fa-regular fa-compass' className='me-2' />
@@ -64,7 +67,6 @@ const OrderOnline = () => {
             <FontAwesomeIcon icon='fa-regular fa-clock' className='me-2' />
             32 min
           </span>
-          {/* </div> */}
           <div className='position-absolute top-0 end-0 col-md-6'>
             <form className='ms-5 border border-secondary-subtle rounded shadow-sm'>
               <button className='btn bg-white text-secondary focus-out' type='button'>

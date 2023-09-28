@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { Link, Outlet } from 'react-router-dom';
+import { cardContext } from '../ContextAPI/ContextAPI';
 
 const SecondaryHeader = () => {
+  const { cart } = useContext(cardContext);
   const [menuName, setMenuName] = useState('Delivery');
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -48,7 +50,7 @@ const SecondaryHeader = () => {
             aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
-          <div className='collapse navbar-collapse' id='navbarNav'>
+          <div className='collapse navbar-collapse position-relative' id='navbarNav'>
             <ul className='navbar-nav'>
               {menu?.map((items) => {
                 return (
@@ -85,6 +87,11 @@ const SecondaryHeader = () => {
               })}
             </ul>
             <Outlet />
+            <div className='position-absolute top-0 end-0 mt-4'>
+              <button className='btn btn-secondary' type='button'>
+                Cart ({cart.cartState?.length})
+              </button>
+            </div>
           </div>
         </div>
       </nav>

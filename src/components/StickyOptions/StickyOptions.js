@@ -79,9 +79,7 @@ const StickyOptions = () => {
                               ? 'nav-link dropdown-toggle'
                               : 'nav-link active text-secondary'
                           }
-                          // role='button'
                           type='button'
-                          // className='btn btn-transparent'
                           // data-bs-toggle='modal'
                           data-bs-target={menu.id === 1 ? '#modal3' : ''}
                           data-bs-toggle={menu.id === 1 ? 'modal' : menu.id === 4 ? 'dropdown' : ''}

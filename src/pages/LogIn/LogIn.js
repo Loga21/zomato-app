@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});
-  const [lacchu, setLacchu] = useState(0);
-  const [loga, setLoga] = useState(false);
+  const [mobileNumInput, setMobileNumInput] = useState(0);
+  const [enterOtp, setEnterOtp] = useState(false);
   const [otp, setOtp] = useState('');
   const [inputErrorMsg, setInputErrorMsg] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -15,8 +15,8 @@ const LogIn = () => {
 
   const handleInput = (event) => {
     event.preventDefault();
-    lacchu.length > 9 ? setLoga(true) : setLoga(false);
-    lacchu.length > 9 ? setInputErrorMsg(false) : setInputErrorMsg(true);
+    mobileNumInput.length > 9 ? setEnterOtp(true) : setEnterOtp(false);
+    mobileNumInput.length > 9 ? setInputErrorMsg(false) : setInputErrorMsg(true);
   };
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const LogIn = () => {
             aria-label='Close'></button>
         </div>
         <div className='modal-body'>
-          {!loga && (
+          {!enterOtp && (
             <form className='dropdown'>
               <div className='border rounded px-2 py-1'>
                 <img
@@ -109,13 +109,13 @@ const LogIn = () => {
                   id='phoneNumber'
                   placeholder='Phone'
                   onChange={(e) => {
-                    setLacchu(e.target.value.replace(/\D/g, ''));
+                    setMobileNumInput(e.target.value.replace(/\D/g, ''));
                     setInputErrorMsg(false);
                   }}
                 />
               </div>
               <div className='d-block text-center'>
-                {lacchu.length < 10 && inputErrorMsg && (
+                {mobileNumInput.length < 10 && inputErrorMsg && (
                   <p className='text-danger m-0'>Incorrect Mobile number</p>
                 )}
                 <button
@@ -126,7 +126,7 @@ const LogIn = () => {
               </div>
             </form>
           )}
-          {loga && (
+          {enterOtp && (
             <div className='text-center'>
               We have sent an OTP to the mobile number
               <p className='mt-3'>Enter Your OTP Below</p>
@@ -144,7 +144,7 @@ const LogIn = () => {
                 )}
                 <button
                   className='btn btn-danger border-0 rounded text-white me-3'
-                  onClick={() => setLoga(false)}>
+                  onClick={() => setEnterOtp(false)}>
                   Reset Mobile Number
                 </button>
                 <Link

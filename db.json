@@ -853,7 +853,18 @@
     ],
     "accordionValues": [
       {
+        "id": 1,
+        "containerId": "accordion1",
+        "toggleTarget": "#collapseOne",
+        "ariaControls": "collapseOne",
+        "targetId": "collapseOne",
+        "dataParent": "#accordion1",
+        "btnName": "Popular cuisines near me",
+        "brand1": "Bakeries near me. Bars near me. Beverage Shops near me. Bhojanalya near me. Cafés nearme. Casual Dining near me. Clubs near me. Cocktail Bars near me. Confectioneries nearme. Dessert Parlors near me. Dhabas near meFine Dining near me. Food Courts near me.Food Trucks near me. Irani Cafes near me. Kiosks near me. Lounges near me. Paan Shopnear me. Pubs near me. Quick Bites near me. Shacks near me. Sweet Shops near me"
+      },
+      {
         "id": 2,
+        "containerId": "accordion2",
         "toggleTarget": "#collapseTwo",
         "ariaControls": "collapseTwo",
         "targetId": "collapseTwo",
@@ -867,6 +878,7 @@
       },
       {
         "id": 3,
+        "containerId": "accordion3",
         "toggleTarget": "#collapseThree",
         "ariaControls": "collapseThree",
         "targetId": "collapseThree",

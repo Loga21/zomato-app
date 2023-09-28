@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import './CuisineDetailPage.scss';
 import { Link, Outlet } from 'react-router-dom';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const CuisineDetailPage = () => {
   const [infoBtn, setInfoBtn] = useState('Overview');
@@ -95,7 +94,7 @@ const CuisineDetailPage = () => {
               {menuBar.helpIcons?.map((icons) => {
                 return (
                   <button
-                    key={icon.id}
+                    key={icons.id}
                     className='bg-light border-1 rounded py-1 px-2 me-2 text-secondary mt-3'>
                     <FontAwesomeIcon icon={icons.icon} className='me-2 text-danger' />
                     {icons.toolTip}
