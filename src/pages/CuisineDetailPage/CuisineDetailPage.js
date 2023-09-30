@@ -29,7 +29,11 @@ const CuisineDetailPage = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
+    return (
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
+    );
   }
 
   if (error) {
@@ -56,11 +60,17 @@ const CuisineDetailPage = () => {
       </nav>
       <div className='d-flex'>
         <div className='geeks'>
-          <img
-            src='https://b.zmtcdn.com/data/pictures/chains/0/18591940/dad38637e7a47c3da8aacc70c82baefe_featured_v2.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*'
-            alt='roast'
-            height={370}
-          />
+          <Link
+            to='/cuisine-details/photos'
+            onClick={() => {
+              setInfoBtn('Photos');
+            }}>
+            <img
+              src='https://b.zmtcdn.com/data/pictures/chains/0/18591940/dad38637e7a47c3da8aacc70c82baefe_featured_v2.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*'
+              alt='roast'
+              height={370}
+            />
+          </Link>
         </div>
         <div className='d-block ms-2 me-2'>
           {menuBar.courasalImg?.map((food) => {

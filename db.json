@@ -1492,6 +1492,18 @@
         "bgImageUrl": "https://b.zmtcdn.com/data/collections/63fc817da5ea1a03b486f0605d8268ce_1694785461.jpg",
         "highlightedText": "12 Live Cricket Screenings",
         "totalPlaces": 12
+      },
+      {
+        "id": 7,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/6487ebe8fbb28294be84b70041d24601_1691347528.jpg",
+        "highlightedText": "13 Picturesque Cafes",
+        "totalPlaces": 13
+      },
+      {
+        "id": 8,
+        "bgImageUrl": "https://b.zmtcdn.com/data/collections/706d897c97831fde7a470ab77e79808c_1692120346.jpg",
+        "highlightedText": "16 Must-visit Legendary Places",
+        "totalPlaces": 16
       }
     ],
     "subHeaderMenus": [

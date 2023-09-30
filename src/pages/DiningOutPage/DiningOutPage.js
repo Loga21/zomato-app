@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import './DiningOutPage.scss';
 import DiningOutSubHeader from '../../components/DiningOutSubHeader/DiningOutSubHeader';
 import TrendingDinings from './TrendingDinings/TrendingDinings';
 import Accordian from '../../components/Accordian/Accordian';
+import './DiningOutPage.scss';
 
 const DiningOutPage = () => {
   const [collections, setCollections] = useState({});
@@ -41,6 +41,31 @@ const DiningOutPage = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
+  const handleCollections = (items) => {
+    return (
+      <div key={items.id} className='col-md-3 px-2 pb-3'>
+        <div className='card text-white position-relative'>
+          <img
+            src={items.bgImageUrl}
+            className='card-img'
+            alt={items.highlightedText}
+            height={320}
+          />
+          <div className='position-absolute bottom-0 px-3 py-2 card-wrapper'>
+            <h5 className='card-title fw-normal'>{items.highlightedText}</h5>
+            <p className='card-text'>
+              <small>
+                {items.totalPlaces} Places{' '}
+                <FontAwesomeIcon icon='fa-solid fa-caret-right' className='ms-1' />
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className='container my-3'>
       <h3>Collections</h3>
@@ -56,40 +81,39 @@ const DiningOutPage = () => {
           </Link>
         </button>
       </div>
-      <div className='position-relative'>
-        <FontAwesomeIcon
-          icon='fa-solid fa-angle-left'
-          className='bg-white p-3 text-center rounded-pill position-absolute top-50 start-0'
-        />
-        <div className='d-flex row-poster'>
-          {collections.zomatoCollections?.map((items) => {
-            return (
-              <div key={items.id} className='col-md-3 px-2 pb-3'>
-                <div className='card text-white position-relative'>
-                  <img
-                    src={items.bgImageUrl}
-                    className='card-img'
-                    alt={items.highlightedText}
-                    height={320}
-                  />
-                  <div className='position-absolute bottom-0 px-3 py-2 card-wrapper'>
-                    <h5 className='card-title fw-normal'>{items.highlightedText}</h5>
-                    <p className='card-text'>
-                      <small>
-                        {items.totalPlaces} Places{' '}
-                        <FontAwesomeIcon icon='fa-solid fa-caret-right' className='ms-1' />
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+      <div id='collectionsCarousel' className='carousel carousel-dark slide'>
+        <div className='carousel-inner'>
+          <div className='carousel-item active'>
+            <div className='d-flex row-poster'>
+              {collections.zomatoCollections?.map((items) => {
+                return items.id <= 4 && handleCollections(items);
+              })}
+            </div>
+          </div>
+          <div className='carousel-item'>
+            <div className='d-flex row-poster'>
+              {collections.zomatoCollections?.map((items) => {
+                return items.id > 4 && handleCollections(items);
+              })}
+            </div>
+          </div>
         </div>
-        <FontAwesomeIcon
-          icon='fa-solid fa-angle-right'
-          className='bg-white p-3 text-center rounded-pill position-absolute top-50 end-0'
-        />
+        <button
+          className='carousel-control-prev'
+          type='button'
+          data-bs-target='#collectionsCarousel'
+          data-bs-slide='prev'>
+          <span className='carousel-control-prev-icon' aria-hidden='true'></span>
+          <span className='visually-hidden'>Previous</span>
+        </button>
+        <button
+          className='carousel-control-next'
+          type='button'
+          data-bs-target='#collectionsCarousel'
+          data-bs-slide='next'>
+          <span className='carousel-control-next-icon' aria-hidden='true'></span>
+          <span className='visually-hidden'>Next</span>
+        </button>
       </div>
       <DiningOutSubHeader />
       <div className='card border-0'>

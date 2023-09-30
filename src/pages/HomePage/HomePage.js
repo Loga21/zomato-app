@@ -46,14 +46,14 @@ const HomePage = () => {
               type='button'
               className='btn btn-transparent'
               data-bs-toggle='modal'
-              data-bs-target='#modal1'>
+              data-bs-target='#loginModal'>
               Log in
             </li>
             <li
               type='button'
               className='btn btn-transparent'
               data-bs-toggle='modal'
-              data-bs-target='#modal2'>
+              data-bs-target='#signUpModal'>
               Sign up
             </li>
           </ul>

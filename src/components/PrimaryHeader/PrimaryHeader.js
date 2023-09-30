@@ -156,7 +156,7 @@ const PrimaryHeader = () => {
                   type='button'
                   // className='btn btn-transparent'
                   data-bs-toggle='modal'
-                  data-bs-target={btn.id === 1 ? '#modal1' : '#modal2'}>
+                  data-bs-target={btn.id === 1 ? '#loginModal' : '#signUpModal'}>
                   <a className='nav-link text-secondary' href='#' role='button'>
                     {btn.btnText}
                   </a>

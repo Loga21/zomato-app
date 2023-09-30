@@ -53,13 +53,13 @@ const StickyOptions = () => {
               className='navbar-toggler'
               type='button'
               data-bs-toggle='collapse'
-              data-bs-target='#navbarNavDropdown'
-              aria-controls='navbarNavDropdown'
+              data-bs-target='#chooseCuisinesDropdown'
+              aria-controls='chooseCuisinesDropdown'
               aria-expanded='false'
               aria-label='Toggle navigation'>
               <span className='navbar-toggler-icon'></span>
             </button>
-            <div className='collapse navbar-collapse' id='navbarNavDropdown'>
+            <div className='collapse navbar-collapse' id='chooseCuisinesDropdown'>
               <ul className='navbar-nav'>
                 {option.stickyHeaderOptions?.map((menu) => {
                   return (
@@ -81,7 +81,7 @@ const StickyOptions = () => {
                           }
                           type='button'
                           // data-bs-toggle='modal'
-                          data-bs-target={menu.id === 1 ? '#modal3' : ''}
+                          data-bs-target={menu.id === 1 ? '#filterModal' : ''}
                           data-bs-toggle={menu.id === 1 ? 'modal' : menu.id === 4 ? 'dropdown' : ''}
                           aria-expanded={menu.id === 4 ? 'false' : ''}
                           aria-current={menu.id === 4 ? 'page' : ''}

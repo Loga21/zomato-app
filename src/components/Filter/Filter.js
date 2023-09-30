@@ -42,7 +42,7 @@ const Filter = () => {
     <>
       <div
         className='modal fade visibility-set'
-        id='modal3'
+        id='filterModal'
         tabIndex='-1'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'>

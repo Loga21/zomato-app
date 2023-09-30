@@ -35,7 +35,7 @@ const SignUp = () => {
   return (
     <div
       className='modal fade'
-      id='modal2'
+      id='signUpModal'
       tabIndex='-1'
       aria-labelledby='exampleModalLabel'
       aria-hidden='true'>
@@ -106,7 +106,7 @@ const SignUp = () => {
                   type='button'
                   className='ms-1 text-danger'
                   data-bs-toggle='modal'
-                  data-bs-target='#modal1'>
+                  data-bs-target='#loginModal'>
                   Log in
                 </span>
               </p>
@@ -130,7 +130,7 @@ const SignUp = () => {
               type='button'
               className='text-danger ms-3'
               data-bs-toggle='modal'
-              data-bs-target='#modal1'>
+              data-bs-target='#loginModal'>
               Log in
             </span>
           </p>

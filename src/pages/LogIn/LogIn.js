@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});
+  const [countryCodesorting, setCountryCodeSorting] = useState('+91');
   const [mobileNumInput, setMobileNumInput] = useState(0);
   const [enterOtp, setEnterOtp] = useState(false);
   const [otp, setOtp] = useState('');
@@ -49,7 +50,7 @@ const LogIn = () => {
   return (
     <div
       className='modal fade'
-      id='modal1'
+      id='loginModal'
       tabIndex='-1'
       aria-labelledby='exampleModalLabel'
       aria-hidden='true'>
@@ -78,12 +79,16 @@ const LogIn = () => {
                   type='button'
                   data-bs-toggle='dropdown'
                   aria-expanded='false'>
-                  + 91
+                  {countryCodesorting}
                 </button>
                 <ul className='dropdown-menu drop'>
                   {countryName.countryName?.map((country) => {
                     return (
-                      <li key={country.id}>
+                      <li
+                        key={country.id}
+                        onClick={() => {
+                          setCountryCodeSorting(country.callCode);
+                        }}>
                         <a className='dropdown-item d-flex' href='#'>
                           <div>
                             <img
@@ -178,7 +183,7 @@ const LogIn = () => {
             type='button'
             className='ms-3 text-danger'
             data-bs-toggle='modal'
-            data-bs-target='#modal2'>
+            data-bs-target='#signUpModal'>
             Create account
           </span>
         </div>

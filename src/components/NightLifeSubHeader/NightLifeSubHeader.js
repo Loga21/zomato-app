@@ -55,7 +55,7 @@ const NightLifeSubHeader = () => {
                     <a
                       className='nav-link active text-secondary'
                       type='button'
-                      data-bs-target={menu.id === 1 ? '#modal3' : ''}
+                      data-bs-target={menu.id === 1 ? '#filterModal' : ''}
                       data-bs-toggle={menu.id === 1 ? 'modal' : ''}>
                       {menu.id === 1 && (
                         <FontAwesomeIcon

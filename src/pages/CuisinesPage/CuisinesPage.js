@@ -59,7 +59,7 @@ const CuisinesPage = () => {
       <div className='mb-5 mt-4 bg-light px-2 py-1'>
         <div className='position-relative'>
           <h3 className='my-4'>Inspiration for your first order</h3>
-          <div id='carouselExample' className='carousel carousel-dark slide'>
+          <div id='favItemsCarousel' className='carousel carousel-dark slide'>
             <div className='carousel-inner'>
               <div className='carousel-item active'>
                 <div className='d-flex justify-content-between mx-2'>
@@ -79,7 +79,7 @@ const CuisinesPage = () => {
             <button
               className='carousel-control-prev'
               type='button'
-              data-bs-target='#carouselExample'
+              data-bs-target='#favItemsCarousel'
               data-bs-slide='prev'>
               <span className='carousel-control-prev-icon' aria-hidden='true'></span>
               <span className='visually-hidden'>Previous</span>
@@ -87,7 +87,7 @@ const CuisinesPage = () => {
             <button
               className='carousel-control-next'
               type='button'
-              data-bs-target='#carouselExample'
+              data-bs-target='#favItemsCarousel'
               data-bs-slide='next'>
               <span className='carousel-control-next-icon' aria-hidden='true'></span>
               <span className='visually-hidden'>Next</span>
