@@ -1,14 +1,16 @@
 import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import { cardContext } from '../ContextAPI/ContextAPI';
 
 const SecondaryHeader = () => {
   const { cart } = useContext(cardContext);
-  const [menuName, setMenuName] = useState('Delivery');
+  const location = useLocation();
+  const [nav, setNav] = useState(location.pathname);
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/secondaryHeader', 'GET')
       .then((resInJson) => {
@@ -35,7 +37,7 @@ const SecondaryHeader = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
-
+  console.log(nav);
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-light'>
@@ -57,18 +59,20 @@ const SecondaryHeader = () => {
                   <li key={items.id} className='nav-item ms-2'>
                     <Link
                       className={
-                        menuName === items.toolTip
+                        items.link === nav
                           ? 'nav-link active fs-5 text-danger border-2 border-bottom border-danger'
                           : 'nav-link text-secondary fs-5'
                       }
                       aria-current='page'
                       to={items.link}
                       onClick={() => {
-                        setMenuName(items.toolTip);
+                        // setMenuName(items.toolTip);
+                        setNav(items.link);
                       }}>
                       <span
                         className={
-                          menuName === items.toolTip
+                          // menuName === items.toolTip
+                          items.link === nav
                             ? 'bg-warning-subtle rounded-circle py-4 px-1 me-2'
                             : 'bg-body-secondary rounded-circle py-4 px-1 me-2'
                         }>

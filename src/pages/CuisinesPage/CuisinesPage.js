@@ -40,6 +40,20 @@ const CuisinesPage = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
+  const handleCarousel = (items) => {
+    return (
+      <div key={items.id} className='carousal-width text-center'>
+        <img
+          src={items.foodImgUrl}
+          alt={items.foodName}
+          width={150}
+          height={150}
+          className='rounded-circle'
+        />
+        <h6 className='fs-5 text-secondary mt-3'>{items.foodName}</h6>
+      </div>
+    );
+  };
   return (
     <div className='container mb-4'>
       <div className='mb-5 mt-4 bg-light px-2 py-1'>
@@ -48,48 +62,16 @@ const CuisinesPage = () => {
           <div id='carouselExample' className='carousel carousel-dark slide'>
             <div className='carousel-inner'>
               <div className='carousel-item active'>
-                <div className='d-flex'>
+                <div className='d-flex justify-content-between mx-2'>
                   {food.sampleFood?.map((items) => {
-                    return (
-                      items.id <= 6 && (
-                        <div key={items.id} className='carousal-width'>
-                          <img
-                            src={items.foodImgUrl}
-                            alt={items.foodName}
-                            width={150}
-                            height={150}
-                            className='rounded-circle'
-                            style={{ marginRight: 40 }}
-                          />
-                          <h6 className='fs-5 text-secondary mt-3' style={{ marginLeft: 45 }}>
-                            {items.foodName}
-                          </h6>
-                        </div>
-                      )
-                    );
+                    return items.id <= 6 && handleCarousel(items);
                   })}
                 </div>
               </div>
               <div className='carousel-item'>
-                <div className='d-flex'>
+                <div className='d-flex justify-content-between mx-2'>
                   {food.sampleFood?.map((items) => {
-                    return (
-                      items.id > 6 && (
-                        <div key={items.id} className='carousal-width'>
-                          <img
-                            src={items.foodImgUrl}
-                            alt={items.foodName}
-                            width={150}
-                            height={150}
-                            className='rounded-circle'
-                            style={{ marginRight: 40 }}
-                          />
-                          <h6 className='fs-5 text-secondary mt-3' style={{ marginLeft: 45 }}>
-                            {items.foodName}
-                          </h6>
-                        </div>
-                      )
-                    );
+                    return items.id > 6 && handleCarousel(items);
                   })}
                 </div>
               </div>
@@ -99,9 +81,7 @@ const CuisinesPage = () => {
               type='button'
               data-bs-target='#carouselExample'
               data-bs-slide='prev'>
-              <span
-                className='carousel-control-prev-icon bg-dark p-2 rounded-pill'
-                aria-hidden='true'></span>
+              <span className='carousel-control-prev-icon' aria-hidden='true'></span>
               <span className='visually-hidden'>Previous</span>
             </button>
             <button
@@ -109,9 +89,7 @@ const CuisinesPage = () => {
               type='button'
               data-bs-target='#carouselExample'
               data-bs-slide='next'>
-              <span
-                className='carousel-control-next-icon bg-dark p-2 rounded-pill'
-                aria-hidden='true'></span>
+              <span className='carousel-control-next-icon' aria-hidden='true'></span>
               <span className='visually-hidden'>Next</span>
             </button>
           </div>
