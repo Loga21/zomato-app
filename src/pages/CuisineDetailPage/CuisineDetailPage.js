@@ -2,14 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import './CuisineDetailPage.scss';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const CuisineDetailPage = () => {
-  const [infoBtn, setInfoBtn] = useState('Overview');
+  const location = useLocation();
+  const [nav, setNav] = useState('');
   const [menuBar, setMenuBar] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
+    const loc = location.pathname.split('/')[2];
+    loc === undefined ? setNav('') : setNav(loc);
     fetchApi('http://localhost:5000/cuisineDetail', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {
@@ -39,6 +42,7 @@ const CuisineDetailPage = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <div className='container mt-4'>
       <nav aria-label='breadcrumb'>
@@ -63,8 +67,9 @@ const CuisineDetailPage = () => {
           <Link
             to='/cuisine-details/photos'
             onClick={() => {
-              setInfoBtn('Photos');
-            }}>
+              setNav('photos');
+            }}
+          >
             <img
               src='https://b.zmtcdn.com/data/pictures/chains/0/18591940/dad38637e7a47c3da8aacc70c82baefe_featured_v2.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*'
               alt='roast'
@@ -139,21 +144,23 @@ const CuisineDetailPage = () => {
       </div>
       <section className='d-flex justify-content-evenly border-bottom border-2 my-4'>
         {menuBar.stickyMenu?.map((menu) => {
+          // console.log(nav, menu.linkUrl);
           return (
-            <Link to={menu.linkUrl} key={menu.id}>
-              <button
-                className={
-                  infoBtn === menu.menuName
-                    ? 'bg-transparent border-0 py-1 px-2 text-danger border-bottom border-2 border-danger fs-5'
-                    : 'bg-transparent border-0 py-1 px-2 text-secondary fs-5'
-                }
-                name={menu.menuName}
-                onClick={() => {
-                  setInfoBtn(menu.menuName);
-                  // infoBtn === 'Overview' && setInfo(!info);
-                }}>
-                {menu.menuName}
-              </button>
+            <Link
+              key={menu.id}
+              className={
+                menu.linkUrl === nav
+                  ? 'bg-transparent border-0 py-1 px-2 text-danger border-bottom border-2 border-danger fs-5 text-decoration-none'
+                  : 'bg-transparent border-0 py-1 px-2 text-secondary fs-5 text-decoration-none'
+              }
+              // name={menu.menuName}
+              to={menu.linkUrl}
+              onClick={() => {
+                // setInfoBtn(menu.menuName);
+                setNav(menu.linkUrl);
+                // infoBtn === 'Overview' && setInfo(!info);
+              }}>
+              {menu.menuName}
             </Link>
           );
         })}

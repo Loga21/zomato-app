@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import './StickyOptions.scss';
 import Filter from '../Filter/Filter';
-// import { cardContext } from '../ContextAPI/ContextAPI';
+import { cardContext } from '../ContextAPI/ContextAPI';
 
 const StickyOptions = () => {
-  // const { foodCardDetail, setSortedFood } = useContext(cardContext);
+  const { foodCardDetail, setSortByRatingFoodItems, setSortByTypeFoodItems } = useContext(cardContext);
   const [option, setOptions] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -37,13 +37,19 @@ const StickyOptions = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
-  // const handleFoodSort = () => {
-  //   const foodSorting = foodCardDetail.foodItems.filter((foodItems) => {
-  //     return foodItems.rating >= 4.0;
-  //   });
-  //   console.log(foodSorting);
-  //   setSortedFood(foodSorting);
-  // };
+  const handleFoodSort = (menu) => {
+    console.log(menu);
+    const foodSorting = foodCardDetail.foodItems?.filter((foodItems) => {
+      return foodItems.rating >= 4.0;
+    });
+    console.log(foodSorting);
+    menu.id === 2 && setSortByRatingFoodItems(foodSorting);
+    const foodTypeSorting = foodCardDetail.foodItems?.filter((foodItems) => {
+      return foodItems.foodType === 'PureVeg';
+    });
+    menu.id === 3 && setSortByTypeFoodItems(foodTypeSorting);
+  };
+
   return (
     <>
       <section className='position-sticky top-0 visibility-set'>
@@ -71,8 +77,7 @@ const StickyOptions = () => {
                             ? 'nav-item dropdown border rounded me-3'
                             : 'nav-item border rounded me-3'
                         }
-                        // onClick={handleFoodSort}
-                      >
+                        onClick={() => handleFoodSort(menu)}>
                         <a
                           className={
                             menu.id === 4

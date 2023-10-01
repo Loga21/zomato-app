@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});
-  const [countryCodesorting, setCountryCodeSorting] = useState('+91');
+  const [countryCodesorting, setCountryCodeSorting] = useState({ flag: 'https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp', code: '+91' });
   const [mobileNumInput, setMobileNumInput] = useState(0);
   const [enterOtp, setEnterOtp] = useState(false);
   const [otp, setOtp] = useState('');
@@ -70,7 +70,7 @@ const LogIn = () => {
             <form className='dropdown'>
               <div className='border rounded px-2 py-1'>
                 <img
-                  src='https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp'
+                  src={countryCodesorting.flag}
                   alt='flag'
                   height={20}
                 />
@@ -79,7 +79,7 @@ const LogIn = () => {
                   type='button'
                   data-bs-toggle='dropdown'
                   aria-expanded='false'>
-                  {countryCodesorting}
+                  {countryCodesorting.code}
                 </button>
                 <ul className='dropdown-menu drop'>
                   {countryName.countryName?.map((country) => {
@@ -87,7 +87,7 @@ const LogIn = () => {
                       <li
                         key={country.id}
                         onClick={() => {
-                          setCountryCodeSorting(country.callCode);
+                          setCountryCodeSorting({ flag: country.flagUrl, code: country.callCode });
                         }}>
                         <a className='dropdown-item d-flex' href='#'>
                           <div>

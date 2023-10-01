@@ -52,32 +52,23 @@ const PrimaryHeader = () => {
 
   const handleSearch = (e) => {
     const searchText = e.target.value;
-    const searchFilter = foodCardDetail.foodItems.filter((word) => {
+    const searchFilter = foodCardDetail.foodItems?.filter((word) => {
       return word.cuisineName.toLowerCase().includes(searchText.toLowerCase());
     });
     console.log(searchFilter);
     setFilteredFood(searchFilter);
-  };
-  console.log(handleSearch);
-
-  const handleRestro = (e) => {
-    const searchText = e.target.value;
-    const searchRestaurantFilter = restaurantCardDetail.trendingDinings.filter((word) => {
+    const searchRestaurantFilter = restaurantCardDetail.trendingDinings?.filter((word) => {
       return word.diningName.toLowerCase().includes(searchText.toLowerCase());
     });
     setFilteredRestaurant(searchRestaurantFilter);
-  };
-  console.log(handleRestro);
-
-  const handleNightRestro = (e) => {
-    const searchText = e.target.value;
-    const searchNightRestaurantFilter = NightRestaurantCardDetail.nightTimeRestaurants.filter(
+    const searchNightRestaurantFilter = NightRestaurantCardDetail.nightTimeRestaurants?.filter(
       (word) => {
         return word.diningName.toLowerCase().includes(searchText.toLowerCase());
       }
     );
     setFilteredNightRestaurant(searchNightRestaurantFilter);
   };
+
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-light mt-1'>
@@ -142,7 +133,7 @@ const PrimaryHeader = () => {
                   type='search'
                   style={{ width: 450 }}
                   placeholder='Search for restaurant, cuisine or a dish'
-                  onKeyUp={handleNightRestro}
+                  onKeyUp={(e) => handleSearch(e)}
                 />
               </span>
             </form>

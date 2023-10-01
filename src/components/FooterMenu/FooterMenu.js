@@ -33,48 +33,36 @@ const FooterMenu = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
+  const footerMenu = (value) => {
+    return (
+      <ul className='nav flex-column' key={value.id}>
+        <li className='nav-item mb-2'>
+          <a href='#' className='nav-link p-0 text-body-secondary'>
+            {value.menu}
+          </a>
+        </li>
+      </ul>
+    );
+  };
+
   return (
     <div className='row'>
       <div className='col-6 col-md-2 mb-3'>
         <h6>ABOUT ZOMATO</h6>
         {footer.aboutZomato.map((value) => {
-          return (
-            <ul className='nav flex-column' key={value.id}>
-              <li className='nav-item mb-2'>
-                <a href='#' className='nav-link p-0 text-body-secondary'>
-                  {value.menu}
-                </a>
-              </li>
-            </ul>
-          );
+          return footerMenu(value);
         })}
       </div>
       <div className='col-6 col-md-2 mb-3 ms-4'>
         <h6>ZOMAVERSE</h6>
         {footer.zomaverse.map((value) => {
-          return (
-            <ul className='nav flex-column' key={value.id}>
-              <li className='nav-item mb-2'>
-                <a href='#' className='nav-link p-0 text-body-secondary'>
-                  {value.menu}
-                </a>
-              </li>
-            </ul>
-          );
+          return footerMenu(value);
         })}
       </div>
       <div className='col-6 col-md-2 mb-3 ms-4'>
         <h6>FOR RESTAURANTS</h6>
         {footer.forRestaurants.map((value) => {
-          return (
-            <ul className='nav flex-column' key={value.id}>
-              <li className='nav-item mb-2'>
-                <a href='#' className='nav-link p-0 text-body-secondary'>
-                  {value.menu}
-                </a>
-              </li>
-            </ul>
-          );
+          return footerMenu(value);
         })}
         <ul className='nav flex-column'>
           <h6 className='mt-4'>FOR RESTAURANTS</h6>
@@ -90,26 +78,18 @@ const FooterMenu = () => {
       <div className='col-6 col-md-2 mb-3 ms-4'>
         <h6>LEARN MORE</h6>
         {footer.learnMore.map((value) => {
-          return (
-            <ul className='nav flex-column' key={value.id}>
-              <li className='nav-item mb-2'>
-                <a href='#' className='nav-link p-0 text-body-secondary'>
-                  {value.menu}
-                </a>
-              </li>
-            </ul>
-          );
+          return footerMenu(value);
         })}
       </div>
       <div className='col-6 col-md-2 mb-3 ms-4'>
         <h6>SOCIAL LINKS</h6>
         <div className='d-flex'>
-          {footer.socialMediaIcons.map((icon) => {
+          {footer.socialMediaIcons?.map((icon) => {
             return (
               <ul className='nav' key={icon.id}>
                 <li className='nav-item  me-2 mb-3'>
                   <a href='#' className='nav-link p-0 text-body-secondary'>
-                    <FontAwesomeIcon icon={icon} className='fs-4 text-dark' />
+                    <FontAwesomeIcon icon={icon.icon} className='fs-4 text-dark' />
                   </a>
                 </li>
               </ul>
