@@ -1,9 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../Filter/Filter';
+import { cardContext } from '../ContextAPI/ContextAPI';
 
 const DiningOutSubHeader = () => {
+  const {
+    restaurantFoodCardDetail,
+    setSortByRestroTypeDiningOut,
+    setSortByRatingDiningOut,
+    setSortBySeatingDiningOut,
+    setSortByServesDiningOut,
+    setSortByOpenStatusDiningOut
+  } = useContext(cardContext);
   const [subHeader, setSubHeader] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -33,6 +42,31 @@ const DiningOutSubHeader = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
+  const handleRestaurantType = (menu) => {
+    // console.log(menu);
+    const restroSorting = restaurantFoodCardDetail.trendingDinings?.filter((dining) => {
+      return dining.restroType === 'Gold';
+    });
+    menu.id === 2 && setSortByRestroTypeDiningOut(restroSorting);
+    const restroRatingSorting = restaurantFoodCardDetail.trendingDinings?.filter((dining) => {
+      return dining.rating >= 4.0;
+    });
+    menu.id === 3 && setSortByRatingDiningOut(restroRatingSorting);
+    const restroSeatingSorting = restaurantFoodCardDetail.trendingDinings?.filter((dining) => {
+      return dining.restroSeating >= 'Outdoor Seating';
+    });
+    menu.id === 4 && setSortBySeatingDiningOut(restroSeatingSorting);
+    const restroServerSorting = restaurantFoodCardDetail.trendingDinings?.filter((dining) => {
+      return dining.liquorProvideStatus === true;
+    });
+    menu.id === 5 && setSortByServesDiningOut(restroServerSorting);
+    const restroOpenStatusSorting = restaurantFoodCardDetail.trendingDinings?.filter((dining) => {
+      return dining.openStatus === true;
+    });
+    menu.id === 6 && setSortByOpenStatusDiningOut(restroOpenStatusSorting);
+  };
+
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-transparent my-4'>
@@ -51,7 +85,10 @@ const DiningOutSubHeader = () => {
             <ul className='navbar-nav'>
               {subHeader.subHeaderMenus?.map((menu) => {
                 return (
-                  <li key={menu.id} className='nav-item border rounded me-3'>
+                  <li
+                    key={menu.id}
+                    className='nav-item border rounded me-3'
+                    onClick={() => handleRestaurantType(menu)}>
                     <a
                       className='nav-link active text-secondary'
                       type='button'

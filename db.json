@@ -1722,7 +1722,7 @@
         "opensAt": "Opens at 12noon",
         "restroType": "Gold",
         "restroSeating": "Outdoor Seating",
-        "liquorProvideStatus": true,
+        "liquorProvideStatus": false,
         "openStatus": false
       },
       {

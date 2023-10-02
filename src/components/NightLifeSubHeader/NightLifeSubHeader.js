@@ -1,9 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../Filter/Filter';
+import { cardContext } from '../ContextAPI/ContextAPI';
 
 const NightLifeSubHeader = () => {
+  const {
+    NightRestaurantCardDetail,
+    setSortByDistanceNightLife,
+    setSortByRestroTypeNightLife,
+    setSortByRatingNightLife,
+    setSortByPubsNightLife
+  } = useContext(cardContext);
   const [subHeader, setSubHeader] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -33,6 +41,29 @@ const NightLifeSubHeader = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
+  const handleNightRestaurantType = (menu) => {
+    // console.log(menu);
+    const nightRestroSorting = NightRestaurantCardDetail.nightTimeRestaurants?.filter((dining) => {
+      return dining.distance <= 5.0;
+    });
+    menu.id === 2 && setSortByDistanceNightLife(nightRestroSorting);
+    const nightRestroTypeSorting = NightRestaurantCardDetail.nightTimeRestaurants?.filter(
+      (dining) => {
+        return dining.restroType === 'Gold';
+      }
+    );
+    menu.id === 3 && setSortByRestroTypeNightLife(nightRestroTypeSorting);
+    const nightRatingSorting = NightRestaurantCardDetail.nightTimeRestaurants?.filter((dining) => {
+      return dining.rating >= 4.0;
+    });
+    menu.id === 4 && setSortByRatingNightLife(nightRatingSorting);
+    const nightPubsSorting = NightRestaurantCardDetail.nightTimeRestaurants?.filter((dining) => {
+      return dining.liquorProvideStatus === true;
+    });
+    menu.id === 5 && setSortByPubsNightLife(nightPubsSorting);
+  };
+
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-transparent my-4'>
@@ -51,7 +82,12 @@ const NightLifeSubHeader = () => {
             <ul className='navbar-nav'>
               {subHeader.subHeaderMenus?.map((menu) => {
                 return (
-                  <li key={menu.id} className='nav-item border rounded me-3'>
+                  <li
+                    key={menu.id}
+                    className='nav-item border rounded me-3'
+                    onClick={() => {
+                      handleNightRestaurantType(menu);
+                    }}>
                     <a
                       className='nav-link active text-secondary'
                       type='button'

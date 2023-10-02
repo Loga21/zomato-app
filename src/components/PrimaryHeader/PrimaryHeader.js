@@ -11,13 +11,13 @@ const PrimaryHeader = () => {
   const {
     foodCardDetail,
     setFilteredFood,
-    restaurantCardDetail,
+    restaurantFoodCardDetail,
     setFilteredRestaurant,
     NightRestaurantCardDetail,
     setFilteredNightRestaurant
   } = useContext(cardContext);
   console.log(foodCardDetail);
-  // console.log(restaurantCardDetail);
+  // console.log(restaurantFoodCardDetail);
 
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,7 +57,7 @@ const PrimaryHeader = () => {
     });
     console.log(searchFilter);
     setFilteredFood(searchFilter);
-    const searchRestaurantFilter = restaurantCardDetail.trendingDinings?.filter((word) => {
+    const searchRestaurantFilter = restaurantFoodCardDetail.trendingDinings?.filter((word) => {
       return word.diningName.toLowerCase().includes(searchText.toLowerCase());
     });
     setFilteredRestaurant(searchRestaurantFilter);

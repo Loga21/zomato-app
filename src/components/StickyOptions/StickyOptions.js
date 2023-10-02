@@ -6,7 +6,8 @@ import Filter from '../Filter/Filter';
 import { cardContext } from '../ContextAPI/ContextAPI';
 
 const StickyOptions = () => {
-  const { foodCardDetail, setSortByRatingFoodItems, setSortByTypeFoodItems } = useContext(cardContext);
+  const { foodCardDetail, setSortByRatingFoodItems, setSortByTypeFoodItems } =
+    useContext(cardContext);
   const [option, setOptions] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);

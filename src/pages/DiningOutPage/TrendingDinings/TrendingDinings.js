@@ -5,7 +5,15 @@ import { cardContext } from '../../../components/ContextAPI/ContextAPI';
 
 const TrendingDinings = () => {
   const [trendingRestaurants, setTrendingRestaurants] = useState({});
-  const { setRestaurantFoodCardDetail, filteredRestaurant } = useContext(cardContext);
+  const {
+    setRestaurantFoodCardDetail,
+    filteredRestaurant,
+    sortByRestroTypeDiningOut,
+    sortByRatingDiningOut,
+    sortBySeatingDiningOut,
+    sortByServesDiningOut,
+    sortByOpenStatusDiningOut
+  } = useContext(cardContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
@@ -87,7 +95,7 @@ const TrendingDinings = () => {
       </div>
     );
   };
-
+  console.log(sortByRestroTypeDiningOut);
   return (
     <div className='ms-2 row product-cards'>
       {filteredRestaurant.length > 0
@@ -95,9 +103,34 @@ const TrendingDinings = () => {
           filteredRestaurant?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-        : trendingRestaurants.trendingDinings?.map((restaurants) => {
-          return restaurantContainer(restaurants);
-        })}
+        : (sortByRestroTypeDiningOut.length > 0)
+            ? sortByRestroTypeDiningOut &&
+          sortByRestroTypeDiningOut?.map((restaurants) => {
+            return restaurantContainer(restaurants);
+          })
+            : (sortByRatingDiningOut.length > 0)
+                ? sortByRatingDiningOut &&
+          sortByRatingDiningOut?.map((restaurants) => {
+            return restaurantContainer(restaurants);
+          })
+                : (sortBySeatingDiningOut.length > 0)
+                    ? sortBySeatingDiningOut &&
+          sortBySeatingDiningOut?.map((restaurants) => {
+            return restaurantContainer(restaurants);
+          })
+                    : (sortByServesDiningOut.length > 0)
+                        ? sortByServesDiningOut &&
+          sortByServesDiningOut?.map((restaurants) => {
+            return restaurantContainer(restaurants);
+          })
+                        : (sortByOpenStatusDiningOut.length > 0)
+                            ? sortByOpenStatusDiningOut &&
+          sortByOpenStatusDiningOut?.map((restaurants) => {
+            return restaurantContainer(restaurants);
+          })
+                            : trendingRestaurants.trendingDinings?.map((restaurants) => {
+                              return restaurantContainer(restaurants);
+                            })}
     </div>
   );
 };
