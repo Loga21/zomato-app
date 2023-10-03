@@ -93,7 +93,7 @@ const SecondaryHeader = () => {
             <Outlet />
             <div className='position-absolute top-0 end-0 mt-4'>
               <button className='btn btn-secondary' type='button'>
-                Cart ({cart.cartState?.length})
+                Food Cart ({cart.cartState?.length})
               </button>
             </div>
           </div>

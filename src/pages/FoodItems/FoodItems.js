@@ -2,10 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { cardContext } from '../../components/ContextAPI/ContextAPI';
+import ChooseQuantity from '../ChooseQuantity/ChooseQuantity';
 
 const FoodItems = () => {
   const [food, setFood] = useState({});
-  const { setFoodCardDetail, filteredFood, sortByRatingFoodItems, sortByTypeFoodItems } = useContext(cardContext);
+  const { setFoodCardDetail, filteredFood, sortByRatingFoodItems, sortByTypeFoodItems } =
+    useContext(cardContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
@@ -72,15 +74,19 @@ const FoodItems = () => {
               <div className='text-secondary'>{food.cuisineName}</div>
               <div>
                 <button
-                  className='btn btn-warning btn-sm'
+                  className='btn bg-transparent border-danger btn-sm mt-2 shadow-sm'
+                  type='button'
+                  // className='btn btn-transparent'
+                  data-bs-toggle='modal'
+                  data-bs-target='#ChooseQuantityModal'
                   onClick={handleAddToCart.bind(this, food)}>
-                  Add to Cart
+                  Add Item
                 </button>
               </div>
             </div>
             <div className='text-end'>
               <div
-                className='bg-success rounded text-light px-1'
+                className='bg-success rounded text-light px-1 mt-2 mb-2'
                 style={{ marginLeft: 70, fontSize: 14 }}>
                 {food.rating}
                 <FontAwesomeIcon
@@ -90,7 +96,7 @@ const FoodItems = () => {
                 />
               </div>
               <p className='card-text text-secondary m-0'>₹{food.price} for one</p>
-              <p className='text-secondary m-0'>{food.timeTaken} min</p>
+              <p className='text-secondary m-0 mt-2'>{food.timeTaken} min</p>
             </div>
           </div>
           <hr className='m-0 text-secondary' />
@@ -112,24 +118,29 @@ const FoodItems = () => {
   };
 
   return (
+    <>
       <div className='ms-2 row product-cards'>
         {filteredFood.length > 0
           ? filteredFood &&
             filteredFood?.map((food) => {
               return foodItem(food);
             })
-          : (sortByRatingFoodItems.length > 0)
-              ? sortByRatingFoodItems && sortByRatingFoodItems?.map((food) => {
+          : sortByRatingFoodItems.length > 0
+            ? sortByRatingFoodItems &&
+            sortByRatingFoodItems?.map((food) => {
+              return foodItem(food);
+            })
+            : sortByTypeFoodItems.length > 0
+              ? sortByTypeFoodItems &&
+            sortByTypeFoodItems?.map((food) => {
+              return foodItem(food);
+            })
+              : food.foodItems?.map((food) => {
                 return foodItem(food);
-              })
-              : (sortByTypeFoodItems.length > 0)
-                  ? sortByTypeFoodItems && sortByTypeFoodItems?.map((food) => {
-                    return foodItem(food);
-                  })
-                  : food.foodItems?.map((food) => {
-                    return foodItem(food);
-                  })}
+              })}
       </div>
+      <ChooseQuantity />
+    </>
   );
 };
 
