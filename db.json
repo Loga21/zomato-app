@@ -1890,59 +1890,77 @@
         "btnLable": "Add cooking instructions"
       }
     ],
-    "billSummaryData":[
+    "billSummaryData": [
       {
-        "id":1,
-        "lable":"Subtotal",
-        "price":292
+        "id": 1,
+        "lable": "Subtotal",
+        "price": 292
       },
       {
-        "id":2,
-        "lable":"GST",
-        "price":10.50
+        "id": 2,
+        "lable": "GST",
+        "price": 10.50
       },
       {
-        "id":3,
-        "lable":"Delivery partner fee",
-        "price":14
+        "id": 3,
+        "lable": "Delivery partner fee",
+        "price": 14
       },
       {
-        "id":4,
-        "lable":"Grand Total",
-        "price":336.50
+        "id": 4,
+        "lable": "Grand Total",
+        "price": 336.50
       },
       {
-        "id":5,
-        "lable":"Coupon - (ZOMATO)",
-        "price":-100.00
+        "id": 5,
+        "lable": "Coupon - (ZOMATO)",
+        "price": -100.00
       },
       {
-        "id":6,
-        "lable":"Net Payable",
-        "price":236.50
+        "id": 6,
+        "lable": "Net Payable",
+        "price": 236.50
       }
     ],
-    "paymentMethod":[
+    "paymentMethod": [
       {
-        "id":1,
-        "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyOoxY1k_Hj78I_Vb6S9sP4qV4cL5HkRzsa_7s5_ScOF5FSnIYXSWSwDXOE3xR6KHEu0&usqp=CAU",
-        "method":"Phone pay"
+        "id": 1,
+        "icon": "fa-solid fa-indian-rupee-sign",
+        "method": "Phone pay"
       },
       {
-        "id":2,
-        "icon":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.hindustantimes.com%2Ftech%2Fimg%2F2020%2F11%2F05%2F1600x900%2Fimage_-_2020-11-05T095740.083_1604550459365_1604550465218_1604550598928.jpg&tbnid=viIffTu8tzss2M&vet=12ahUKEwjWqb37_9mBAxX-wDgGHbzUACUQMygEegQIARBc..i&imgrefurl=https%3A%2F%2Ftech.hindustantimes.com%2Ftech%2Fnews%2Fgoogle-starts-rolling-out-a-new-logo-for-google-pay-in-india-71604550073410.html&docid=k6cmrShYHReBRM&w=1600&h=900&q=google%20pay%20logo&ved=2ahUKEwjWqb37_9mBAxX-wDgGHbzUACUQMygEegQIARBc",
-        "method":"Gpay"
+        "id": 2,
+        "icon": "fa-brands fa-google-pay",
+        "method": "G pay"
       },
       {
-        "id":3,
-        "icon":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fcash-delivery_569841-162.jpg%3Fw%3D2000&tbnid=MArLXhYLFdT5iM&vet=12ahUKEwimvqWJg9qBAxXI6KACHfxMDoAQMygCegQIARBw..i&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Fpremium-vector%2Fcash-delivery_22697248.htm&docid=P26tPE89CBTUeM&w=2000&h=2000&q=cash%20on%20delivery%20logo&ved=2ahUKEwimvqWJg9qBAxXI6KACHfxMDoAQMygCegQIARBw",
-        "method":"Cash on Delivery"
+        "id": 3,
+        "icon": "fa-solid fa-money-bills",
+        "method": "Cash on Delivery"
       },
       {
-        "id":4,
-        "icon":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.signaturebankga.com%2Fwp-content%2Fuploads%2F2022%2F02%2Floadimage-1024x1024.png&tbnid=XOrxE3hkjlVayM&vet=12ahUKEwi2vv-Xg9qBAxXxwKACHeuGD1sQMygOegUIARCIAQ..i&imgrefurl=https%3A%2F%2Fwww.signaturebankga.com%2Fe-banking-the-advantage-and-importance-of-internet-banking%2F&docid=QoZAcZBM7CJ_mM&w=1024&h=1024&q=net%20banking&ved=2ahUKEwi2vv-Xg9qBAxXxwKACHeuGD1sQMygOegUIARCIAQ",
-        "method":"Net Banking"
+        "id": 4,
+        "icon": "fa-solid fa-building-columns",
+        "method": "Net Banking"
       }
     ]
-  }
+  },
+  "chnageAddress": [
+    {
+      "id": 1,
+      "type": "Home"
+    },
+    {
+      "id": 2,
+      "type": "Work"
+    },
+    {
+      "id": 3,
+      "type": "Hotel"
+    },
+    {
+      "id": 4,
+      "type": "Other"
+    }
+  ]
 }
