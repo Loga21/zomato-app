@@ -15,15 +15,15 @@ const SignUp = () => {
     return emailRegex.test(emailInput);
   }
   const isValidEmail = validateEmail(emailInput);
-  console.log(isValidEmail);
+  // console.log(isValidEmail);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     nameInput === '' || emailInput === '' || !isValidEmail ? setAccInfo(false) : setAccInfo(true);
-    console.log(isValidEmail);
+    // console.log(isValidEmail);
     nameInput === '' ? setNameInputErrorMsg(true) : setNameInputErrorMsg(false);
     emailInput === '' || !isValidEmail ? setEmailInputErrorMsg(true) : setEmailInputErrorMsg(false);
-    console.log(nameInput, emailInput, accInfo);
+    // console.log(nameInput, emailInput, accInfo);
     // console.log(inputErrorMsg)
   };
 

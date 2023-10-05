@@ -37,7 +37,7 @@ const SecondaryHeader = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
-  console.log(nav);
+  // console.log(nav);
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-light'>

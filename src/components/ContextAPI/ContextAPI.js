@@ -6,7 +6,7 @@ import FoodCartReducer from '../reducers/FoodCartReducer';
 export const cardContext = createContext(null);
 const ContextAPI = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(FoodCartReducer);
-  console.log(cartState);
+  // console.log(cartState);
 
   useEffect(() => {
     cart.cartDispatch({

@@ -4,8 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import ChangeAddress from './ChangeAddress/ChangeAddress';
 import OrderInfo from './OrderInfo/OrderInfo';
+import PropTypes from 'prop-types';
 
-const ConfirmOrder = () => {
+const ConfirmOrder = ({ details, total }) => {
+  const gstAmount = (total * 7) / 100;
+  const SubTotal = total + 2;
+  const deliveryPartnerFee = 14;
+  const zomatoCoupon = 50.0;
+  const grandTotal = gstAmount + SubTotal + deliveryPartnerFee;
+  const netPayable = grandTotal - zomatoCoupon;
   const [btnLable, setBtnLable] = useState({});
   const [payMethod, setPayMethod] = useState({ icon: 'fa-brands fa-google-pay', method: 'G Pay' });
   const [loading, setLoading] = useState(true);
@@ -65,9 +72,9 @@ const ConfirmOrder = () => {
             <div className='d-flex justify-content-between border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
               <div>
                 <FontAwesomeIcon icon='fa-regular fa-square-plus' />
-                <span className='ms-2'>Chicken</span>
+                <span className='ms-2'>{details.cuisineName}</span>
                 <div className='ms-4'>
-                  <p className='m-0'>₹290</p>
+                  <p className='m-0'>₹{total}</p>
                   <p className='m-0'>Medium</p>
                   <button className='btn btn-sm p-0 text-danger'>+ Edit -</button>
                 </div>
@@ -78,7 +85,7 @@ const ConfirmOrder = () => {
                   <span className='mx-3'>1</span>
                   <button className='fs-4'>+</button>
                 </div>
-                <p className='m-0 mt-2'>₹290</p>
+                <p className='m-0 mt-2'>₹{total}</p>
               </div>
             </div>
             {btnLable.addBtn?.map((lable) => {
@@ -113,7 +120,7 @@ const ConfirmOrder = () => {
             </div>
             <div className='hr-text label-l mt-3 mb-4 text-secondary'>BILL SUMMARY</div>
             <div className='border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
-              {btnLable.billSummaryData?.map((data) => {
+              {/* {btnLable.billSummaryData?.map((data) => {
                 return (
                   <div
                     key={data.id}
@@ -135,10 +142,52 @@ const ConfirmOrder = () => {
                         </p>
                       )}
                     </div>
-                    <p>₹{data.price}</p>
+                    <p>
+                      {data.id === 1 && `₹ ${total + 2}`}
+                      {data.id !== 1 && data.price}
+                      {data.id === 4 && data.price}
+                    </p>
                   </div>
                 );
-              })}
+              })} */}
+              <div className='d-flex justify-content-between'>
+                <div>
+                  <h5>Subtotal</h5>
+                  <p className=''>Includes ₹2 Feeding Indian donation</p>
+                </div>
+                <p>₹{SubTotal}</p>
+              </div>
+              <div className='d-flex justify-content-between'>
+                <div>
+                  <h6>GST</h6>
+                </div>
+                <p className=''>₹{gstAmount}</p>
+              </div>
+              <div className='d-flex justify-content-between border-bottom'>
+                <div>
+                  <h6>Delivery partner fee</h6>
+                  <p className='m-0 pb-2'>Fully goes to them for their time and effort</p>
+                </div>
+                <p>₹{deliveryPartnerFee}</p>
+              </div>
+              <div className='d-flex justify-content-between mt-3'>
+                <div>
+                  <h6>Grand Total</h6>
+                </div>
+                <p>₹{grandTotal}</p>
+              </div>
+              <div className='d-flex justify-content-between mt-3'>
+                <div>
+                  <h6>Coupon - (ZOMATO)</h6>
+                </div>
+                <p>-₹{zomatoCoupon}</p>
+              </div>
+              <div className='d-flex justify-content-between mt-3'>
+                <div>
+                  <h6>Net Payable</h6>
+                </div>
+                <p>₹{netPayable}</p>
+              </div>
             </div>
             <div className='d-flex justify-content-between border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
               <div>
@@ -200,9 +249,15 @@ const ConfirmOrder = () => {
                 </ul>
               </div>
               <div>
-                <button className='btn btn-danger' type='button'
+                <button
+                  className='btn btn-danger'
+                  type='button'
                   data-bs-toggle='modal'
-                  data-bs-target='#OrderInfoModal'>Place Order</button>
+                  data-bs-target='#OrderInfoModal'>
+                  <span>Total: ₹{netPayable}</span>
+                  <span className='ms-2 me-2'>Place Order</span>
+                  <FontAwesomeIcon icon="fa-solid fa-caret-right" />
+                </button>
               </div>
             </div>
           </div>
@@ -212,6 +267,11 @@ const ConfirmOrder = () => {
       <OrderInfo />
     </>
   );
+};
+
+ConfirmOrder.propTypes = {
+  details: PropTypes.array,
+  total: PropTypes.number
 };
 
 export default ConfirmOrder;
