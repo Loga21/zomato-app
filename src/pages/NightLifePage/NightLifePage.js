@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import NightLifeSubHeader from '../../components/NightLifeSubHeader/NightLifeSubHeader';
 import NightTimeRestaurants from './NightTimeRestaurants/NightTimeRestaurants';

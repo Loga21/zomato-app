@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './HomePage.scss';
 import SignUp from '../SignUp/SignUp';
 import LogIn from '../LogIn/LogIn';
+import './HomePage.scss';
 
 const HomePage = () => {
   const [location, setLocation] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/branchs', 'GET')
       .then((resInJson) => {

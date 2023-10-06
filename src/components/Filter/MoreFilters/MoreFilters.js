@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './MoreFilters.scss';
+
 const MoreFilters = () => {
   return (
     <form className='border border-secondary-subtle rounded mt-1'>

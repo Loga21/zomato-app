@@ -11,6 +11,7 @@ const FoodItems = () => {
   const [foodOrderDetail, setFoodOrderDetail] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/cuisine', 'GET')
       .then((resInJson) => {

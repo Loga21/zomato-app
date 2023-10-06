@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import './StickyOptions.scss';
 import Filter from '../Filter/Filter';
 import { cardContext } from '../ContextAPI/ContextAPI';
+import './StickyOptions.scss';
 
 const StickyOptions = () => {
   const { foodCardDetail, setSortByRatingFoodItems, setSortByTypeFoodItems } =
@@ -11,6 +11,7 @@ const StickyOptions = () => {
   const [option, setOptions] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/stickyOptions', 'GET')
       .then((resInJson) => {

@@ -5,6 +5,7 @@ const SortBy = () => {
   const [sortBy, setSortBy] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/filter', 'GET')
       .then((resInJson) => {
@@ -30,6 +31,7 @@ const SortBy = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <>
       {sortBy.sortBy?.map((sort) => {

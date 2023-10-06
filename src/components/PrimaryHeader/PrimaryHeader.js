@@ -4,8 +4,8 @@ import { fetchApi } from '../../utils/fetchApi';
 import LogIn from '../../pages/LogIn/LogIn';
 import SignUp from '../../pages/SignUp/SignUp';
 // import PropTypes from 'prop-types';
-import './PrimaryHeader.scss';
 import { cardContext } from '../ContextAPI/ContextAPI';
+import './PrimaryHeader.scss';
 
 const PrimaryHeader = () => {
   const {

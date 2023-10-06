@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import './LogIn.scss';
 import { Link } from 'react-router-dom';
+import './LogIn.scss';
 
 const LogIn = () => {
   const [countryName, setCountryName] = useState({});

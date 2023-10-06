@@ -16,6 +16,7 @@ const TrendingDinings = () => {
   } = useContext(cardContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/diningOut', 'GET')
       .then((resInJson) => {
@@ -96,6 +97,7 @@ const TrendingDinings = () => {
     );
   };
   console.log(sortByRestroTypeDiningOut);
+
   return (
     <div className='ms-2 row product-cards'>
       {filteredRestaurant.length > 0

@@ -11,6 +11,7 @@ const Header = () => {
   // const dineOutPath = '/cuisines/dine-out';
   // const nightLifePath = '/cuisines/drinks-and-nightlife';
   console.log(liveUrl);
+
   return (
     <div>
       {liveUrl !== homePath && (

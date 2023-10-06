@@ -13,6 +13,7 @@ const Filter = () => {
   const [category, setCategory] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/filter', 'GET')
       .then((resInJson) => {
@@ -31,6 +32,7 @@ const Filter = () => {
         setLoading(false);
       });
   }, []);
+
   if (loading) {
     return <div className='spinner-border text-success invisible' data-test-id='spinner'></div>;
   }
@@ -38,6 +40,7 @@ const Filter = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <>
       <div

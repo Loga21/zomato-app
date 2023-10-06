@@ -134,6 +134,62 @@
       {
         "id": 6,
         "option": "Chinese"
+      },
+      {
+        "id": 7,
+        "option": "Biryani"
+      },
+      {
+        "id": 8,
+        "option": "British"
+      },
+      {
+        "id": 9,
+        "option": "Cabinet Food"
+      },
+      {
+        "id": 10,
+        "option": "Durban"
+      },
+      {
+        "id": 11,
+        "option": "Egyptian"
+      },
+      {
+        "id": 12,
+        "option": "French"
+      },
+      {
+        "id": 13,
+        "option": "German"
+      },
+      {
+        "id": 14,
+        "option": "Home-made"
+      },
+      {
+        "id": 15,
+        "option": "International"
+      },
+      {
+        "id": 16,
+        "option": "Kerala"
+      },
+      {
+        "id": 17,
+        "option": "Malay"
+      },
+      {
+        "id": 18,
+        "option": "Oriya"
+      },
+      {
+        "id": 19,
+        "option": "Pastry"
+      },
+      {
+        "id": 20,
+        "option": "Welsh"
       }
     ],
     "stickyHeaderOptions": [

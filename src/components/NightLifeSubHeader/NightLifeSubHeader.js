@@ -15,6 +15,7 @@ const NightLifeSubHeader = () => {
   const [subHeader, setSubHeader] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/NightLife', 'GET')
       .then((resInJson) => {

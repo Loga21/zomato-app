@@ -5,6 +5,7 @@ const ChangeAddress = () => {
   const [addressType, setAddressType] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/chnageAddress', 'GET')
       .then((resInJson) => {

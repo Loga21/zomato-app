@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import './Footer.scss';
 import FooterMenu from '../FooterMenu/FooterMenu';
+import './Footer.scss';
 
 const Footer = () => {
   const [footer, setFooter] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/footerItems', 'GET')
       .then((resInJson) => {
@@ -33,6 +34,7 @@ const Footer = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <div className='footer-wrapper'>
       <footer className='pt-5 pb-1 container'>

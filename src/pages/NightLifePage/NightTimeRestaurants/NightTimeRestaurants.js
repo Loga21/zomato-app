@@ -15,6 +15,7 @@ const NightTimeRestaurants = () => {
   const [nightRestaurants, setNightRestaurants] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/NightLife', 'GET')
       .then((resInJson) => {
@@ -95,6 +96,7 @@ const NightTimeRestaurants = () => {
       </div>
     );
   };
+
   return (
     <div className='ms-2 row product-cards'>
       {filteredNightRestaurant.length > 0

@@ -32,6 +32,7 @@ const SignUp = () => {
     setEmailInput('');
     setAccInfo(false);
   };
+
   return (
     <div
       className='modal fade'

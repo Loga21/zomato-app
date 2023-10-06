@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import './CuisineDetailPage.scss';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import './CuisineDetailPage.scss';
 
 const CuisineDetailPage = () => {
   const location = useLocation();
@@ -10,9 +10,11 @@ const CuisineDetailPage = () => {
   const [menuBar, setMenuBar] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     const loc = location.pathname.split('/')[2];
     loc === undefined ? setNav('') : setNav(loc);
+
     fetchApi('http://localhost:5000/cuisineDetail', 'GET')
       .then((resInJson) => {
         if (resInJson.statusCode !== 404) {

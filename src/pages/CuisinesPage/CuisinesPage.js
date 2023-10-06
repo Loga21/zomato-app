@@ -9,6 +9,7 @@ const CuisinesPage = () => {
   const [food, setFood] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/cuisine', 'GET')
       .then((resInJson) => {
@@ -54,6 +55,7 @@ const CuisinesPage = () => {
       </div>
     );
   };
+
   return (
     <div className='container mb-4'>
       <div className='mb-5 mt-4 bg-light px-2 py-1'>

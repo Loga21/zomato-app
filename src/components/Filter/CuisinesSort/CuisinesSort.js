@@ -7,6 +7,7 @@ const CuisinesSort = () => {
   const [cuisineVariety, setCuisineVariety] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/filter', 'GET')
       .then((resInJson) => {
@@ -33,6 +34,7 @@ const CuisinesSort = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <>
       <form className='border border-secondary-subtle rounded mb-3 mt-1'>

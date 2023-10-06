@@ -11,6 +11,7 @@ const DiningOutPage = () => {
   const [collections, setCollections] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/diningOut', 'GET')
       .then((resInJson) => {

@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { Link } from 'react-router-dom';
-import './Overview.scss';
 import OurSponsors from './OurSponsors/OurSponsors';
+import './Overview.scss';
 
 const Overview = () => {
   const [restaurant, setRestaurant] = useState({});

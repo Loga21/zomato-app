@@ -9,6 +9,7 @@ const Reviews = () => {
   const [error, setError] = useState(true);
   const [sorting, setSorting] = useState('Newest First');
   const [reviewSorting, setReviewSorting] = useState('All Reviews');
+
   useEffect(() => {
     fetchApi('http://localhost:5000/reviews', 'GET')
       .then((resInJson) => {

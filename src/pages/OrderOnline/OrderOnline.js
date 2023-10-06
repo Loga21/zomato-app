@@ -39,6 +39,7 @@ const OrderOnline = () => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
   return (
     <div className='container my-4 d-flex'>
       <div
