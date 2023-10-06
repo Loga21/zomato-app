@@ -8,7 +8,7 @@ const FoodItems = () => {
   const [food, setFood] = useState({});
   const { setFoodCardDetail, filteredFood, sortByRatingFoodItems, sortByTypeFoodItems } =
     useContext(cardContext);
-  const [modal, setModal] = useState([]);
+  const [foodOrderDetail, setFoodOrderDetail] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   useEffect(() => {
@@ -46,7 +46,7 @@ const FoodItems = () => {
       type: 'ADD_TO_CART',
       payload: foodItem
     });
-    setModal(foodItem);
+    setFoodOrderDetail(foodItem);
   };
   // console.log(modal);
   const foodItem = (food) => {
@@ -141,7 +141,7 @@ const FoodItems = () => {
                 return foodItem(food);
               })}
       </div>
-      <ChooseQuantity modal={modal}/>
+      <ChooseQuantity OrderDetail={foodOrderDetail}/>
     </>
   );
 };

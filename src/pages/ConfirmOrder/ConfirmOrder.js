@@ -6,17 +6,19 @@ import ChangeAddress from './ChangeAddress/ChangeAddress';
 import OrderInfo from './OrderInfo/OrderInfo';
 import PropTypes from 'prop-types';
 
-const ConfirmOrder = ({ details, total }) => {
-  const gstAmount = (total * 7) / 100;
-  const SubTotal = total + 2;
+const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
+  const feedingDonation = 2;
   const deliveryPartnerFee = 14;
   const zomatoCoupon = 50.0;
+  const gstAmount = (totalAmount * 7) / 100; // (originalAmount * gst%) / 100
+  const SubTotal = totalAmount + feedingDonation;
   const grandTotal = gstAmount + SubTotal + deliveryPartnerFee;
-  const netPayable = grandTotal - zomatoCoupon;
+  const netPayable = (grandTotal - zomatoCoupon).toFixed(2); // toFixed(no.of.decimals) to fix the numbers after decimal point
   const [btnLable, setBtnLable] = useState({});
   const [payMethod, setPayMethod] = useState({ icon: 'fa-brands fa-google-pay', method: 'G Pay' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
   useEffect(() => {
     fetchApi('http://localhost:5000/confirmOrder', 'GET')
       .then((resInJson) => {
@@ -72,10 +74,10 @@ const ConfirmOrder = ({ details, total }) => {
             <div className='d-flex justify-content-between border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
               <div>
                 <FontAwesomeIcon icon='fa-regular fa-square-plus' />
-                <span className='ms-2'>{details.cuisineName}</span>
+                <span className='ms-2'>{orderedItem.cuisineName}</span>
                 <div className='ms-4'>
-                  <p className='m-0'>₹{total}</p>
-                  <p className='m-0'>Medium</p>
+                  <p className='m-0'>₹{totalAmount}</p>
+                  <p className='m-0'>{foodQuantity}</p>
                   <button className='btn btn-sm p-0 text-danger'>+ Edit -</button>
                 </div>
               </div>
@@ -85,7 +87,7 @@ const ConfirmOrder = ({ details, total }) => {
                   <span className='mx-3'>1</span>
                   <button className='fs-4'>+</button>
                 </div>
-                <p className='m-0 mt-2'>₹{total}</p>
+                <p className='m-0 mt-2'>₹{totalAmount}</p>
               </div>
             </div>
             {btnLable.addBtn?.map((lable) => {
@@ -256,7 +258,7 @@ const ConfirmOrder = ({ details, total }) => {
                   data-bs-target='#OrderInfoModal'>
                   <span>Total: ₹{netPayable}</span>
                   <span className='ms-2 me-2'>Place Order</span>
-                  <FontAwesomeIcon icon="fa-solid fa-caret-right" />
+                  <FontAwesomeIcon icon='fa-solid fa-caret-right' />
                 </button>
               </div>
             </div>
@@ -270,8 +272,9 @@ const ConfirmOrder = ({ details, total }) => {
 };
 
 ConfirmOrder.propTypes = {
-  details: PropTypes.array,
-  total: PropTypes.number
+  orderedItem: PropTypes.array,
+  totalAmount: PropTypes.number,
+  foodQuantity: PropTypes.string
 };
 
 export default ConfirmOrder;

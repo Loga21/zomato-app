@@ -44,14 +44,14 @@ const HomePage = () => {
             <li>Add restaurant</li>
             <li
               type='button'
-              className='btn btn-transparent'
+              className=' header-menu'
               data-bs-toggle='modal'
               data-bs-target='#loginModal'>
               Log in
             </li>
             <li
               type='button'
-              className='btn btn-transparent'
+              className=''
               data-bs-toggle='modal'
               data-bs-target='#signUpModal'>
               Sign up

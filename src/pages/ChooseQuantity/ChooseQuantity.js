@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 import PropTypes from 'prop-types';
 
-const ChooseQuantity = ({ modal }) => {
-  const details = modal;
+const ChooseQuantity = ({ OrderDetail }) => {
+  const orderedItem = OrderDetail;
   // console.log(details);
   // console.log(details.addOn);
   // console.log(details.quantitySize)
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
   const [addOnPrice, setAddOnPrice] = useState(0);
+  const [foodQuantity, setFoodQuantity] = useState('');
   // const [itemSize, setItemSize] = useState({});
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(true);
@@ -41,7 +42,7 @@ const ChooseQuantity = ({ modal }) => {
   // if (error) {
   //   return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   // }
-  const totalAmt = price + addOnPrice;
+  const totalAmount = price + addOnPrice;
   const handleAddOn = (options) => {
     setAddOnPrice(options.addOnPrice);
   };
@@ -57,8 +58,13 @@ const ChooseQuantity = ({ modal }) => {
         <div className='modal-dialog modal-content'>
           <div className='modal-header border-0'>
             <div className='modal-title' id='exampleModalLabel'>
-              <img src={details.cuisineImg} alt='foodItem' height={50} className='rounded me-4' />
-              <span className='fs-5 text-dark fw-bold'>{details.cuisineName}</span>
+              <img
+                src={orderedItem.cuisineImg}
+                alt='foodItem'
+                height={50}
+                className='rounded me-4'
+              />
+              <span className='fs-5 text-dark fw-bold'>{orderedItem.cuisineName}</span>
             </div>
             <button
               type='button'
@@ -72,7 +78,7 @@ const ChooseQuantity = ({ modal }) => {
               <p className='pb-2 border-bottom'>Select only 1 option</p>
               {/* {itemSize.itemSize?.map((item) => { */}
               {/* return ( */}
-              {details.quantitySize?.map((foodSize) => {
+              {orderedItem.quantitySize?.map((foodSize) => {
                 return (
                   <div key={foodSize.id} className='d-flex justify-content-between'>
                     <p>{foodSize.size}</p>
@@ -82,7 +88,8 @@ const ChooseQuantity = ({ modal }) => {
                         value='medium-price'
                         className='me-1'
                         onClick={() => {
-                          foodSize.id === 1 ? setPrice(foodSize.price) : setPrice(foodSize.price);
+                          setPrice(foodSize.price);
+                          setFoodQuantity(foodSize.size);
                         }}
                       />
                       <span id='medium-price'>₹{foodSize.price}</span>
@@ -97,18 +104,18 @@ const ChooseQuantity = ({ modal }) => {
                     type='radio'
                     value='Max-price'
                     className='me-1'
-                    onClick={() => setPrice(details.largePrice)}
+                    onClick={() => setPrice(orderedItem.largePrice)}
                   />
-                  <span id='max-price'>₹{details.largePrice}</span>
+                  <span id='max-price'>₹{orderedItem.largePrice}</span>
                 </div>
               </div> */}
               {/* );
               })} */}
             </div>
             <div className='border border-secondary-subtle p-2 rounded shadow-sm bg-white my-3'>
-              <h5>{details.addOnType}</h5>
+              <h5>{orderedItem.addOnType}</h5>
               <p className='border-bottom pb-2'>Select upto 4 options</p>
-              {details.addOn?.map((options) => {
+              {orderedItem.addOn?.map((options) => {
                 return (
                   <div key={options.id} className='d-flex justify-content-between mb-3'>
                     <div>
@@ -149,7 +156,7 @@ const ChooseQuantity = ({ modal }) => {
                   Add item
                   {price > 0 && (
                     <span className='m-0 ms-2'>
-                      ₹{price > 0 && addOnPrice === 0 ? price : totalAmt}
+                      ₹{price > 0 && addOnPrice === 0 ? price : totalAmount}
                     </span>
                   )}
                   {/* {Price + addOnPrice} */}
@@ -159,13 +166,17 @@ const ChooseQuantity = ({ modal }) => {
           </div>
         </div>
       </div>
-      <ConfirmOrder details={details} total={totalAmt} />
+      <ConfirmOrder
+        orderedItem={orderedItem}
+        totalAmount={totalAmount}
+        foodQuantity={foodQuantity}
+      />
     </>
   );
 };
 
 ChooseQuantity.propTypes = {
-  modal: PropTypes.object
+  OrderDetail: PropTypes.array
 };
 
 export default ChooseQuantity;

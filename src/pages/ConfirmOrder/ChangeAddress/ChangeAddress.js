@@ -56,15 +56,29 @@ const ChangeAddress = () => {
             {addressType?.map((address) => {
               return (
                 <div key={address.id}>
-                  <button className='btn border border-dark text-secondary me-3'>{address.type}</button>
+                  <button className='btn border border-dark text-secondary me-3'>
+                    {address.type}
+                  </button>
                 </div>
               );
             })}
           </div>
           <form className='d-grid my-4'>
-            <input type='text' placeholder='Current address *' className='p-2 rounded border border-secondary'/>
-            <input type='text' placeholder='Floor (optional)' className='my-3 p-2 rounded border border-secondary' />
-            <input type='text' placeholder='Nearby landmark (optional)' className='p-2 rounded border border-secondary'/>
+            <input
+              type='text'
+              placeholder='Current address *'
+              className='p-2 rounded border border-secondary'
+            />
+            <input
+              type='text'
+              placeholder='Floor (optional)'
+              className='my-3 p-2 rounded border border-secondary'
+            />
+            <input
+              type='text'
+              placeholder='Nearby landmark (optional)'
+              className='p-2 rounded border border-secondary'
+            />
             <button className='btn btn-danger mt-4'>Save address</button>
           </form>
         </div>
