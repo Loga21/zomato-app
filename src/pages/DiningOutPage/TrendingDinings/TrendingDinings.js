@@ -96,7 +96,7 @@ const TrendingDinings = () => {
       </div>
     );
   };
-  console.log(sortByRestroTypeDiningOut);
+  // console.log(sortByRestroTypeDiningOut);
 
   return (
     <div className='ms-2 row product-cards'>

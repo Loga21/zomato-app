@@ -43,6 +43,13 @@ const DiningOutPage = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
+  // const maxLength = 20;
+  // const str = 'Need to raise a PR, Before that take a pull';
+  // const truncate = (str, maxLength) => {
+  //   return str.length > maxLength ? str.slice(0, maxLength - 1) + '…' : str;
+  // }
+  // console.log(truncate(str, maxLength));
+
   const handleCollections = (items) => {
     return (
       <div key={items.id} className='col-md-3 px-2 pb-3'>

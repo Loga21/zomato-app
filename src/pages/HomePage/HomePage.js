@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SignUp from '../SignUp/SignUp';
 import LogIn from '../LogIn/LogIn';
 import './HomePage.scss';
+import { cardContext } from '../../components/ContextAPI/ContextAPI';
 
 const HomePage = () => {
+  const { loginState, PhoneNumber, userInfoParsed } = useContext(cardContext);
   const [location, setLocation] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
@@ -30,7 +32,11 @@ const HomePage = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
+    return (
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
+    );
   }
 
   if (error) {
@@ -43,20 +49,30 @@ const HomePage = () => {
         <nav>
           <ul className='ul-nav'>
             <li>Add restaurant</li>
-            <li
-              type='button'
-              className=' header-menu'
-              data-bs-toggle='modal'
-              data-bs-target='#loginModal'>
-              Log in
-            </li>
-            <li
-              type='button'
-              className=''
-              data-bs-toggle='modal'
-              data-bs-target='#signUpModal'>
-              Sign up
-            </li>
+            {!loginState && (
+              <>
+                <li
+                  type='button'
+                  className=' header-menu'
+                  data-bs-toggle='modal'
+                  data-bs-target='#loginModal'>
+                  Log in
+                </li>
+                <li type='button' className='' data-bs-toggle='modal' data-bs-target='#signUpModal'>
+                  Sign up
+                </li>
+              </>
+            )}
+            {loginState && PhoneNumber.length > 0 && (
+              <li className='p-1 mt-3'>
+                <FontAwesomeIcon
+                  icon='fa-solid fa-circle-user'
+                  className='fs-2 me-2'
+                  style={{ verticalAlign: -10 }}
+                />
+                <span>{userInfoParsed.userName}</span>
+              </li>
+            )}
           </ul>
         </nav>
         <div className='text-wrapper'>

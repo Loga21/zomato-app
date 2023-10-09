@@ -1133,7 +1133,7 @@
         "cuisineImg": "https://b.zmtcdn.com/data/pictures/3/67083/916cf13c160bd6b1dde72d4934c6cc21_o2_featured_v2.jpg",
         "offer": 15,
         "hotelName": "City Square Cafeteria",
-        "rating": 4.0,
+        "rating": 4,
         "cuisineName": "North Indian, Lebanese, Str",
         "price": 250,
         "timeTaken": 28,
@@ -2270,7 +2270,7 @@
       {
         "id": 2,
         "lable": "GST",
-        "price": 10.50
+        "price": 10.5
       },
       {
         "id": 3,
@@ -2285,7 +2285,7 @@
       {
         "id": 5,
         "lable": "Coupon - (ZOMATO)",
-        "price": -100.00
+        "price": -100
       },
       {
         "id": 6,
@@ -2332,6 +2332,73 @@
     {
       "id": 4,
       "type": "Other"
+    }
+  ],
+  "signUpData": [
+    {
+      "name": "lacchu",
+      "email": "lacchu@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "arun",
+      "email": "arun@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "loga",
+      "email": "loga@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "arun",
+      "email": "dq@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "lacchu",
+      "email": "lacchu@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "arun",
+      "email": "arun@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 7
+    },
+    {
+      "name": "arun",
+      "email": "arun@gmail.com",
+      "id": 8
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 9
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 10
+    },
+    {
+      "name": "anu",
+      "email": "anu13@gmail.com",
+      "id": 11
+    },
+    {
+      "name": "arun",
+      "email": "dq@gmail.com",
+      "id": 12
+    },
+    {
+      "name": "viplav",
+      "email": "viplav@gmail.com",
+      "id": 13
     }
   ]
 }

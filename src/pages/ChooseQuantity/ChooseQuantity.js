@@ -13,6 +13,7 @@ const ChooseQuantity = ({ OrderDetail }) => {
   const [price, setPrice] = useState(0);
   const [addOnPrice, setAddOnPrice] = useState(0);
   const [foodQuantity, setFoodQuantity] = useState('');
+  const [toggleAddOn, setToggleAddOn] = useState(false);
   // const [itemSize, setItemSize] = useState({});
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(true);
@@ -44,8 +45,10 @@ const ChooseQuantity = ({ OrderDetail }) => {
   // }
   const totalAmount = price + addOnPrice;
   const handleAddOn = (options) => {
-    setAddOnPrice(options.addOnPrice);
+    setToggleAddOn(!toggleAddOn);
+    toggleAddOn ? setAddOnPrice(0) : setAddOnPrice(options.addOnPrice);
   };
+  // console.log(addOnPrice);
 
   return (
     <>

@@ -9,6 +9,7 @@ import './PrimaryHeader.scss';
 
 const PrimaryHeader = () => {
   const {
+    loginState,
     foodCardDetail,
     setFilteredFood,
     restaurantFoodCardDetail,
@@ -138,22 +139,33 @@ const PrimaryHeader = () => {
               </span>
             </form>
           </div>
-          <ul className='navbar-nav mb-2 mb-lg-0 fs-5 ms-5'>
-            {primaryMenuBtn?.map((btn) => {
-              return (
-                <li
-                  key={btn.id}
-                  className={btn.id === 1 ? 'nav-item ms-5' : 'nav-item ms-2'}
-                  type='button'
-                  // className='btn btn-transparent'
-                  data-bs-toggle='modal'
-                  data-bs-target={btn.id === 1 ? '#loginModal' : '#signUpModal'}>
-                  <a className='nav-link text-secondary' href='#' role='button'>
-                    {btn.btnText}
-                  </a>
-                </li>
-              );
-            })}
+          <ul className='navbar-nav mb-2 mb-lg-0 fs-5 ms-1'>
+            {!loginState &&
+              primaryMenuBtn?.map((btn) => {
+                return (
+                  <li
+                    key={btn.id}
+                    className={btn.id === 1 ? 'nav-item ms-4' : 'nav-item ms-2'}
+                    type='button'
+                    // className='btn btn-transparent'
+                    data-bs-toggle='modal'
+                    data-bs-target={btn.id === 1 ? '#loginModal' : '#signUpModal'}>
+                    <a className='nav-link text-secondary' href='#' role='button'>
+                      {btn.btnText}
+                    </a>
+                  </li>
+                );
+              })}
+            {loginState && (
+              <li className='p-1 ms-4 text-secondary'>
+              <FontAwesomeIcon
+                icon='fa-solid fa-circle-user'
+                className='fs-2 me-2'
+                style={{ verticalAlign: -10 }}
+              />
+              <span>Lacchu</span>
+            </li>
+            )}
           </ul>
         </div>
       </nav>

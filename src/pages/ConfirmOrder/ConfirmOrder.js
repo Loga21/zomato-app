@@ -5,19 +5,28 @@ import { Link } from 'react-router-dom';
 import ChangeAddress from './ChangeAddress/ChangeAddress';
 import OrderInfo from './OrderInfo/OrderInfo';
 import PropTypes from 'prop-types';
+// import { cardContext } from '../../components/ContextAPI/ContextAPI';
 
 const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
+  // const { inputAddress } = useContext(cardContext);
+  const [feedDonationStatus, setFeedDonationStatus] = useState(0);
+  const [toggleDonation, setToggleDonation] = useState(false);
+  const [useZomatoCode, setUseZomatoCode] = useState(false);
   const feedingDonation = 2;
   const deliveryPartnerFee = 14;
   const zomatoCoupon = 50.0;
-  const gstAmount = (totalAmount * 7) / 100; // (originalAmount * gst%) / 100
-  const SubTotal = totalAmount + feedingDonation;
+  const SubTotal = totalAmount + feedDonationStatus;
+  const gstAmount = (SubTotal * 7) / 100; // (originalAmount * gst%) / 100
   const grandTotal = gstAmount + SubTotal + deliveryPartnerFee;
   const netPayable = (grandTotal - zomatoCoupon).toFixed(2); // toFixed(no.of.decimals) to fix the numbers after decimal point
-  const [btnLable, setBtnLable] = useState({});
+  // console.log(feedDonationStatus);
   const [payMethod, setPayMethod] = useState({ icon: 'fa-brands fa-google-pay', method: 'G Pay' });
+  const [btnLable, setBtnLable] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
+  const userAddress = localStorage.getItem('userAddress');
+  // console.log(userAddress);
 
   useEffect(() => {
     fetchApi('http://localhost:5000/confirmOrder', 'GET')
@@ -45,6 +54,11 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
+
+  const handleDonation = () => {
+    setToggleDonation(!toggleDonation);
+    toggleDonation ? setFeedDonationStatus(0) : setFeedDonationStatus(feedingDonation);
+  };
 
   return (
     <>
@@ -109,10 +123,12 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
                     icon='fa-solid fa-hand-holding-dollar'
                     className='text-primary me-2'
                   />
-                  <span>Save ₹100 more on this order</span>
+                  <span>Save ₹50 more on this order</span>
                 </div>
                 <div>
-                  <button className='text-danger'>Apply</button>
+                  <button className='text-danger' onClick={() => setUseZomatoCode(!useZomatoCode)}>
+                    Apply
+                  </button>
                 </div>
               </div>
               <p className='ms-4 border-bottom pb-2'>Code: ZOMATO</p>
@@ -121,6 +137,20 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
               </p>
             </div>
             <div className='hr-text label-l mt-3 mb-4 text-secondary'>BILL SUMMARY</div>
+            <div className='d-flex justify-content-between border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
+              <div>
+                <p className='m-0 mb-2'>Feeding India donation</p>
+                <p>working towards a malnutrition free India</p>
+              </div>
+              <div>
+                <input
+                  type='checkbox'
+                  value='price'
+                  onClick={handleDonation}
+                />
+                <p className='m-0 mt-2 me-2'>₹2</p>
+              </div>
+            </div>
             <div className='border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
               {/* {btnLable.billSummaryData?.map((data) => {
                 return (
@@ -178,28 +208,22 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
                 </div>
                 <p>₹{grandTotal}</p>
               </div>
-              <div className='d-flex justify-content-between mt-3'>
-                <div>
-                  <h6>Coupon - (ZOMATO)</h6>
-                </div>
-                <p>-₹{zomatoCoupon}</p>
-              </div>
-              <div className='d-flex justify-content-between mt-3'>
-                <div>
-                  <h6>Net Payable</h6>
-                </div>
-                <p>₹{netPayable}</p>
-              </div>
-            </div>
-            <div className='d-flex justify-content-between border border-secondary-subtle p-2 rounded bg-white shadow-sm my-4'>
-              <div>
-                <p className='m-0 mb-2'>Feeding India donation</p>
-                <p>working towards a malnutrition free India</p>
-              </div>
-              <div>
-                <input type='checkbox' value='price' />
-                <p className='m-0 mt-2 me-2'>₹2</p>
-              </div>
+              {useZomatoCode && (
+                <>
+                  <div className='d-flex justify-content-between mt-3'>
+                    <div>
+                      <h6>Coupon - (ZOMATO)</h6>
+                    </div>
+                    <p>-₹{zomatoCoupon}</p>
+                  </div>
+                  <div className='d-flex justify-content-between mt-3'>
+                    <div>
+                      <h6>Net Payable</h6>
+                    </div>
+                    <p>₹{netPayable}</p>
+                  </div>
+                </>
+              )}
             </div>
             <div className='d-flex justify-content-between border border-secondary-subtle rounded p-2 bg-white shadow-sm mb-3'>
               <div className='ms-2'>
@@ -208,7 +232,8 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
                 <p id='address' className='m-0 mt-3'>
                   Address :
                 </p>
-                <span className='m-0'>19/1, Type 1 Block, Hcf quarters, Aavadi, Chennai - 62</span>
+                <span className='m-0'>{userAddress}</span>
+                {/* <span className='m-0'>19/1, Type 1 Block, Hcf quarters, Aavadi, Chennai - 62</span> */}
               </div>
               <div>
                 <button
@@ -220,8 +245,8 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
                 </button>
               </div>
             </div>
-            <div className='d-flex justify-content-between border border-secondary-subtle rounded bg-white p-2 shadow-sm mb-3'>
-              <div className='btn-group sortby'>
+            <div className='d-flex justify-content-between mb-3'>
+              <div className='btn-group ms-2 sortby'>
                 {/* <div> */}
                 <FontAwesomeIcon icon={payMethod.icon} className='mt-3 text-primary' />
                 <button
@@ -256,7 +281,7 @@ const ConfirmOrder = ({ orderedItem, totalAmount, foodQuantity }) => {
                   type='button'
                   data-bs-toggle='modal'
                   data-bs-target='#OrderInfoModal'>
-                  <span>Total: ₹{netPayable}</span>
+                  <span>Total: ₹{useZomatoCode ? netPayable : grandTotal}</span>
                   <span className='ms-2 me-2'>Place Order</span>
                   <FontAwesomeIcon icon='fa-solid fa-caret-right' />
                 </button>

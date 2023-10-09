@@ -5,6 +5,14 @@ import FoodCartReducer from '../reducers/FoodCartReducer';
 
 export const cardContext = createContext(null);
 const ContextAPI = ({ children }) => {
+  const PhoneNumber = localStorage.getItem('Ph.no');
+  // console.log(PhoneNumber);
+  const name = localStorage.getItem('signUpDetails');
+  // console.log(name);
+  // console.log(name.userName);
+  const userInfoParsed = JSON.parse(name)
+  // console.log(userInfoParsed.userName);
+
   const [cartState, cartDispatch] = useReducer(FoodCartReducer);
   // console.log(cartState);
 
@@ -36,11 +44,17 @@ const ContextAPI = ({ children }) => {
   const [sortByRestroTypeNightLife, setSortByRestroTypeNightLife] = useState([]);
   const [sortByRatingNightLife, setSortByRatingNightLife] = useState([]);
   const [sortByPubsNightLife, setSortByPubsNightLife] = useState([]);
+  const [inputAddress, setInputAddress] = useState('');
+  const [loginState, setLoginState] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(true);
   return (
     <cardContext.Provider
       value={{
+        loginState,
+        setLoginState,
+        PhoneNumber,
+        userInfoParsed,
         foodCardDetail,
         setFoodCardDetail,
         filteredFood,
@@ -75,6 +89,8 @@ const ContextAPI = ({ children }) => {
         setSortByRatingNightLife,
         sortByPubsNightLife,
         setSortByPubsNightLife,
+        inputAddress,
+        setInputAddress,
         isLoading,
         setIsLoading,
         isError,

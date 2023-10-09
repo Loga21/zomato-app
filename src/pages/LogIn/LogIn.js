@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-import { Link } from 'react-router-dom';
+import { cardContext } from '../../components/ContextAPI/ContextAPI';
+// import { Link } from 'react-router-dom';
 import './LogIn.scss';
 
 const LogIn = () => {
+  const { setLoginState } = useContext(cardContext);
   const [countryName, setCountryName] = useState({});
+  // const [modal, setModal] = useState(false);
   const [countryCodesorting, setCountryCodeSorting] = useState({ flag: 'https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp', code: '+91' });
   const [mobileNumInput, setMobileNumInput] = useState(0);
   const [enterOtp, setEnterOtp] = useState(false);
@@ -13,6 +16,8 @@ const LogIn = () => {
   const [inputErrorMsg, setInputErrorMsg] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
+  localStorage.setItem('Ph.no', mobileNumInput);
 
   const handleInput = (event) => {
     event.preventDefault();
@@ -45,6 +50,11 @@ const LogIn = () => {
 
   if (error) {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
+  }
+
+  const handleConfirmBtn = () => {
+    setInputErrorMsg(true);
+    setLoginState(true);
   }
 
   return (
@@ -152,12 +162,12 @@ const LogIn = () => {
                   onClick={() => setEnterOtp(false)}>
                   Reset Mobile Number
                 </button>
-                <Link
-                  to={otp.length > 3 ? '/cuisines' : '#'}
+                <button
+                  // to={otp.length > 3 ? '/cuisines' : '#'}
                   className='border-0 rounded text-white btn btn-success'
-                  onClick={() => setInputErrorMsg(true)}>
+                  onClick={handleConfirmBtn}>
                   Confirm
-                </Link>
+                </button>
               </div>
             </div>
           )}
