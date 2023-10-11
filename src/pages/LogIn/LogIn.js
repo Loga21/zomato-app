@@ -64,7 +64,7 @@ const LogIn = () => {
       tabIndex='-1'
       aria-labelledby='exampleModalLabel'
       aria-hidden='true'>
-      <div className='modal-dialog modal-content'>
+      <div className='modal-dialog modal-content login-modal'>
         <div className='modal-header border-0 text-secondary'>
           <h1 className='modal-title fs-3' id='exampleModalLabel'>
             Login

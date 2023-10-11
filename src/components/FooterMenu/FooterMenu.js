@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
-
+import './FooterMenu.scss';
 const FooterMenu = () => {
   const [footer, setFooter] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -47,20 +47,20 @@ const FooterMenu = () => {
   };
 
   return (
-    <div className='row'>
-      <div className='col-6 col-md-2 mb-3'>
+    <div className='d-flex flex-wrap justify-content-sm-between footer-menu'>
+      <div className=''>
         <h6>ABOUT ZOMATO</h6>
         {footer.aboutZomato.map((value) => {
           return footerMenu(value);
         })}
       </div>
-      <div className='col-6 col-md-2 mb-3 ms-4'>
+      <div className=''>
         <h6>ZOMAVERSE</h6>
         {footer.zomaverse.map((value) => {
           return footerMenu(value);
         })}
       </div>
-      <div className='col-6 col-md-2 mb-3 ms-4'>
+      <div className=''>
         <h6>FOR RESTAURANTS</h6>
         {footer.forRestaurants.map((value) => {
           return footerMenu(value);
@@ -76,13 +76,13 @@ const FooterMenu = () => {
           </ul>
         </ul>
       </div>
-      <div className='col-6 col-md-2 mb-3 ms-4'>
+      <div className=''>
         <h6>LEARN MORE</h6>
         {footer.learnMore.map((value) => {
           return footerMenu(value);
         })}
       </div>
-      <div className='col-6 col-md-2 mb-3 ms-4'>
+      <div className='d-none d-sm-block my-lg-0 my-sm-3'>
         <h6>SOCIAL LINKS</h6>
         <div className='d-flex'>
           {footer.socialMediaIcons?.map((icon) => {
@@ -100,7 +100,7 @@ const FooterMenu = () => {
         <ul className='nav flex-row'>
           {footer.socialMediaImg.map((socialMedia) => {
             return (
-              <li className='nav-item mb-2' key={socialMedia.id}>
+              <li className='nav-item mb-2 me-2' key={socialMedia.id}>
                 <a href='#' className='nav-link p-0 text-body-secondary'>
                   <img src={socialMedia.imgUrl} alt={socialMedia.alt} width={120} height={35} />
                 </a>

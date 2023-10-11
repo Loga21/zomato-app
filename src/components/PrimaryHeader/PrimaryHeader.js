@@ -10,6 +10,7 @@ import './PrimaryHeader.scss';
 const PrimaryHeader = () => {
   const {
     loginState,
+    userInfoParsed,
     foodCardDetail,
     setFilteredFood,
     restaurantFoodCardDetail,
@@ -163,7 +164,7 @@ const PrimaryHeader = () => {
                 className='fs-2 me-2'
                 style={{ verticalAlign: -10 }}
               />
-              <span>Lacchu</span>
+              <span>{userInfoParsed.userName}</span>
             </li>
             )}
           </ul>

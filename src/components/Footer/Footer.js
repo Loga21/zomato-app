@@ -38,7 +38,7 @@ const Footer = () => {
   return (
     <div className='footer-wrapper'>
       <footer className='pt-5 pb-1 container'>
-        <div className='d-flex'>
+        <div className='d-lg-flex d-md-flex d-sm-flex justify-content-between'>
           <div>
             <img
               src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*'
@@ -46,62 +46,64 @@ const Footer = () => {
               className='footer-logo'
             />
           </div>
-          <div className='dropup-center dropup ms-auto'>
-            <button
-              className='btn btn-transparent border-dark dropdown-toggle'
-              type='button'
-              data-bs-toggle='dropdown'
-              aria-expanded='false'>
-              <img
-                src='https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp'
-                alt='india'
-                width={30}
-                height={23}
-              />
-              <span className='ms-2'>India</span>
-            </button>
-            <ul className='dropdown-menu'>
-              {footer.footerCountryDropdown.map((country) => {
-                return (
-                  <li className='' key={country.id}>
-                    <a className='dropdown-item' href='#'>
-                      <img
-                        src={country.countryFlagImgUrl}
-                        alt='hi'
-                        width={30}
-                        height={23}
-                        className='me-2'
-                      />
-                      {country.countryNames}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className='dropup-center dropup ms-3'>
-            <button
-              className='btn btn-transparent border-dark dropdown-toggle'
-              type='button'
-              data-bs-toggle='dropdown'
-              aria-expanded='false'>
-              English
-            </button>
-            <ul className='dropdown-menu'>
-              {footer.languageDropdown.map((language) => {
-                return (
-                  <li key={language.id}>
-                    <a className='dropdown-item' href='#'>
-                      {language.language}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+          <div className='d-flex ms-lg-auto ms-md-auto'>
+            <div className='dropup-center dropup mb-sm-2 me-sm-3 footer-dropdown'>
+              <button
+                className='btn btn-transparent border-dark dropdown-toggle'
+                type='button'
+                data-bs-toggle='dropdown'
+                aria-expanded='false'>
+                <img
+                  src='https://b.zmtcdn.com/images/flags_z10/in.png?output-format=webp'
+                  alt='india'
+                  width={30}
+                  height={23}
+                />
+                <span className='ms-2'>India</span>
+              </button>
+              <ul className='dropdown-menu'>
+                {footer.footerCountryDropdown.map((country) => {
+                  return (
+                    <li className='' key={country.id}>
+                      <a className='dropdown-item' href='#'>
+                        <img
+                          src={country.countryFlagImgUrl}
+                          alt='hi'
+                          width={30}
+                          height={23}
+                          className='me-2'
+                        />
+                        {country.countryNames}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className='dropup-center dropup mb-sm-5'>
+              <button
+                className='btn btn-transparent border-dark dropdown-toggle'
+                type='button'
+                data-bs-toggle='dropdown'
+                aria-expanded='false'>
+                English
+              </button>
+              <ul className='dropdown-menu'>
+                {footer.languageDropdown.map((language) => {
+                  return (
+                    <li key={language.id}>
+                      <a className='dropdown-item' href='#'>
+                        {language.language}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
         <FooterMenu />
-        <div className='d-flex flex-column flex-sm-row justify-content-between border-top py-3 text-secondary'>
+        <div className='border-top py-3 text-secondary'>
           By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy
           Policy and Content Policies. All trademarks are properties of their respective owners.
           2008-2023 © Zomato™ Ltd. All rights reserved.

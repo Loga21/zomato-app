@@ -73,6 +73,12 @@ const SignUp = () => {
     userEmail: emailInput
   };
   localStorage.setItem('signUpDetails', JSON.stringify(getData));
+  // if (localStorage.getItem('signUpDetails') === null) {
+  //   localStorage.setItem('signUpDetails', JSON.stringify(getData));
+  // }
+  // if (localStorage.getItem('signUpDetails') === null || JSON.parse(localStorage.getItem('signUpDetails')).length === 0) {
+  //   localStorage.setItem('signUpDetails', JSON.stringify(getData));
+  // }
 
   function validateEmail(emailInput) {
     return emailRegex.test(emailInput);

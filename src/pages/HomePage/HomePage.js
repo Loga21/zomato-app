@@ -3,8 +3,9 @@ import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SignUp from '../SignUp/SignUp';
 import LogIn from '../LogIn/LogIn';
-import './HomePage.scss';
 import { cardContext } from '../../components/ContextAPI/ContextAPI';
+import './HomePage.scss';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const { loginState, PhoneNumber, userInfoParsed } = useContext(cardContext);
@@ -43,37 +44,77 @@ const HomePage = () => {
     return <div className='alert-alert-danger'>Some Error Occurred. Try again later.</div>;
   }
 
+  const handleStorage = () => {
+    localStorage.removeItem('signUpDetails');
+    const userDetails = localStorage.getItem('signUpDetails');
+    if (userDetails == null) {
+      userInfoParsed.userName = '';
+    }
+    // window.location.reload(false);
+  };
+
   return (
     <>
       <div className='zomato-header'>
-        <nav>
-          <ul className='ul-nav'>
-            <li>Add restaurant</li>
-            {!loginState && (
-              <>
-                <li
-                  type='button'
-                  className=' header-menu'
-                  data-bs-toggle='modal'
-                  data-bs-target='#loginModal'>
-                  Log in
+        <nav className='navbar navbar-expand-lg nav-container'>
+          <button
+            className='navbar-toggler border-0 shadow-none'
+            type='button'
+            data-bs-toggle='collapse'
+            data-bs-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent'
+            aria-expanded='false'
+            aria-label='Toggle navigation'>
+            <FontAwesomeIcon icon='fa-solid fa-bars' className='fs-3 text-white' />
+          </button>
+          <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul className='navbar-nav mb-2 mb-lg-0 ms-lg-auto ul-nav'>
+              <li className='p-0 px-4 py-2'>Add restaurant</li>
+              {!loginState && (
+                <>
+                  <li
+                    type='button'
+                    className=' header-menu p-0 px-4 py-2'
+                    data-bs-toggle='modal'
+                    data-bs-target='#loginModal'>
+                    Log in
+                  </li>
+                  <li
+                    type='button'
+                    className='p-0 px-4 py-2'
+                    data-bs-toggle='modal'
+                    data-bs-target='#signUpModal'>
+                    Sign up
+                  </li>
+                </>
+              )}
+              {loginState && PhoneNumber.length > 0 && (
+                <li className='nav-item dropdown'>
+                  <Link
+                    className='nav-link dropdown-toggle'
+                    to=''
+                    role='button'
+                    data-bs-toggle='dropdown'
+                    aria-expanded='false'>
+                    <FontAwesomeIcon
+                      icon='fa-solid fa-circle-user'
+                      className='fs-2 me-2'
+                      style={{ verticalAlign: -10 }}
+                    />
+                    <span>{userInfoParsed.userName}</span>
+                  </Link>
+                  <ul className='dropdown-menu bg-transparent border-light p-0'>
+                    <li
+                      className='dropdown-item text-white bg-transparent item-list p-0 py-2 ms-2'
+                      type='button'
+                      onClick={handleStorage}>
+                      Log Out
+                    </li>
+                  </ul>
                 </li>
-                <li type='button' className='' data-bs-toggle='modal' data-bs-target='#signUpModal'>
-                  Sign up
-                </li>
-              </>
-            )}
-            {loginState && PhoneNumber.length > 0 && (
-              <li className='p-1 mt-3'>
-                <FontAwesomeIcon
-                  icon='fa-solid fa-circle-user'
-                  className='fs-2 me-2'
-                  style={{ verticalAlign: -10 }}
-                />
-                <span>{userInfoParsed.userName}</span>
-              </li>
-            )}
-          </ul>
+              )}
+            </ul>
+          </div>
         </nav>
         <div className='text-wrapper'>
           <img
@@ -87,7 +128,7 @@ const HomePage = () => {
           </h1>
         </div>
       </div>
-      <div className='text-center'>
+      <div className='text-center location-para'>
         <h2 className='location-header'>
           Popular locations in &nbsp;
           <img
@@ -97,26 +138,24 @@ const HomePage = () => {
           />
           &nbsp; India
         </h2>
-        <p className='fs-5'>
+        <p className='fs-5 col-lg-9 mx-lg-auto location-description'>
           From swanky upscale restaurants to the cosiest hidden gems serving the most incredible
-          food,
-          <br />
-          Zomato covers it all. Explore menus, and millions of restaurant photos and reviews from
-          users
-          <br />
-          just like you, to find your next great meal.
+          food, Zomato covers it all. Explore menus, and millions of restaurant photos and reviews
+          from users just like you, to find your next great meal.
         </p>
       </div>
-      <div className='d-flex flex-wrap container mb-5 mt-5'>
+      <div className='d-flex flex-wrap container mb-5 mt-5 states-container'>
         {location.states?.map((state) => {
           return (
-            <div key={state.id} className='col-md-4 px-2 py-3'>
-              <div className='card rounded-3 card-content'>
-                <div className='card-body text-center'>
+            <div
+              key={state.id}
+              className='col-lg-4 col-md-4 col-sm-6 col-12 px-lg-2 px-md-2 px-sm-2 py-3'>
+              <div className='card rounded-3 shadow-sm'>
+                <div className='card-body text-center d-flex justify-content-between'>
                   <a href='/cuisines' className='text-decoration-none text-dark'>
                     <span>{state.stateName}</span>
                   </a>
-                  <FontAwesomeIcon icon='fa-solid fa-chevron-down' className='ms-5' />
+                  <FontAwesomeIcon icon='fa-solid fa-chevron-down' className='mt-2' />
                 </div>
               </div>
             </div>
@@ -127,7 +166,7 @@ const HomePage = () => {
       <div className='d-flex flex-wrap container mb-4 mt-3'>
         {location.countries?.map((countryName) => {
           return (
-            <div key={countryName.id} className='col-md-4 px-2 py-3'>
+            <div key={countryName.id} className='col-lg-4 col-md-4 col-sm-6 col-12 px-2 py-3'>
               <div className='card rounded-3 card-content'>
                 <div className='card-body d-flex justify-content-between'>
                   <div>

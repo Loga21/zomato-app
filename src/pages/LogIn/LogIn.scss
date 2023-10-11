@@ -17,3 +17,9 @@
     // outline: none;
   }
 }
+
+@media screen and (max-width: 575px) {
+  .login-modal {
+    width: 300px;
+  }
+}
