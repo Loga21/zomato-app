@@ -47,7 +47,7 @@ const TrendingDinings = () => {
 
   const restaurantContainer = (restaurants) => {
     return (
-      <div className='col-md-4' key={restaurants.id}>
+      <div className='col-lg-4 col-md-4 col-sm-6 col-12' key={restaurants.id}>
         <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
           <div className='position-relative'>
             <a href='/cuisine-details'>

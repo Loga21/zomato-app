@@ -74,11 +74,8 @@ const StickyOptions = () => {
                     <>
                       <li
                         key={menu.id}
-                        className={
-                          menu.id === 4
-                            ? 'nav-item dropdown border rounded me-3'
-                            : 'nav-item border rounded me-3'
-                        }
+                        className={`
+                          ${menu.id === 4 ? 'dropdown' : ''} nav-item me-3 sticky-header-styles`}
                         onClick={() => handleFoodSort(menu)}>
                         <a
                           className={

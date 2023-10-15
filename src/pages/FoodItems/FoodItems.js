@@ -52,7 +52,7 @@ const FoodItems = () => {
   // console.log(modal);
   const foodItem = (food) => {
     return (
-      <div className='col-md-4' key={food.id}>
+      <div className='col-lg-4 col-md-4 col-sm-6' key={food.id}>
         <div className='card p-2 shadow mb-4 bg-body-tertiary rounded'>
           <div className='position-relative'>
             <a href='/cuisine-details'>
@@ -64,55 +64,51 @@ const FoodItems = () => {
               />
             </a>
             <p
-              className='bg-primary col-md-2 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
+              className='bg-primary  p-1 py-sm-0 p-md-1 text-center rounded-1 ms-2 text-light position-absolute bottom-0 start-0'
               style={{ fontSize: 12 }}>
               {food.offer}% OFF
             </p>
           </div>
-          <div className='card-body d-flex justify-content-between'>
-            <div>
-              <div className='card-title fs-5 product-title text-decoration-none'>
+          <div className='card-body'>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+              <div className='card-title fs-5 product-title text-decoration-none text-start mb-0'>
                 {food.hotelName}
               </div>
-              <div className='text-secondary'>{food.cuisineName}</div>
-              <div>
-                <button
-                  className='btn bg-transparent border-danger btn-sm mt-2 shadow-sm'
-                  type='button'
-                  // className='btn btn-transparent'
-                  data-bs-toggle='modal'
-                  data-bs-target='#ChooseQuantityModal'
-                  onClick={handleAddToCart.bind(this, food)}>
-                  Add Item
-                </button>
-              </div>
-            </div>
-            <div className='text-end'>
-              <div
-                className='bg-success rounded text-light px-1 mt-2 mb-2'
-                style={{ marginLeft: 70, fontSize: 14 }}>
+              <div className='d-flex bg-success rounded text-light px-1 text-end'>
                 {food.rating}
                 <FontAwesomeIcon
                   icon='fa-solid fa-star'
-                  className='fs-n1 text-light'
-                  style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
+                  className='fs-n1 text-light mt-2 ms-1'
+                  style={{ fontSize: 9 }}
                 />
               </div>
-              <p className='card-text text-secondary m-0'>₹{food.price} for one</p>
-              <p className='text-secondary m-0 mt-2'>{food.timeTaken} min</p>
             </div>
-          </div>
-          <hr className='m-0 text-secondary' />
-          <div className='d-flex my-3 ms-3'>
-            <img
-              src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
-              alt='PrepareGuideLines'
-              height={18}
-            />
-            <div>
-              <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
-                Restaurant partner follows WHO protocol
-              </p>
+            <div className='d-flex justify-content-between align-items-center mb-3'>
+              <div className='text-secondary text-start'>{food.cuisineName}</div>
+              <p className='card-text text-secondary m-0 text-end'>₹{food.price} for one</p>
+            </div>
+            <div className='d-flex justify-content-between align-items-center border-bottom border-body-secondary pb-3'>
+              <button
+                className='btn bg-transparent border-danger btn-sm shadow-sm text-start'
+                type='button'
+                data-bs-toggle='modal'
+                data-bs-target='#ChooseQuantityModal'
+                onClick={handleAddToCart.bind(this, food)}>
+                Add Item
+              </button>
+              <span className='text-secondary text-end'>{food.timeTaken} min</span>
+            </div>
+            <div className='d-flex my-3 ms-3'>
+              <img
+                src='https://b.zmtcdn.com/data/o2_assets/695598f38d29d0e5d3f8ffe57cfdb94c1613145422.png'
+                alt='PrepareGuideLines'
+                height={18}
+              />
+              <div>
+                <p className='m-0 ms-2 text-secondary' style={{ fontSize: 13 }}>
+                  Restaurant partner follows WHO protocol
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +138,7 @@ const FoodItems = () => {
                 return foodItem(food);
               })}
       </div>
-      <ChooseQuantity OrderDetail={foodOrderDetail}/>
+      <ChooseQuantity OrderDetail={foodOrderDetail} />
     </>
   );
 };

@@ -30,7 +30,11 @@ const Overview = () => {
   }, []);
 
   if (loading) {
-    return <div className='spinner-border text-success position-absolute top-50 start-50 translate-middle' data-test-id='spinner'></div>;
+    return (
+      <div
+        className='spinner-border text-success position-absolute top-50 start-50 translate-middle'
+        data-test-id='spinner'></div>
+    );
   }
 
   if (error) {
@@ -39,21 +43,24 @@ const Overview = () => {
 
   return (
     <div>
-      <div className='d-flex'>
-        <div>
+      <div className='d-block d-sm-flex'>
+        <div className='col-md-8 col-sm-8 col-8'>
           <h4>About this place</h4>
-          <div className='d-flex mb-4 mt-4'>
+          <div className='d-flex flex-wrap mb-4 mt-4'>
             {restaurant.restroFeatures?.map((feature) => {
               return (
-                <div key={feature.id} className='card me-4 px-3 py-2 d-flex flex-row shadow-sm'>
-                  <div>
-                    <img src={feature.imgUrl} alt='safeRide' height={40} className='me-2' />
-                  </div>
-                  <div>
-                    <p className='m-0' style={{ fontSize: 10 }}>
-                      {feature.safetyMeasures}
-                    </p>
-                    <p className='m-0'>{feature.features}</p>
+                <div key={feature.id} className='py-2 py-sm-2 py-md-0'>
+                  <div
+                    className='card me-4 px-3 py-2 d-flex flex-lg-row flex-md-col shadow-sm '>
+                    <div>
+                      <img src={feature.imgUrl} alt='safeRide' height={40} className='me-2' />
+                    </div>
+                    <div>
+                      <p className='m-0' style={{ fontSize: 10 }}>
+                        {feature.safetyMeasures}
+                      </p>
+                      <p className='m-0'>{feature.features}</p>
+                    </div>
                   </div>
                 </div>
               );
@@ -163,7 +170,7 @@ const Overview = () => {
             />
           </p>
         </div>
-        <div className='card col-md-4 shadow-sm rounded-4' style={{ height: 390 }}>
+        <div className='card col-md-4 col-sm-4 col-4 shadow-sm rounded-4' style={{ height: 390 }}>
           <div className='card-body'>
             <h5>Call</h5>
             <p className='text-danger'>+919941504709</p>
@@ -172,6 +179,7 @@ const Overview = () => {
               <img
                 src='https://maps.zomato.com/php/staticmap?center=13.0952593315,80.2410406619&maptype=zomato&markers=13.0952593315,80.2410406619,pin_res32&sensor=false&scale=2&zoom=16&language=en&size=240x150&size=400x240&size=650x250'
                 alt='location'
+                className='card-img'
                 height={130}
               />
               <p className='m-0 position-absolute bottom-0 start-0 ms-1'>

@@ -132,7 +132,7 @@ const CuisinesPage = () => {
       <div className='d-flex flex-wrap container mb-4 mt-3'>
         {food.popularLocalities?.map((area) => {
           return (
-            <div key={area.id} className='col-md-4 px-2 py-3'>
+            <div key={area.id} className='col-lg-4 col-md-4 col-sm-6 col-12 px-2 py-3'>
               <div className='card rounded-3 card-content'>
                 <div className='card-body d-flex justify-content-between'>
                   <div>
@@ -144,7 +144,7 @@ const CuisinesPage = () => {
                   <div>
                     <FontAwesomeIcon
                       icon='fa-solid fa-chevron-right'
-                      className='ms-5 mt-3'
+                      className='ms-3 mt-3'
                       style={{ fontSize: 12 }}
                     />
                   </div>

@@ -152,7 +152,7 @@ const ChooseQuantity = ({ OrderDetail }) => {
               </div>
               <div>
                 <button
-                  className='btn btn-danger rounded'
+                  className={price > 0 || addOnPrice > 0 ? 'btn btn-danger rounded' : 'btn btn-secondary rounded'}
                   // className='btn btn-transparent'
                   data-bs-toggle='modal'
                   data-bs-target='#ConfirmOrderModal'>

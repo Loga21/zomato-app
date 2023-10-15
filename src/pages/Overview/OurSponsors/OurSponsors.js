@@ -76,7 +76,7 @@ const OurSponsors = () => {
         })}
       </div>
       <p className='fs-5'>Similar restaurants</p>
-      <div className='d-flex my-3'>
+      <div className='d-flex flex-wrap my-3'>
         {restaurant.similarRestaurants?.map((restro) => {
           return (
             <div key={restro.id} className='me-2'>

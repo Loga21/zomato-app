@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { fetchApi } from '../../utils/fetchApi';
 import { Outlet, useLocation } from 'react-router-dom';
 import { cardContext } from '../ContextAPI/ContextAPI';
+import './SecondaryHeader.scss';
 
 const SecondaryHeader = () => {
   const { cart } = useContext(cardContext);
@@ -57,11 +58,11 @@ const SecondaryHeader = () => {
             <ul className='navbar-nav'>
               {menu?.map((items) => {
                 return (
-                  <li key={items.id} className='nav-item ms-2'>
+                  <li key={items.id} className='nav-item ms-2 mb-md-2 mb-lg-0'>
                     <a
                       className={
                         items.link === nav
-                          ? 'nav-link active fs-5 text-danger border-2 border-bottom border-danger'
+                          ? 'nav-link active fs-5 text-danger border-2 border-bottom border-danger menu-styles'
                           : 'nav-link text-secondary fs-5'
                       }
                       aria-current='page'

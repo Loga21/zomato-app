@@ -70,8 +70,7 @@ const CuisineDetailPage = () => {
             to='/cuisine-details/photos'
             onClick={() => {
               setNav('photos');
-            }}
-          >
+            }}>
             <img
               src='https://b.zmtcdn.com/data/pictures/chains/0/18591940/dad38637e7a47c3da8aacc70c82baefe_featured_v2.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*'
               alt='roast'
@@ -97,7 +96,7 @@ const CuisineDetailPage = () => {
           />
         </div>
       </div>
-      <div className='d-flex justify-content-between'>
+      <div className='d-flex flex-wrap justify-content-between'>
         <div className='mt-2'>
           <h2>Hotel Kanthaas</h2>
           <div className='text-secondary mb-1'>
@@ -107,18 +106,6 @@ const CuisineDetailPage = () => {
             <span>
               6:30am - 10.30pm (Today) <FontAwesomeIcon icon='fa-solid fa-circle-info' />
             </span>
-            <div className='mt-3'>
-              {menuBar.helpIcons?.map((icons) => {
-                return (
-                  <button
-                    key={icons.id}
-                    className='bg-light border-1 rounded py-1 px-2 me-2 text-secondary mt-3'>
-                    <FontAwesomeIcon icon={icons.icon} className='me-2 text-danger' />
-                    {icons.toolTip}
-                  </button>
-                );
-              })}
-            </div>
           </div>
         </div>
         <div className='d-flex mt-2'>
@@ -144,7 +131,19 @@ const CuisineDetailPage = () => {
           })}
         </div>
       </div>
-      <section className='d-flex justify-content-evenly border-bottom border-2 my-4'>
+      <div className='mt-3'>
+        {menuBar.helpIcons?.map((icons) => {
+          return (
+            <button
+              key={icons.id}
+              className='bg-light border-1 rounded py-1 px-2 me-2 text-secondary mt-3'>
+              <FontAwesomeIcon icon={icons.icon} className='me-2 text-danger' />
+              {icons.toolTip}
+            </button>
+          );
+        })}
+      </div>
+      <section className='d-flex flex-wrap justify-content-evenly border-bottom border-2 my-4'>
         {menuBar.stickyMenu?.map((menu) => {
           // console.log(nav, menu.linkUrl);
           return (

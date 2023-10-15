@@ -8,19 +8,19 @@ const NightLifePage = () => {
   return (
     <div className='container my-3'>
       <h3>Collections</h3>
-      <div className='position-relative mt-4'>
+      <div className='d-flex justify-content-between mt-4'>
         <p className=''>
           Explore curated lists of top restaurants, cafes, pubs, and bars in Chennai, based on
           trends
         </p>
-        <button className='position-absolute top-0 end-0'>
+        <button className='pb-3'>
           <Link to='#' className='text-decoration-none text-danger'>
             All collections in Chennai
             <FontAwesomeIcon icon='fa-solid fa-caret-right' className='ms-2' />
           </Link>
         </button>
       </div>
-      <div className='col-md-3 px-2 pb-3'>
+      <div className='col-lg-3 col-md-4 col-sm-6 col-12 px-2 pb-3'>
         <div className='card text-white position-relative'>
           <img
             src='https://b.zmtcdn.com/data/collections/f141889a9c1564098ee6a9763a941d78_1675232834.jpg'

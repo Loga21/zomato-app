@@ -22,6 +22,7 @@ const PrimaryHeader = () => {
   // console.log(restaurantFoodCardDetail);
 
   const [primaryMenuBtn, setPrimaryMenuBtn] = useState([]);
+  console.log(primaryMenuBtn);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
 
@@ -73,7 +74,7 @@ const PrimaryHeader = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-light mt-1'>
+      <nav className='navbar navbar-expand-lg bg-body-tertiary'>
         <div className='container'>
           <a className='navbar-brand' href='#'>
             <img
@@ -91,15 +92,13 @@ const PrimaryHeader = () => {
             aria-controls='navbarSupportedContent'
             aria-expanded='false'
             aria-label='Toggle navigation'>
-            <span className='navbar-toggler-icon'></span>
+            <FontAwesomeIcon icon='fa-solid fa-bars' className='fs-3' />
           </button>
-          <div
-            className='collapse navbar-collapse border rounded shadow-sm bg-white'
-            id='navbarSupportedContent'>
-            <ul className='navbar-nav mb-2'>
-              <li className='nav-item dropdown mt-1 ms-2'>
+          <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul className='navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4'>
+              <li className='nav-item bg-white shadow-sm border-secondary rounded-start py-lg-1'>
                 <a
-                  className='nav-link dropdown-toggle'
+                  className='nav-link dropdown-toggle border-end border-body-secondary pe-lg-5 ms-lg-3'
                   href='#'
                   role='button'
                   data-bs-toggle='dropdown'
@@ -124,10 +123,8 @@ const PrimaryHeader = () => {
                   </li>
                 </ul>
               </li>
-            </ul>
-            <form className='ms-5 border-start border-secondary-subtle'>
-              <span className='d-flex'>
-                <button className='btn bg-white text-secondary rounded-0 focus-out' type='button'>
+              <form className='d-flex shadow-sm w-75' role='search'>
+                <button className='btn bg-white text-secondary rounded-0 focus-out ps-lg-5' type='button'>
                   <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
                 </button>
                 <input
@@ -137,37 +134,37 @@ const PrimaryHeader = () => {
                   placeholder='Search for restaurant, cuisine or a dish'
                   onKeyUp={(e) => handleSearch(e)}
                 />
-              </span>
-            </form>
+              </form>
+            </ul>
+            <ul className='d-block d-lg-flex mb-0 list-unstyled'>
+              {!loginState &&
+                primaryMenuBtn?.map((btn) => {
+                  return (
+                    <li
+                      key={btn.id}
+                      className={btn.id === 1 ? 'nav-item' : 'nav-item ms-lg-4'}
+                      type='button'
+                      // className='btn btn-transparent'
+                      data-bs-toggle='modal'
+                      data-bs-target={btn.id === 1 ? '#loginModal' : '#signUpModal'}>
+                      <a className='nav-link text-secondary' href='#' role='button'>
+                        {btn.btnText}
+                      </a>
+                    </li>
+                  );
+                })}
+              {loginState && (
+                <li className='nav-item p-1 ms-4 text-secondary'>
+                  <FontAwesomeIcon
+                    icon='fa-solid fa-circle-user'
+                    className='fs-2 me-2'
+                    style={{ verticalAlign: -10 }}
+                  />
+                  <span>{userInfoParsed.userName}</span>
+                </li>
+              )}
+            </ul>
           </div>
-          <ul className='navbar-nav mb-2 mb-lg-0 fs-5 ms-1'>
-            {!loginState &&
-              primaryMenuBtn?.map((btn) => {
-                return (
-                  <li
-                    key={btn.id}
-                    className={btn.id === 1 ? 'nav-item ms-4' : 'nav-item ms-2'}
-                    type='button'
-                    // className='btn btn-transparent'
-                    data-bs-toggle='modal'
-                    data-bs-target={btn.id === 1 ? '#loginModal' : '#signUpModal'}>
-                    <a className='nav-link text-secondary' href='#' role='button'>
-                      {btn.btnText}
-                    </a>
-                  </li>
-                );
-              })}
-            {loginState && (
-              <li className='p-1 ms-4 text-secondary'>
-              <FontAwesomeIcon
-                icon='fa-solid fa-circle-user'
-                className='fs-2 me-2'
-                style={{ verticalAlign: -10 }}
-              />
-              <span>{userInfoParsed.userName}</span>
-            </li>
-            )}
-          </ul>
         </div>
       </nav>
       <LogIn />
