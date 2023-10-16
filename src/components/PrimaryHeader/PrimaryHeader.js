@@ -74,8 +74,9 @@ const PrimaryHeader = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+      <nav className='navbar navbar-expand-md bg-body-tertiary'>
         <div className='container'>
+          {/* <div className='container'> */}
           <a className='navbar-brand' href='#'>
             <img
               src='https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png'
@@ -85,20 +86,22 @@ const PrimaryHeader = () => {
             />
           </a>
           <button
-            className='navbar-toggler'
+            className='navbar-toggler shadow-none'
             type='button'
             data-bs-toggle='collapse'
             data-bs-target='#navbarSupportedContent'
             aria-controls='navbarSupportedContent'
             aria-expanded='false'
             aria-label='Toggle navigation'>
-            <FontAwesomeIcon icon='fa-solid fa-bars' className='fs-3' />
+            <FontAwesomeIcon icon='fa-solid fa-circle-user' className='fs-2' />
           </button>
-          <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul className='navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4'>
-              <li className='nav-item bg-white shadow-sm border-secondary rounded-start py-lg-1'>
+          <div
+            className='collapse navbar-collapse mt-2 mt-md-0 nav-container'
+            id='navbarSupportedContent'>
+            <ul className='navbar-nav mb-2 mb-md-0 ms-md-2 location-search-input'>
+              <li className='nav-item rounded-start py-md-1 list-styles'>
                 <a
-                  className='nav-link dropdown-toggle border-end border-body-secondary pe-lg-5 ms-lg-3'
+                  className='nav-link dropdown-toggle pe-md-3 ms-3 ms-md-3'
                   href='#'
                   role='button'
                   data-bs-toggle='dropdown'
@@ -123,12 +126,14 @@ const PrimaryHeader = () => {
                   </li>
                 </ul>
               </li>
-              <form className='d-flex shadow-sm w-75' role='search'>
-                <button className='btn bg-white text-secondary rounded-0 focus-out ps-lg-5' type='button'>
+              <form className='d-flex form-styles mt-2 mt-md-0' role='search'>
+                <button
+                  className='btn bg-white text-secondary rounded-0 focus-out ps-3 ps-md-4'
+                  type='button'>
                   <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
                 </button>
                 <input
-                  className='border-0 text-secondary p-2 focus-out'
+                  className='border-0 text-secondary p-2 focus-out form-input-styles'
                   type='search'
                   style={{ width: 450 }}
                   placeholder='Search for restaurant, cuisine or a dish'
@@ -136,13 +141,13 @@ const PrimaryHeader = () => {
                 />
               </form>
             </ul>
-            <ul className='d-block d-lg-flex mb-0 list-unstyled'>
+            <ul className='d-block d-md-flex mb-0 list-unstyled ms-auto' style={{ fontSize: 18 }}>
               {!loginState &&
                 primaryMenuBtn?.map((btn) => {
                   return (
                     <li
                       key={btn.id}
-                      className={btn.id === 1 ? 'nav-item' : 'nav-item ms-lg-4'}
+                      className={btn.id === 1 ? 'nav-item ms-md-2' : 'nav-item ms-md-3'}
                       type='button'
                       // className='btn btn-transparent'
                       data-bs-toggle='modal'

@@ -56,7 +56,7 @@ const HomePage = () => {
   return (
     <>
       <div className='zomato-header'>
-        <nav className='navbar navbar-expand-lg nav-container'>
+        <nav className='navbar navbar-expand-md nav-container w-100'>
           <button
             className='navbar-toggler border-0 shadow-none'
             type='button'
@@ -68,20 +68,20 @@ const HomePage = () => {
             <FontAwesomeIcon icon='fa-solid fa-bars' className='fs-3 text-white' />
           </button>
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul className='navbar-nav mb-2 mb-lg-0 ms-lg-auto ul-nav'>
-              <li className='p-0 px-4 py-2'>Add restaurant</li>
+            <ul className='navbar-nav mb-2 mb-md-0 ms-auto text-white' style={{ fontSize: 18 }}>
+              <li className='nav-item p-0 px-4 py-2'>Add restaurant</li>
               {!loginState && (
                 <>
                   <li
                     type='button'
-                    className=' header-menu p-0 px-4 py-2'
+                    className='nav-item header-menu p-0 px-4 py-2'
                     data-bs-toggle='modal'
                     data-bs-target='#loginModal'>
                     Log in
                   </li>
                   <li
                     type='button'
-                    className='p-0 px-4 py-2'
+                    className='nav-item p-0 px-4 py-2'
                     data-bs-toggle='modal'
                     data-bs-target='#signUpModal'>
                     Sign up
@@ -91,7 +91,7 @@ const HomePage = () => {
               {loginState && PhoneNumber.length > 0 && (
                 <li className='nav-item dropdown'>
                   <Link
-                    className='nav-link dropdown-toggle'
+                    className='nav-link dropdown-toggle text-white  ms-3 me-md-5 pe-md-5'
                     to=''
                     role='button'
                     data-bs-toggle='dropdown'
@@ -103,9 +103,9 @@ const HomePage = () => {
                     />
                     <span>{userInfoParsed.userName}</span>
                   </Link>
-                  <ul className='dropdown-menu bg-transparent border-light p-0'>
+                  <ul className='dropdown-menu bg-transparent border-light ms-md-2 p-0'>
                     <li
-                      className='dropdown-item text-white bg-transparent item-list p-0 py-2 ms-2'
+                      className='dropdown-item text-white bg-transparent item-list p-0 py-2 ms-md-2'
                       type='button'
                       onClick={handleStorage}>
                       Log Out

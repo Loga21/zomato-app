@@ -45,7 +45,7 @@ const SecondaryHeader = () => {
       <nav className='navbar navbar-expand-lg bg-light'>
         <div className='container'>
           <button
-            className='navbar-toggler'
+            className='navbar-toggler shadow-none'
             type='button'
             data-bs-toggle='collapse'
             data-bs-target='#navbarNav'
@@ -54,7 +54,7 @@ const SecondaryHeader = () => {
             aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
-          <div className='collapse navbar-collapse position-relative' id='navbarNav'>
+          <div className='collapse navbar-collapse position-relative mt-2 mt-lg-0' id='navbarNav'>
             <ul className='navbar-nav'>
               {menu?.map((items) => {
                 return (

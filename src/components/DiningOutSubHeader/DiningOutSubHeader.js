@@ -87,7 +87,7 @@ const DiningOutSubHeader = () => {
                 return (
                   <li
                     key={menu.id}
-                    className='nav-item border rounded me-3'
+                    className='nav-item me-3 sub-header-styles'
                     onClick={() => handleRestaurantType(menu)}>
                     <a
                       className='nav-link active text-secondary'

@@ -1940,7 +1940,7 @@
         "offerInfo": 10,
         "diningName": "The Living Room",
         "rating": 4.5,
-        "cuisineName": "North Indian, Pasta, Italian,...",
+        "cuisineName": "North Indian, Pasta, Ita...",
         "price": "2,000",
         "location": "Anna Nagar East, Chennai",
         "distance": 5.9,
@@ -1985,7 +1985,7 @@
         "offerInfo": 15,
         "diningName": "Origin",
         "rating": 4.7,
-        "cuisineName": "North Indian, Mediterranean...",
+        "cuisineName": "North Indian, Mediterr...",
         "price": "2,500",
         "location": "Palavakkam, Chennai",
         "distance": 13.7,
@@ -2394,6 +2394,71 @@
       "name": "dq",
       "email": "dq@gmail.com",
       "id": 12
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 13
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 14
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 15
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 16
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 17
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 18
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 19
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 20
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 21
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 22
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 23
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 24
+    },
+    {
+      "name": "dq",
+      "email": "dq@gmail.com",
+      "id": 25
     }
   ]
 }

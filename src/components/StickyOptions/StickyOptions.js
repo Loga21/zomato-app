@@ -58,7 +58,7 @@ const StickyOptions = () => {
         <nav className='navbar navbar-expand-lg bg-light mt-2'>
           <div className='container'>
             <button
-              className='navbar-toggler'
+              className='navbar-toggler shadow-none'
               type='button'
               data-bs-toggle='collapse'
               data-bs-target='#chooseCuisinesDropdown'

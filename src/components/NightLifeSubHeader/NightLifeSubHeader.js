@@ -85,7 +85,7 @@ const NightLifeSubHeader = () => {
                 return (
                   <li
                     key={menu.id}
-                    className='nav-item border rounded me-3'
+                    className='nav-item me-3 sub-header-styles'
                     onClick={() => {
                       handleNightRestaurantType(menu);
                     }}>

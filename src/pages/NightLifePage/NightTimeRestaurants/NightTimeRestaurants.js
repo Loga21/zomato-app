@@ -57,7 +57,7 @@ const NightTimeRestaurants = () => {
                 height={225}
               />
             </a>
-            <div className='d-flex col-md-4 bg-dark text-center rounded-1 ms-2 text-light p-1 position-absolute bottom-0 start-0'>
+            <div className='d-flex bg-dark text-center rounded-1 ms-2 text-light p-1 py-sm-0 p-md-1 text-center position-absolute bottom-0 start-0'>
               <img
                 src='https://b.zmtcdn.com/data/o2_assets/9b1ff9e19b7fadea6c6a57e081a1f5ac1687776279.png'
                 alt='offer-logo'
@@ -68,28 +68,30 @@ const NightTimeRestaurants = () => {
               </p>
             </div>
           </div>
-          <div className='card-body d-flex justify-content-between p-0 p-1 pb-0'>
-            <div>
-              <p className='card-title m-0 mb-1 fs-5 product-title text-decoration-none'>
+          <div className='card-body'>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+              <p className='card-title m-0 fs-5 product-title text-decoration-none text-start'>
                 {restaurants.diningName}
               </p>
-              <p className='text-secondary m-0'>{restaurants.cuisineName}</p>
-              <p className='text-secondary'>{restaurants.location}</p>
-              <p className='text-secondary text-danger mt-4'>{restaurants.opensAt}</p>
-            </div>
-            <div className='text-end mt-2'>
-              <div
-                className='bg-success rounded text-light px-1 mb-1'
-                style={{ marginLeft: 60, fontSize: 14 }}>
+              <div className='d-flex bg-success rounded text-light px-1 text-end'>
                 {restaurants.rating}
                 <FontAwesomeIcon
                   icon='fa-solid fa-star'
-                  className='fs-n1 text-light'
-                  style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
+                  className='fs-n1 text-light mt-2 ms-1'
+                  style={{ fontSize: 9 }}
                 />
               </div>
-              <p className='card-text text-secondary m-0'>₹{restaurants.price} for two</p>
-              <p className='text-secondary m-0 mt-5'>{restaurants.distance} km</p>
+            </div>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+            <p className='text-secondary m-0 text-start'>{restaurants.cuisineName}</p>
+            <p className='card-text text-secondary m-0 text-end'>₹{restaurants.price} for two</p>
+            </div>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+            <p className='text-secondary m-0 text-start'>{restaurants.location}</p>
+            <p className='text-secondary m-0 text-end'>{restaurants.distance} km</p>
+            </div>
+            <div>
+              <p className='text-secondary m-0 text-danger'>{restaurants.opensAt}</p>
             </div>
           </div>
         </div>

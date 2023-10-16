@@ -58,7 +58,7 @@ const TrendingDinings = () => {
                 height={225}
               />
             </a>
-            <div className='d-flex col-md-4 bg-dark text-center rounded-1 ms-2 text-light p-1 position-absolute bottom-0 start-0'>
+            <div className='d-flex bg-dark text-center rounded-1 ms-2 text-light p-1 py-sm-0 p-md-1 text-center position-absolute bottom-0 start-0'>
               <img
                 src='https://b.zmtcdn.com/data/o2_assets/9b1ff9e19b7fadea6c6a57e081a1f5ac1687776279.png'
                 alt='offer-logo'
@@ -69,27 +69,29 @@ const TrendingDinings = () => {
               </p>
             </div>
           </div>
-          <div className='card-body d-flex justify-content-between p-0 p-1 pb-0'>
-            <div>
-              <p className='card-title m-0 mb-1 fs-5 product-title text-decoration-none'>
+          <div className='card-body'>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+              <p className='card-title m-0 mb-1 fs-5 product-title text-decoration-none text-start'>
                 {restaurants.diningName}
               </p>
-              <p className='text-secondary m-0'>{restaurants.cuisineName}</p>
-              <p className='text-secondary'>{restaurants.location}</p>
-            </div>
-            <div className='text-end mt-2'>
               <div
-                className='bg-success rounded text-light px-1 mb-1'
+                className='d-flex bg-success rounded text-light px-1 text-end'
                 style={{ marginLeft: 60, fontSize: 14 }}>
                 {restaurants.rating}
                 <FontAwesomeIcon
                   icon='fa-solid fa-star'
-                  className='fs-n1 text-light'
-                  style={{ fontSize: 8, paddingBottom: 2, marginLeft: 2 }}
+                  className='fs-n1 text-light mt-2 ms-1'
+                  style={{ fontSize: 9 }}
                 />
               </div>
-              <p className='card-text text-secondary m-0'>₹{restaurants.price} for two</p>
-              <p className='text-secondary m-0'>{restaurants.distance} km</p>
+            </div>
+            <div className='d-flex justify-content-between align-items-center mb-2'>
+              <p className='text-secondary m-0 text-start'>{restaurants.cuisineName}</p>
+              <p className='card-text text-secondary m-0 text-end'>₹{restaurants.price} for two</p>
+            </div>
+            <div className='d-flex justify-content-between align-items-center'>
+              <p className='text-secondary m-0 text-start'>{restaurants.location}</p>
+              <p className='text-secondary m-0 text-end'>{restaurants.distance} km</p>
             </div>
           </div>
         </div>
@@ -105,34 +107,34 @@ const TrendingDinings = () => {
           filteredRestaurant?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-        : (sortByRestroTypeDiningOut.length > 0)
-            ? sortByRestroTypeDiningOut &&
+        : sortByRestroTypeDiningOut.length > 0
+          ? sortByRestroTypeDiningOut &&
           sortByRestroTypeDiningOut?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-            : (sortByRatingDiningOut.length > 0)
-                ? sortByRatingDiningOut &&
+          : sortByRatingDiningOut.length > 0
+            ? sortByRatingDiningOut &&
           sortByRatingDiningOut?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-                : (sortBySeatingDiningOut.length > 0)
-                    ? sortBySeatingDiningOut &&
+            : sortBySeatingDiningOut.length > 0
+              ? sortBySeatingDiningOut &&
           sortBySeatingDiningOut?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-                    : (sortByServesDiningOut.length > 0)
-                        ? sortByServesDiningOut &&
+              : sortByServesDiningOut.length > 0
+                ? sortByServesDiningOut &&
           sortByServesDiningOut?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-                        : (sortByOpenStatusDiningOut.length > 0)
-                            ? sortByOpenStatusDiningOut &&
+                : sortByOpenStatusDiningOut.length > 0
+                  ? sortByOpenStatusDiningOut &&
           sortByOpenStatusDiningOut?.map((restaurants) => {
             return restaurantContainer(restaurants);
           })
-                            : trendingRestaurants.trendingDinings?.map((restaurants) => {
-                              return restaurantContainer(restaurants);
-                            })}
+                  : trendingRestaurants.trendingDinings?.map((restaurants) => {
+                    return restaurantContainer(restaurants);
+                  })}
     </div>
   );
 };
