@@ -3,6 +3,7 @@ import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../Filter/Filter';
 import { cardContext } from '../ContextAPI/ContextAPI';
+import './DiningOutSubHeader.scss';
 
 const DiningOutSubHeader = () => {
   const {
@@ -69,7 +70,7 @@ const DiningOutSubHeader = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-transparent my-4'>
+      <nav className='navbar navbar-expand-md bg-transparent my-4'>
         <div className='container'>
           <button
             className='navbar-toggler'
@@ -82,12 +83,16 @@ const DiningOutSubHeader = () => {
             <span className='navbar-toggler-icon'></span>
           </button>
           <div className='collapse navbar-collapse' id='navbarNavDropdown'>
-            <ul className='navbar-nav'>
+            <ul className='navbar-nav d-flex flex-wrap'>
               {subHeader.subHeaderMenus?.map((menu) => {
                 return (
                   <li
                     key={menu.id}
-                    className='nav-item me-3 sub-header-styles'
+                    className={
+                      menu.id === 6
+                        ? 'nav-item me-3 dine-out-sub-header-styles mt-md-3 mt-lg-0'
+                        : 'nav-item me-3 dine-out-sub-header-styles'
+                    }
                     onClick={() => handleRestaurantType(menu)}>
                     <a
                       className='nav-link active text-secondary'

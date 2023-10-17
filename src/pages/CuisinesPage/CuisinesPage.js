@@ -60,7 +60,7 @@ const CuisinesPage = () => {
     <div className='container mb-4'>
       <div className='mb-5 mt-4 bg-light px-2 py-1'>
         <div className='position-relative'>
-          <h3 className='my-4'>Inspiration for your first order</h3>
+          <h3 className='my-4 ms-3'>Inspiration for your first order</h3>
           <div id='favItemsCarousel' className='carousel carousel-dark slide'>
             <div className='carousel-inner'>
               <div className='carousel-item active'>
@@ -98,7 +98,7 @@ const CuisinesPage = () => {
         </div>
       </div>
       <div className='position-relative'>
-        <h3 className='my-4'>Top brands for you</h3>
+        <h3 className='my-4 ms-3'>Top brands for you</h3>
         <FontAwesomeIcon
           icon='fa-solid fa-angle-left'
           className='bg-white p-3 text-center rounded-pill position-absolute top-50 start-0'

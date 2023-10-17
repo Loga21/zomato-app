@@ -43,7 +43,7 @@ const OrderOnline = () => {
   return (
     <div className='container my-4 d-flex'>
       <div
-        className='border-end me-5 pe-5 rounded-0 list-group position-sticky start-0'
+        className='border-end me-md-3 me-lg-5 pe-md-2 pe-lg-5 rounded-0 list-group d-none d-md-flex'
         id='list-example'>
         {order.todaysMenuList?.map((menu) => {
           return (
@@ -57,38 +57,36 @@ const OrderOnline = () => {
         })}
       </div>
       <div>
-        <div className='position-relative'>
+        <div className='d-flex justify-content-between'>
           <h4 className='my-2'>Order Online</h4>
-          <span className='me-2 text-secondary'>
-            <FontAwesomeIcon icon='fa-regular fa-compass' className='me-2' />
-            Live track your order
-          </span>
-          <span className='border-end border-secondary'></span>
-          <span className='ms-2 text-secondary'>
-            <FontAwesomeIcon icon='fa-regular fa-clock' className='me-2' />
-            32 min
-          </span>
-          <div className='position-absolute top-0 end-0 col-md-6'>
-            <form className='ms-5 border border-secondary-subtle rounded shadow-sm'>
-              <button className='btn bg-white text-secondary focus-out' type='button'>
-                <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
-              </button>
-              <input
-                className='border-0 text-secondary p-2 search-input focus-out'
-                type='search'
-                placeholder='Search within menu'
-              />
-              <button className='btn bg-white text-secondary' type='button'>
-                <FontAwesomeIcon icon='fa-solid fa-xmark' />
-              </button>
-            </form>
-          </div>
+          <form className='border border-secondary-subtle rounded shadow-sm d-none d-md-flex'>
+            <button className='btn bg-white text-secondary focus-out' type='button'>
+              <FontAwesomeIcon icon='fa-solid fa-magnifying-glass' />
+            </button>
+            <input
+              className='border-0 text-secondary p-2 search-input focus-out'
+              type='search'
+              placeholder='Search within menu'
+            />
+            <button className='btn bg-white text-secondary' type='button'>
+              <FontAwesomeIcon icon='fa-solid fa-xmark' />
+            </button>
+          </form>
         </div>
-        <div className='my-4 d-flex'>
+        <span className='me-2 text-secondary'>
+          <FontAwesomeIcon icon='fa-regular fa-compass' className='me-2' />
+          Live track your order
+        </span>
+        <span className='border-end border-secondary'></span>
+        <span className='ms-2 text-secondary'>
+          <FontAwesomeIcon icon='fa-regular fa-clock' className='me-2' />
+          32 min
+        </span>
+        <div className='my-4 d-flex flex-wrap'>
           {order.offerInfo?.map((offer) => {
             return (
               <div
-                className='bg-primary text-light rounded px-2 me-2'
+                className='bg-primary text-light rounded px-2 me-2 mt-2'
                 key={offer.id}
                 style={{ fontSize: 12 }}>
                 <p className='mb-0 mt-1 fw-bold'>{offer.offerPercentage}</p>

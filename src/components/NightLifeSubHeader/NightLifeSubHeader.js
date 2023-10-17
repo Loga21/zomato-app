@@ -3,6 +3,7 @@ import { fetchApi } from '../../utils/fetchApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Filter from '../Filter/Filter';
 import { cardContext } from '../ContextAPI/ContextAPI';
+import './NightLifeSubHeader.scss';
 
 const NightLifeSubHeader = () => {
   const {
@@ -67,7 +68,7 @@ const NightLifeSubHeader = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-transparent my-4'>
+      <nav className='navbar navbar-expand-md bg-transparent my-4'>
         <div className='container'>
           <button
             className='navbar-toggler'
@@ -85,7 +86,7 @@ const NightLifeSubHeader = () => {
                 return (
                   <li
                     key={menu.id}
-                    className='nav-item me-3 sub-header-styles'
+                    className='nav-item me-3 night-life-sub-header-styles'
                     onClick={() => {
                       handleNightRestaurantType(menu);
                     }}>

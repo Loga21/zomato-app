@@ -76,9 +76,9 @@ const DiningOutPage = () => {
 
   return (
     <div className='container my-3'>
-      <h3>Collections</h3>
+      <h3 className='ms-2'>Collections</h3>
       <div className='d-flex justify-content-between mt-4'>
-        <p className=''>
+        <p className='ms-2'>
           Explore curated lists of top restaurants, cafes, pubs, and bars in Chennai, based on
           trends
         </p>
@@ -131,9 +131,9 @@ const DiningOutPage = () => {
           alt='offerBanner'
         />
       </div>
-      <h3 className='mt-4 mb-5'>Trending dining restaurants in Chennai</h3>
+      <h3 className='mt-4 mb-5 ms-3'>Trending dining restaurants in Chennai</h3>
       <TrendingDinings />
-      <h3 className='my-4'>Explore options near me</h3>
+      <h3 className='my-4 ms-3'>Explore options near me</h3>
       <Accordian />
     </div>
   );

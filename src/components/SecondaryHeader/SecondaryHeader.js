@@ -42,7 +42,7 @@ const SecondaryHeader = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-light'>
+      <nav className='navbar navbar-expand-md bg-light'>
         <div className='container'>
           <button
             className='navbar-toggler shadow-none'
@@ -54,11 +54,11 @@ const SecondaryHeader = () => {
             aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
           </button>
-          <div className='collapse navbar-collapse position-relative mt-2 mt-lg-0' id='navbarNav'>
+          <div className='collapse navbar-collapse position-relative mt-2 mt-md-0' id='navbarNav'>
             <ul className='navbar-nav'>
               {menu?.map((items) => {
                 return (
-                  <li key={items.id} className='nav-item ms-2 mb-md-2 mb-lg-0'>
+                  <li key={items.id} className='nav-item ms-2 mb-md-2 mb-md-0'>
                     <a
                       className={
                         items.link === nav

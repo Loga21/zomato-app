@@ -43,8 +43,8 @@ const Overview = () => {
 
   return (
     <div>
-      <div className='d-block d-sm-flex'>
-        <div className='col-md-8 col-sm-8 col-8'>
+      <div className='d-block d-sm-flex flex-fill'>
+        <div className='col-lg-8 col-md-7 col-sm-7 col-12'>
           <h4>About this place</h4>
           <div className='d-flex flex-wrap mb-4 mt-4'>
             {restaurant.restroFeatures?.map((feature) => {
@@ -170,7 +170,7 @@ const Overview = () => {
             />
           </p>
         </div>
-        <div className='card col-md-4 col-sm-4 col-4 shadow-sm rounded-4' style={{ height: 390 }}>
+        <div className='card col-lg-4 col-md-5 col-sm-5 col-8 shadow-sm rounded-4 h-100'>
           <div className='card-body'>
             <h5>Call</h5>
             <p className='text-danger'>+919941504709</p>
